@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="shop">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="shopController">
+
+<div class="container">
+   <div ng-include="'app/cart.html'" ng-show="isCart()"></div>
+  <table class="table table-hover table-striped">
+    <thead>
+       <tr>
+        <th>Title</th>
+        <th>Style</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in products">
+        <td>{{product.title}}</td>
+        <td>{{product.style}}</td>
+        <td><button class="btn btn-success" ng-click="buyProduct()">Buy</button></td>
+      </tr>
+    </tbody>
+  </table>
+   
+</div>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/app.controller.js"></script>
+  <script src="app/app.service.js"></script>
+</body>
+</html>
+
+

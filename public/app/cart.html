@@ -1,0 +1,14 @@
+<div class="col-sm-4 pull-right">
+  <div class="well">
+   <h4>Cart</h4>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="(id, cartProduct) in cart">
+         <button class="btn btn-xs btn-danger" ng-click="removeCartItem()"><span class="glyphicon glyphicon-remove"></span></button>
+        <button class="btn btn-primary btn-xs pull-right">{{ cartProduct.items }}</button>
+        {{ cartProduct.product.title }}
+        
+      </li>
+      </tr>
+    </table>
+  </div>
+</div>

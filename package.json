@@ -1,0 +1,26 @@
+{
+  "name": "frontend-second-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Simon Søllingvraa <simon@soellingvraa.dk>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.1"
+  }
+}

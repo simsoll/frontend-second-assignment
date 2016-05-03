@@ -1,0 +1,22 @@
+{
+  "name": "frontend-second-assignment",
+  "homepage": "https://github.com/simsoll/frontend-second-assignment",
+  "authors": [
+    "Simon Søllingvraa <simon@soellingvraa.dk>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "ng-resource": "^0.0.2"
+  }
+}
