@@ -5,7 +5,7 @@
 
     module.component('accordion', {
         transclude: true,
-        templateUrl: '/public/app/accordion.component.html',
+        templateUrl: '/public/app/components/accordion/accordion.component.html',
         controllerAs: 'model',
         controller: function () {
             var model = this;
@@ -62,6 +62,6 @@
             };
         },
         transclude: true,
-        templateUrl: '/public/app/accordion-panel.component.html'
+        templateUrl: '/public/app/components/accordion/accordion-panel.component.html'
     });
 })();
