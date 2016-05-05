@@ -1,7 +1,11 @@
-(function() {
+(function () {
   "use strict";
-  
-  angular.module("squares", []);
-  
-  
-}());
+
+  var module = angular.module("squares", ['ngComponentRouter']);
+
+  module.value('$routerRootComponent', 'squaresApp');
+
+  module.component('appAbout', {
+    template: 'This is the about page'
+  });
+})();

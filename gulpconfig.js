@@ -22,7 +22,7 @@ function gulpConfig(){
         cssVendor: vendor + '**/*.css',
         fonts: './bower_components/font-awesome/fonts/**/*.*',
         images: client + 'images/**/*.*',
-		index: client + 'index.html',
+		index: root + 'index.html',
         js: './**/*.js',
         jsApp: jsApp,
         jsVendor: vendor + '**/*.js',

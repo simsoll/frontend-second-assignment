@@ -96,7 +96,7 @@ gulp.task('inject-js', ['bower-to-vendor'], function () {
 
     return gulp.src(config.index)
         .pipe(inject(series(jsVendor, app)))
-        .pipe(gulp.dest(config.client));
+        .pipe(gulp.dest(config.root));
 });
 
 gulp.task('inject-css', ['bower-to-vendor'], function () {
@@ -106,7 +106,7 @@ gulp.task('inject-css', ['bower-to-vendor'], function () {
 
     return gulp.src(config.index)
         .pipe(inject(series(css, cssFonts, cssVendor)))
-        .pipe(gulp.dest(config.client));
+        .pipe(gulp.dest(config.root));
 });
 
 gulp.task('inject', ['inject-css', 'inject-js']);
@@ -132,8 +132,7 @@ gulp.task('browserSync', function () {
         port: config.browserSync.port,
         server: {
             baseDir: config.root
-        },
-        startPath: config.index
+        }
     });
 });
 

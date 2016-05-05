@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "title": "Proto 1",
         "ratings": [
             {
@@ -21,10 +22,12 @@
         ]
     },
     {
+        "id": 2,
         "title": "Proto 2",
         "ratings": []
     },
     {
+        "id": 3,
         "title": "Proto 3",
         "ratings": [
             {
