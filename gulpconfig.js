@@ -1,9 +1,10 @@
 function gulpConfig(){
+    var root = './';
     var build = './build/';
     var client = './public/';
-    var server = './';
+    var server = root;
     var clientApp = client + 'app/';
-    var jsApp = clientApp + '**/app.js';
+    var jsApp = clientApp + '**/*.js';
     var vendor = client + 'vendor/';
 
     var config = {
@@ -25,6 +26,7 @@ function gulpConfig(){
         js: './**/*.js',
         jsApp: jsApp,
         jsVendor: vendor + '**/*.js',
+        root: root,
         server: server,
         styles: './sass/**/*.scss',
         vendor: vendor,        
@@ -42,7 +44,7 @@ function gulpConfig(){
 		 * Browsersync settings
 		 */
 		browserSync: {
-			files: [client + '**/*'],
+			files: [client + '**/*.*'],
 			port: 4000,
 			browsers: ['chrome'],			
 		},

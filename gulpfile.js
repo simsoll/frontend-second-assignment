@@ -31,14 +31,14 @@ var browserSync = require('browser-sync');
 gulp.task('help', taskListing);
 gulp.task('default', ['help']);
 
-gulp.task('lint', function() {
+gulp.task('lint', function () {
     return gulp.src(config.js)
         .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('styles', ['clean-css'], function() {
+gulp.task('styles', ['clean-css'], function () {
     return gulp.src(config.styles)
         .pipe(plumber())
         .pipe(sass())
@@ -46,51 +46,51 @@ gulp.task('styles', ['clean-css'], function() {
         .pipe(gulp.dest(config.clientCss));
 });
 
-gulp.task('fonts', ['clean-fonts'], function() {
+gulp.task('fonts', ['clean-fonts'], function () {
     return gulp.src(config.fonts)
         .pipe(gulp.dest(config.build + 'fonts'));
 });
 
-gulp.task('images', ['clean-images'], function() {
+gulp.task('images', ['clean-images'], function () {
     return gulp.src(config.images)
         .pipe(imagemin({ optimizationLevel: 4 }))
         .pipe(gulp.dest(config.build + 'images'));
 })
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
     var files = [].concat(config.build);
     return gulp.src(files, { read: false })
         .pipe(clean());
 });
 
-gulp.task('clean-vendor', function() {
+gulp.task('clean-vendor', function () {
     return gulp.src(config.vendor, { read: false })
         .pipe(clean());
 });
 
-gulp.task('clean-fonts', function() {
+gulp.task('clean-fonts', function () {
     var files = config.fonts;
     return gulp.src(files, { read: false })
         .pipe(clean());
 });
 
-gulp.task('clean-images', function() {
+gulp.task('clean-images', function () {
     var files = config.images;
     return gulp.src(files, { read: false })
         .pipe(clean());
 });
 
-gulp.task('clean-css', function() {
+gulp.task('clean-css', function () {
     return gulp.src(config.clientCss, { read: false })
         .pipe(clean());
 });
 
-gulp.task('bower-to-vendor', ['clean-vendor'], function() {
+gulp.task('bower-to-vendor', ['clean-vendor'], function () {
     return gulp.src(mainBowerFiles(), { base: './bower_components' })
         .pipe(gulp.dest(config.vendor));
 });
 
-gulp.task('inject-js', ['bower-to-vendor'], function() {
+gulp.task('inject-js', ['bower-to-vendor'], function () {
     var jsVendor = gulp.src(config.jsVendor, { read: false });
     var app = gulp.src(config.jsApp, { read: false });
 
@@ -99,7 +99,7 @@ gulp.task('inject-js', ['bower-to-vendor'], function() {
         .pipe(gulp.dest(config.client));
 });
 
-gulp.task('inject-css', ['bower-to-vendor'], function() {
+gulp.task('inject-css', ['bower-to-vendor'], function () {
     var css = gulp.src(config.cssApp, { read: false });
     var cssFonts = gulp.src('./public/fonts/*.css', { read: false });
     var cssVendor = gulp.src(config.cssVendor, { read: false });
@@ -111,7 +111,7 @@ gulp.task('inject-css', ['bower-to-vendor'], function() {
 
 gulp.task('inject', ['inject-css', 'inject-js']);
 
-gulp.task('optimize', ['inject', 'fonts', 'images'], function() {
+gulp.task('optimize', ['inject', 'fonts', 'images'], function () {
     return gulp.src(config.index)
         .pipe(plumber())
         .pipe(useref({ searchPath: './' }))
@@ -121,16 +121,22 @@ gulp.task('optimize', ['inject', 'fonts', 'images'], function() {
 });
 
 gulp.task('browserSync', function () {
-  browserSync({
-    files: config.browserSync.files,
-    server: {
-      baseDir: config.client
-    },
-    port: config.browserSync.port,
-    browser: config.browserSync.browsers
-  });
+    browserSync({
+        browser: config.browserSync.browsers,
+        files: config.browserSync.files,
+        ghostMode: {
+            clicks: true,
+            forms: true,
+            scroll: true
+        },
+        port: config.browserSync.port,
+        server: {
+            baseDir: config.root
+        },
+        startPath: config.index
+    });
 });
 
-gulp.task('dev', ['browserSync'], function() {
-  gulp.watch(config.styles, ['styles']); 
+gulp.task('dev', ['browserSync'], function () {
+    gulp.watch(config.styles, ['styles']);
 })
