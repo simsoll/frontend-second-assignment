@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="shop">
+<html ng-app="squares">
 
 <head>
   <meta charset="utf-8">
@@ -13,25 +13,9 @@
   <!-- endbuild -->
 </head>
 
-<body ng-controller="shopController">
+<body>
 
   <div class="container">
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Style</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="product in products">
-          <td>{{product.title}}</td>
-          <td>{{product.style}}</td>
-          <td><button class="btn btn-success" ng-click="buyProduct()">Buy</button></td>
-        </tr>
-      </tbody>
-    </table>
 
   </div>
   
