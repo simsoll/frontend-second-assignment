@@ -38,12 +38,12 @@ gulp.task('lint', function() {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('styles', ['clean-styles'], function() {
+gulp.task('styles', ['clean-css'], function() {
     return gulp.src(config.styles)
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer({ browsers: ['last 2 version', '> 5%'] }))
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.clientCss));
 });
 
 gulp.task('fonts', ['clean-fonts'], function() {
@@ -80,6 +80,11 @@ gulp.task('clean-images', function() {
         .pipe(clean());
 });
 
+gulp.task('clean-css', function() {
+    return gulp.src(config.clientCss, { read: false })
+        .pipe(clean());
+});
+
 gulp.task('bower-to-vendor', ['clean-vendor'], function() {
     return gulp.src(mainBowerFiles(), { base: './bower_components' })
         .pipe(gulp.dest(config.vendor));
@@ -91,17 +96,17 @@ gulp.task('inject-js', ['bower-to-vendor'], function() {
 
     return gulp.src(config.index)
         .pipe(inject(series(jsVendor, app)))
-        .pipe(gulp.dest(config.index));
+        .pipe(gulp.dest(config.client));
 });
 
 gulp.task('inject-css', ['bower-to-vendor'], function() {
-    var css = gulp.src(config.css, { read: false });
+    var css = gulp.src(config.cssApp, { read: false });
     var cssFonts = gulp.src('./public/fonts/*.css', { read: false });
     var cssVendor = gulp.src(config.cssVendor, { read: false });
 
     return gulp.src(config.index)
         .pipe(inject(series(css, cssFonts, cssVendor)))
-        .pipe(gulp.dest(config.layouts));
+        .pipe(gulp.dest(config.client));
 });
 
 gulp.task('inject', ['inject-css', 'inject-js']);
