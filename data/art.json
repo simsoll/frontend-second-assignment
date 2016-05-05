@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Proto 1",
+        "ratings": [
+            {
+                "user": {
+                    "id": 1,
+                    "name": "Simon"
+                },
+                "value": 5,
+                "comment": "This is cool!"
+            },
+            {
+                "user": {
+                    "id": 2,
+                    "name": "John"
+                },
+                "value": 2,
+                "comment": "Bahhh..."
+            }
+        ]
+    },
+    {
+        "title": "Proto 2",
+        "ratings": []
+    },
+    {
+        "title": "Proto 3",
+        "ratings": [
+            {
+                "user": {
+                    "id": 2,
+                    "name": "John"
+                },
+                "value": 5,
+                "comment": "See, this is a masterpiece!"
+            }
+        ]
+    }
+]

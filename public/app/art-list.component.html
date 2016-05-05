@@ -1,0 +1,10 @@
+<div ng-repeat="art in model.arts">
+    <h1>{{art.title}}</h1>
+    
+    <div ng-repeat="rating in art.ratings">
+        <span>user: {{rating.user.name}}</span>, 
+        <span>rating: {{rating.value}}</span>
+    </div>
+    
+    <rating value="art.rating"></rating>
+</div>
