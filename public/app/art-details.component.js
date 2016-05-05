@@ -10,6 +10,10 @@
         //         return true;
         //     }, 2000);
         // },
+        $routeConfig: [
+            {path: '/overview', component: 'artOverview', name: 'Overview'},
+            {path: '/reviews', component: 'artReviews', name: 'Reviews'}
+        ],
         controllerAs: 'model',
         controller: function() {
             var model = this;
@@ -17,8 +21,16 @@
             model.$routerOnActivate = function(next, previous) {
                 model.id = next.params.id;
                 
-                //retrieve art
+                //retrieve art from db
             }
         }
+    });
+    
+    module.component('artOverview', {
+        template: 'This is the art overview component'
+    });
+    
+    module.component('artReviews', {
+        template: 'This is the art reviews component'
     });
 })();

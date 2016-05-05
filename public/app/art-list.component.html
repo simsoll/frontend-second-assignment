@@ -2,13 +2,11 @@
     <h1>{{art.title}}</h1>
 
     <div ng-repeat="rating in art.ratings">
-        <span>user: {{rating.user.name}}</span>,
-        <span>rating: {{rating.value}}</span>
+        <span>{{rating.user.name}}:</span>
+        <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>
     </div>
 
-    <a ng-link="['ArtDetails', {id: art.id}]" class="btn btn-default">
+    <a ng-link="['ArtDetails', {id: art.id}, 'Overview']" class="btn btn-default">
         <span class="glyphicon glyphicon-zoom-in"></span>
     </a>
-
-    <!--<rating value="art.rating"></rating>-->
 </div>
