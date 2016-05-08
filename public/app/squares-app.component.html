@@ -21,8 +21,11 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li>
+            <li ng-if="user.loggedIn()">
                 <a ng-link="['Profile']">Profile</a>
+            </li>
+            <li ng-if="!user.loggedIn()">
+                <a ng-link="['Login']">Login</a>
             </li>
         </ul>
     </div>
