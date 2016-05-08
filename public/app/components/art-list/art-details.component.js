@@ -4,7 +4,7 @@
     var module = angular.module('squares');
     
     module.component('artDetails', {
-        templateUrl: '/public/app/art-details.component.html',
+        templateUrl: '/public/app/components/art-list/art-details.component.html',
         // $canActivate: function($http, $timeout) {
         //     return $timeout(function() {
         //         return true;

@@ -27,7 +27,7 @@
     var module = angular.module('squares');
 
     module.component('artList', {
-        templateUrl: '/public/app/art-list.component.html',
+        templateUrl: '/public/app/components/art-list/art-list.component.html',
         controllerAs: 'model',
         controller: ['$http', controller]
     });
