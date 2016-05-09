@@ -12,6 +12,7 @@
             { path: '/create', component: 'create', name: 'Create'},
             { path: '/about', component: 'about', name: 'About'},
             { path: '/profile', component: 'profile', name: 'Profile'},
+            { path: '/signup', component: 'signup', name: 'Signup'},
             { path: '/login', component: 'login', name: 'Login'},
             { path: '/artdetail/:id/...', component: 'artDetails', name: 'ArtDetails'},
             { path: '/**', redirectTo: ['Home']}            

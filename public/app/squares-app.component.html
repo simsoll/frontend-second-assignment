@@ -25,6 +25,9 @@
                 <a ng-link="['Profile']">Profile</a>
             </li>
             <li ng-if="!user.loggedIn()">
+                <a ng-link="['Signup']">Sign up</a>
+            </li>            
+            <li ng-if="!user.loggedIn()">
                 <a ng-link="['Login']">Login</a>
             </li>
         </ul>
