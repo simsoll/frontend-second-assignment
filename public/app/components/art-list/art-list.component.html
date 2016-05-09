@@ -1,6 +1,6 @@
 <div ng-repeat="art in model.arts">
     <h1>{{art.title}}</h1>
-
+    <img ng-src="{{art.imageSource}}" alt="Picture of an artwork called {{art.title}}">
     <div ng-repeat="rating in art.ratings">
         <span>{{rating.user.name}}:</span>
         <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>
