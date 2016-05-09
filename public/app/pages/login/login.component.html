@@ -1,8 +1,8 @@
-<form ng-submit="vm.login()">
+<form ng-submit="model.login()">
     <label for="username">Username</label>
-    <input ng-model="vm.username" type="text" id="username" required/>
+    <input ng-model="model.username" type="text" id="username" required/>
     <label for="password">Password</label>
-    <input ng-model="vm.password" type="password" id="password" required/>
+    <input ng-model="model.password" type="password" id="password" required/>
     <a href="">Forgot your password?</a>
     <input type="submit" value="Log in" />
     <a ng-link="['Sign Up']">Sign Up</a>
