@@ -8,7 +8,7 @@
     };
     
     module.component('signup', {
-        templateUrl: '/public/app/pages/signup/signup.component.html',
+        templateUrl: '/app/pages/signup/signup.component.html',
         controllerAs: 'model',
         controller: controller
     });

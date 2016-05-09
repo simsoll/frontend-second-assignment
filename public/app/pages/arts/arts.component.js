@@ -8,7 +8,7 @@
     };
     
     module.component('arts', {
-        templateUrl: '/public/app/pages/arts/arts.component.html',
+        templateUrl: '/app/pages/arts/arts.component.html',
         controllerAs: 'model',
         controller: controller
     });

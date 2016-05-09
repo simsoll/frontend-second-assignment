@@ -15,7 +15,7 @@
     }
     
     module.component('rating', {
-            templateUrl: '/public/app/components/rating/rating.component.html',
+            templateUrl: '/app/components/rating/rating.component.html',
             bindings: {
                 value: '<',
                 max: '<',

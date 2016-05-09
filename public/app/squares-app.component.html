@@ -12,31 +12,34 @@
             </li>
             <li>
                 <a ng-link="['Arts']">Arts</a>
-            </li>           
+            </li>
             <li>
                 <a ng-link="['Create']">Create</a>
             </li>
             <li>
-                <a ng-link="['About']">About</a>                
+                <a ng-link="['About']">About</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li ng-if="user.isAdmin()">
+                <a ng-link="['Admin']">Admin</a>
+            </li>
             <li ng-if="user.loggedIn()">
                 <a ng-link="['Profile']">Profile</a>
             </li>
             <li ng-if="!user.loggedIn()">
-                <a ng-link="['Signup']">Sign up</a>
-            </li>            
+                <a ng-link="['Sign Up']">Sign Up</a>
+            </li>
             <li ng-if="!user.loggedIn()">
-                <a ng-link="['Login']">Login</a>
+                <a ng-link="['Log In']">Log In</a>
             </li>
         </ul>
     </div>
-    
+
 </nav>
 
 <div class="container">
-    
+
     <ng-outlet></ng-outlet>
-    
+
 </div>

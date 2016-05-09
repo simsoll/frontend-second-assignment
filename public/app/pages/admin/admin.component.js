@@ -7,8 +7,8 @@
         
     };
     
-    module.component('home', {
-        templateUrl: '/app/pages/home/home.component.html',
+    module.component('admin', {
+        templateUrl: '/app/pages/admin/admin.component.html',
         controllerAs: 'model',
         controller: controller
     });

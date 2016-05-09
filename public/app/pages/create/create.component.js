@@ -8,7 +8,7 @@
     };
     
     module.component('create', {
-        templateUrl: '/public/app/pages/create/create.component.html',
+        templateUrl: '/app/pages/create/create.component.html',
         controllerAs: 'model',
         controller: controller
     });

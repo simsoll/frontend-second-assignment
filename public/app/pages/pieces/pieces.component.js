@@ -8,7 +8,7 @@
     };
     
     module.component('pieces', {
-        templateUrl: '/public/app/pages/pieces/pieces.component.html',
+        templateUrl: '/app/pages/pieces/pieces.component.html',
         controllerAs: 'model',
         controller: controller
     });

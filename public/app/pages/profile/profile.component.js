@@ -8,7 +8,7 @@
     };
 
     module.component('profile', {
-        templateUrl: '/public/app/pages/profile/profile.component.html',
+        templateUrl: '/app/pages/profile/profile.component.html',
         controllerAs: 'model',
         controller: controller
     });

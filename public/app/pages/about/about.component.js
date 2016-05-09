@@ -8,7 +8,7 @@
     };
     
     module.component('about', {
-        templateUrl: '/public/app/pages/about/about.component.html',
+        templateUrl: '/app/pages/about/about.component.html',
         controllerAs: 'model',
         controller: controller
     });
