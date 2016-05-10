@@ -1,12 +1,12 @@
-(function() {
+(function () {
     'use strict';
-    
+
     var module = angular.module('squares');
-    
-    var controller = function() {
+
+    var controller = function () {
         
     };
-    
+
     module.component('create', {
         templateUrl: '/app/pages/create/create.component.html',
         controllerAs: 'model',
