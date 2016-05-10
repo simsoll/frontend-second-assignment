@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // add routes
-// require('./routes.js')(app);
+require('./routes.js')(app);
 
 app.listen(app.get('port'), function(err) {
     console.log('running server on port ' + app.get('port'));

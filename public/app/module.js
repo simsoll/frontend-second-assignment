@@ -5,7 +5,10 @@
 
   module.value('$routerRootComponent', 'squaresApp');
 
-  module.component('appAbout', {
-    template: 'This is the about page'
+  module.run(function ($rootScope, AuthenticationService) {
+    $rootScope.$on('$routeChangeStart',
+      function (event, next, current) {
+        AuthenticationService.getUserStatus()
+      })
   });
 })();

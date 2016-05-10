@@ -1,4 +1,5 @@
 <form ng-submit="model.login()">
+    <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
     <label for="username">Username</label>
     <input ng-model="model.username" type="text" id="username" required/>
     <label for="password">Password</label>
