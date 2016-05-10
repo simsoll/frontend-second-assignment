@@ -18,3 +18,23 @@ In the report, you must document and explain how the following elements are used
 * Possible use of automation tools, i.e. Gulp
 * Browser compatibility
 * Validation of HTML and CSS
+
+
+# Technical Considerations
+
+## Canvas libraries
+
+Pure AngularJS using directives and mousedown, mouseup and mouseover events
+* very limited functionality
+
+codef0rmer: jQuery drag and drop made easy in AngularJs
+* very simple drag and drop
+* still a bit limited
+
+interactjs
+* drag and drop
+* resizing
+* multi-touch gestures
+* snapping/grid
+* excellent documentation
+
