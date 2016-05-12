@@ -8,6 +8,7 @@
 
         model.login = login;
         model.error = false;
+        model.user = null;
 
         function login() {
             authenticationService.login(model.username, model.password)
@@ -20,6 +21,14 @@
                     model.errorMessage = 'Invalid username and/or password';
                 });
         }
+        
+        model.$routerOnActivate = function (next) {
+            authenticationService.getUserStatus().then(function (data) {
+                if (data.success) {
+                    model.user = data.user;
+                }
+            });
+        }        
     };
 
     module.component('login', {

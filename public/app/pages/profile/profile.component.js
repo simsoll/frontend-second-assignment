@@ -14,12 +14,6 @@
                 }
             });
         }
-
-        authenticationService.getUserStatus().then(function (data) {
-            if (data.success) {
-                model.user = data.user;
-            }
-        });
     };
 
     module.component('profile', {
