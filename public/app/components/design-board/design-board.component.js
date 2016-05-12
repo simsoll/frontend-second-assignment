@@ -4,18 +4,18 @@
     var module = angular.module('squares');
 
     var controller = function () {
-        var x = 0;
-        var y = 0;
-        var stepSize = 100;
+        var model = this;
+        
+        model.designBoardPieces = new Array(25);
 
-        var startPos = null;
+        var startPos = {};
 
         interact('.square')
             .draggable({
                 onmove: function (event) {
-                    var target = event.target,
-                        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-                        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+                    var target = event.target;
+                    var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+                    var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
                     target.style.webkitTransform =
                         target.style.transform =
@@ -23,14 +23,6 @@
 
                     target.setAttribute('data-x', x);
                     target.setAttribute('data-y', y);
-                },
-                onend: function (event) {
-                    var textEl = event.target.querySelector('p');
-
-                    textEl && (textEl.textContent =
-                        'moved a distance of '
-                        + (Math.sqrt(event.dx * event.dx +
-                            event.dy * event.dy) | 0) + 'px');
                 }
             })
             .restrict({
@@ -46,32 +38,27 @@
                 endOnly: true
             })
             .on('dragstart', function (event) {
-                if (!startPos) {
+                if (!startPos[event.target.dataset.id]) {
                     var rect = interact.getElementRect(event.target);
 
                     // record center point when starting the very first a drag
-                    startPos = {
+                    startPos[event.target.dataset.id] = {
                         x: rect.left + rect.width / 2,
                         y: rect.top + rect.height / 2
                     }
                 }
 
                 // snap to the start position
-                event.interactable.snap({ anchors: [startPos] });
+                event.interactable.snap({ anchors: [startPos[event.target.dataset.id]] });
             });
     }
 
     module.component('designBoard', {
-        templateUrl: '/app/components/design-board/design-board.component.html',
+        bindings: {
+            
+        },
         controllerAs: 'model',
-        controller: controller
+        controller: controller,
+        templateUrl: '/app/components/design-board/design-board.component.html'
     });
-
-    function clamp(min, max, value) {
-        return Math.max(Math.min(max, value), min);
-    }
-
-    function integerDivision(x, y) {
-        return Math.floor(x / y);
-    }
 })();

@@ -47,9 +47,6 @@
                 event.target.classList.remove('drop-active');
                 event.target.classList.remove('drop-target');
             })
-            .on('drop', function (event) {
-                event.relatedTarget.textContent = '';
-            });
     }
 
     module.component('designBoardPiece', {
