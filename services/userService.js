@@ -26,28 +26,52 @@ module.exports = (function () {
             password: 'ordinary',
             isAdmin: 'false'            
         }
-    ]
+    ];
       
-    var isAuthenticated = false;      
+    var currentUser = null;      
         
     return {
         authenticate: authenticate,
-        authenticated: authenticated
+        authenticated: authenticated,
+        hasAdminRights: hasAdminRights
     };
     
     function authenticate(username, password) {
+        currentUser = null;
+        
         for (var i = 0; i < users.length; i++) {
             if (users[i].username === username && users[i].password === password) {
-                isAuthenticated = true;
-                return isAuthenticated;
+                currentUser = {
+                    name: users[i].name,
+                    username: users[i].username,
+                    email: users[i].email,
+                    isAdmin: users[i].isAdmin
+                };
+                break;
             }
         }
         
-        isAuthenticated = false;
-        return isAuthenticated;
-    }
+        return authenticated();
+    };
     
     function authenticated() {
-        return isAuthenticated;
+        if (currentUser) {
+            return {
+                success: true,
+                user: currentUser
+            }
+        }
+        
+        return {
+            success: false    
+        };
+    };
+    
+    function hasAdminRights() {
+        if (!currentUser) {
+            return false;
+        }
+        
+        return currentUser.isAdmin;
     }
 })();

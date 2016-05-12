@@ -21,16 +21,16 @@
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li ng-if="user.isAdmin()">
+            <li ng-if="model.user.isAdmin">
                 <a ng-link="['Admin']">Admin</a>
             </li>
-            <li ng-if="model.isLoggedIn()">
-                <a ng-link="['Profile']">Profile</a>
+            <li ng-if="model.user">
+                <a ng-link="['Profile']">{{model.user.username}}'s Profile</a>
             </li>
-            <li ng-if="!model.isLoggedIn()">
+            <li ng-if="!model.user">
                 <a ng-link="['Sign Up']">Sign Up</a>
             </li>
-            <li ng-if="!model.isLoggedIn()">
+            <li ng-if="!model.user">
                 <a ng-link="['Log In']">Log In</a>
             </li>
         </ul>
@@ -42,8 +42,6 @@
 
 <div class="container">
     
-    <p>User is logged in: {{model.isLoggedIn()}}</p>
-
     <ng-outlet></ng-outlet>
 
 </div>

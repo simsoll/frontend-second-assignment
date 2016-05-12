@@ -5,8 +5,21 @@
 
     var controller = function (authenticationService) {
         var model = this;
-        
-        model.isLoggedIn = authenticationService.isLoggedIn();
+        model.user = null;
+
+        model.$routerOnActivate = function (next) {
+            authenticationService.getUserStatus().then(function (data) {
+                if (data.success) {
+                    model.user = data.user;
+                }
+            });
+        }
+
+        authenticationService.getUserStatus().then(function (data) {
+            if (data.success) {
+                model.user = data.user;
+            }
+        });
     };
 
     module.component('profile', {

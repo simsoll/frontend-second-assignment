@@ -7,29 +7,16 @@
 
     authenticationService.$inject = ['$http', '$q'];
     function authenticationService($http, $q) {
-        var model = this;
-
-        model.user = null;
 
         return {
             getUserStatus: getUserStatus,
-            isLoggedIn: isLoggedIn,
             login: login
         }
 
         function getUserStatus() {
             return $http.get('/api/authenticated')
-                // handle success
-                .success(function (data) {
-                    if (data.status) {
-                        model.user = true;
-                    } else {
-                        model.user = false;
-                    }
-                })
-                // handle error
-                .error(function (data) {
-                    model.user = false;
+                .then(function (result) {
+                    return result.data;
                 });
         };
 
@@ -38,25 +25,18 @@
 
             $http.post('/api/authenticate', { username: username, password: password })
                 .success(function (data, status) {
-                    if (status === 200 && data.status) {
-                        model.user = true;
+                    if (status === 200 && data.success) {
                         deferred.resolve();
                     }
                     else {
-                        model.user = false;
                         deferred.reject();
                     }
                 })
                 .error(function (data) {
-                    model.user = false;
                     deferred.reject();
                 });
 
             return deferred.promise;
-        };
-
-        function isLoggedIn() {
-            return model.user ? true : false;
         };
     }
 })();
