@@ -3,14 +3,14 @@
 
     var module = angular.module('squares');
 
-    var controller = function (AuthenticationService) {
+    var controller = function (authenticationService) {
         var model = this;
 
         model.login = login;
         model.error = false;
 
         function login() {
-            AuthenticationService.login(model.username, model.password)
+            authenticationService.login(model.username, model.password)
                 .then(function () {
                     model.error = false;
                     model.$router.navigate(['Profile']);

@@ -5,10 +5,10 @@
 
   module.value('$routerRootComponent', 'squaresApp');
 
-  module.run(function ($rootScope, AuthenticationService) {
+  module.run(function ($rootScope, authenticationService) {
     $rootScope.$on('$routeChangeStart',
       function (event, next, current) {
-        AuthenticationService.getUserStatus()
+        authenticationService.getUserStatus()
       })
   });
 })();

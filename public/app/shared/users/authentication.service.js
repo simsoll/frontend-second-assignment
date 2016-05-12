@@ -3,10 +3,10 @@
 
     angular
         .module('squares')
-        .factory('AuthenticationService', AuthenticationService);
+        .factory('authenticationService', authenticationService);
 
-    AuthenticationService.$inject = ['$http', '$q'];
-    function AuthenticationService($http, $q) {
+    authenticationService.$inject = ['$http', '$q'];
+    function authenticationService($http, $q) {
         var model = this;
 
         model.user = null;

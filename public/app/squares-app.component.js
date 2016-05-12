@@ -3,16 +3,18 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($rootScope, AuthenticationService) {
+    var controller = function ($rootScope, authenticationService) {
         var model = this;
 
-        model.isLoggedIn = function() {
-            return AuthenticationService.isLoggedIn()
+        model.isLoggedIn = function () {
+            return authenticationService.isLoggedIn()
         };
 
-        $rootScope.$on('$routeChangeStart', function () {
-            model.isLoggedIn = AuthenticationService.isLoggedIn();
-        })
+        model.$routerOnActivate = function () {
+            return authenticationService.getHeroes().then(function (heroes) {
+                $ctrl.heroes = heroes;
+            });
+        };
     };
 
     module.component('squaresApp', {

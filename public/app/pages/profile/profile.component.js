@@ -3,10 +3,10 @@
 
     var module = angular.module('squares');
 
-    var controller = function (AuthenticationService) {
+    var controller = function (authenticationService) {
         var model = this;
         
-        model.isLoggedIn = AuthenticationService.isLoggedIn();
+        model.isLoggedIn = authenticationService.isLoggedIn();
     };
 
     module.component('profile', {
