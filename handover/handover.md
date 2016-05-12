@@ -1,3 +1,4 @@
+# Project description
 Create a Style Guide for the public website to Squares. The Style Guide must include:
 
 * Target group description based on the personas acquired by KongOrange. Comment on the personas and the target group they hint at. What values do they possess etc.?
@@ -19,8 +20,15 @@ In the report, you must document and explain how the following elements are used
 * Browser compatibility
 * Validation of HTML and CSS
 
+## User Persona
+Julie 23, single, studying Media Science, lives in Aarhus, wants to live in Copenhagen, Northside-fan, listens to P6 Beat (indie cool), changes for P3 (mainstream), when alone. Loves Instagram, just began on Snapchat, reads Danish fashion blogs, reads eb.dk for news, Zulu & DR3 as flow tv, has iPhone 5s, watches House of Cards, because people say it’s cool, watches Game of Thrones, because she loves it & read all of the Harry Potter books. 
+
+## Designer Persona
+Persona (designer): Peter 28, single, graduate from London School of Arts as Illustrator, lives in New York, illustrated his first children's book, been at Hummel as tshirt print designer, pursuing career as professional street artist. Got prints chosen on Threadless.com, has his own webshop with t-shirts he sell through Spreadshirt.
 
 # Technical Considerations
+
+
 
 ## Canvas libraries
 
