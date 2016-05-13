@@ -28,7 +28,7 @@ Persona (designer): Peter 28, single, graduate from London School of Arts as Ill
 
 # Technical Considerations
 
-
+* Sharing is important - need proper routing for that to work
 
 ## Canvas libraries
 
