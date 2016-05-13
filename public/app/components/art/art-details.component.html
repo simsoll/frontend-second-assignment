@@ -1,4 +1,13 @@
-<h3>This is the details of art {{model.id}}</h3>
+<h3>This is the details of art {{model.art.title}}</h3>
+
+<div ng-repeat="rating in model.art.ratings">
+    <span>{{rating.user.name}}:</span>
+    <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>
+</div>
+
+<a ng-click="model.goToArts()" class="btn btn-default">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+</a>
 
 <ul>
     <li><a ng-link="['Overview']">Overview</a></li>
