@@ -11,6 +11,7 @@
             authenticationService.getUserStatus().then(function (data) {
                 if (data.success) {
                     model.user = data.user;
+                    model.parent.onUserStatusUpdate(model.user);
                 }
             });
         }
@@ -19,6 +20,9 @@
     module.component('profile', {
         templateUrl: '/app/pages/profile/profile.component.html',
         controllerAs: 'model',
-        controller: controller
+        controller: controller,
+        require: {
+            parent: '^squaresApp'
+        },              
     });
 })();

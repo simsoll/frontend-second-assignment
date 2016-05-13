@@ -3,6 +3,23 @@
 
     var module = angular.module('squares');
 
+    var controller = function (authenticationService) {
+        var model = this;
+        model.user = null;
+
+        model.onUserStatusUpdate = function (user) {
+            model.user = user;
+        }
+
+        model.$onInit = function () {
+            authenticationService.getUserStatus().then(function (data) {
+                if (data.success) {
+                    model.user = data.user;
+                }
+            });
+        }
+    }
+
     module.component('squaresApp', {
         templateUrl: '/app/squares-app.component.html',
         $routeConfig: [
@@ -17,6 +34,8 @@
             { path: '/login', component: 'login', name: 'Log In' },
             { path: '/artdetail/:id/...', component: 'artDetails', name: 'ArtDetails' },
             { path: '/**', redirectTo: ['Home'] }
-        ]
+        ],
+        controllerAs: 'model',
+        controller: controller
     });
 })();
