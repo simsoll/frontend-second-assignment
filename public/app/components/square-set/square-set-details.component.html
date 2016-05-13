@@ -1,0 +1,18 @@
+<h3>This is the details of square-set {{model.squareSet.title}}</h3>
+
+<img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}" alt="A square in the set called {{model.squareSet.title}}">
+<div ng-repeat="rating in model.squareSet.ratings">
+    <span>{{rating.user.name}}:</span>
+    <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>
+</div>
+
+<a ng-click="model.goToPieces()" class="btn btn-default">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+</a>
+
+<ul>
+    <li><a ng-link="['Overview']">Overview</a></li>
+    <li><a ng-link="['Reviews']">Reviews</a></li>
+</ul>
+
+<ng-outlet></ng-outlet>

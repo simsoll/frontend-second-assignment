@@ -2,6 +2,7 @@
 
 var userHandler = require('./handlers/user.handler.js');
 var artHandler = require('./handlers/art.handler.js');
+var squareSetHandler = require('./handlers/square-set.handler.js');
 
 module.exports = function(app) {
 
@@ -12,4 +13,8 @@ module.exports = function(app) {
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);
     app.get('/api/art/getById', artHandler.getById);   
+    
+    // square set routes
+    app.get('/api/squareSet/getAll', squareSetHandler.getAll);
+    app.get('/api/squareSet/getById', squareSetHandler.getById);     
 };

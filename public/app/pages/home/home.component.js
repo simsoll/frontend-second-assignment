@@ -19,6 +19,6 @@
     module.component('home', {
         templateUrl: '/app/pages/home/home.component.html',
         controllerAs: 'model',
-        controller: controller
+        controller: controller  
     });
 })();

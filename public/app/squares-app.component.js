@@ -32,7 +32,8 @@
             { path: '/admin', component: 'admin', name: 'Admin' },
             { path: '/signup', component: 'signup', name: 'Sign Up' },
             { path: '/login', component: 'login', name: 'Log In' },
-            { path: '/artdetail/:id/...', component: 'artDetails', name: 'ArtDetails' },
+            { path: '/artDetail/:id/...', component: 'artDetails', name: 'ArtDetails' },
+            { path: '/squareSetDetail/:id/...', component: 'squareSetDetails', name: 'SquareSetDetails' },
             { path: '/**', redirectTo: ['Home'] }
         ],
         controllerAs: 'model',

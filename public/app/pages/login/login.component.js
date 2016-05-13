@@ -28,7 +28,7 @@
                     model.user = data.user;
                 }
             });
-        }        
+        };        
     };
 
     module.component('login', {
