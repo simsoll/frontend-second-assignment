@@ -1,5 +1,12 @@
 <div class="container-fluid">
     <div class="row">
-        <design-board class="col-md-6"></design-board>
+        <design-board square-set="model.squareSet" class="col-md-6"></design-board>
     </div>
+    
+    <a ng-hide="model.squareSet" ng-click="model.goToPieces()" class="btn btn-default">
+        <span class="glyphicon glyphicon-zoom-in"></span><span>Browse square sets</span>
+    </a>
+    <a ng-hide="model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default">
+        <span class="glyphicon glyphicon-th"></span><span>Pick random square set</span>
+    </a>    
 </div>

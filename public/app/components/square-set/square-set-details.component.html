@@ -1,6 +1,6 @@
 <h3>This is the details of square-set {{model.squareSet.title}}</h3>
 
-<img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}" alt="A square in the set called {{model.squareSet.title}}">
+<img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}" alt="A square in the set called {{model.squareSet.title}}"/>
 <div ng-repeat="rating in model.squareSet.ratings">
     <span>{{rating.user.name}}:</span>
     <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>

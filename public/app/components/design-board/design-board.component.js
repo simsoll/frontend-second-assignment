@@ -55,7 +55,7 @@
 
     module.component('designBoard', {
         bindings: {
-            
+            squareSet: '<'
         },
         controllerAs: 'model',
         controller: controller,
