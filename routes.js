@@ -1,11 +1,10 @@
 'use strict';
 
-var userManagement = require('./handlers/userManagement.js');
+var userHandler = require('./handlers/user.handler.js');
 
 module.exports = function(app) {
 
-    // userManagement routes
-    app.post('/api/authenticate', userManagement.authenticate);
-    app.get('/api/authenticated', userManagement.authenticated);
-    
+    // user routes
+    app.post('/api/authenticate', userHandler.authenticate);
+    app.get('/api/authenticated', userHandler.authenticated);
 };

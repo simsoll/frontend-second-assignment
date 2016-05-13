@@ -1,5 +1,5 @@
 'use strict';
-var userService = require('../services/userService.js');
+var userService = require('../services/user.service.js');
 
 
 module.exports.authenticate = function (request, response) {
