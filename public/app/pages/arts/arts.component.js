@@ -1,24 +1,18 @@
-(function() {
+(function () {
     'use strict';
-    
+
     var module = angular.module('squares');
-    
-    function fetchArts($http) {
-        return $http.get('/data/art.json')
-            .then(function (reponse) {
-                return reponse.data;
-            })
-    }
-    
-    var controller = function($http, authenticationService) {
+
+    var controller = function ($http, authenticationService) {
         var model = this;
         model.user = null;
         model.arts = [];
 
-        model.$onInit = function() {
-            fetchArts($http).then(function(arts) {
-                model.arts = arts;
-            });       
+        model.$onInit = function () {
+            $http.get('/api/art/getAll')
+                .then(function (response) {
+                    model.arts = response.data;
+                });
         };
 
         model.$routerOnActivate = function (next) {
@@ -26,10 +20,10 @@
                 if (data.success) {
                     model.user = data.user;
                 }
-            });                 
-        }        
+            });
+        }
     };
-    
+
     module.component('arts', {
         controllerAs: 'model',
         controller: controller,
