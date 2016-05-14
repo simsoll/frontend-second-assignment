@@ -12,7 +12,9 @@
 
         model.$routerOnActivate = function (next) {
             retrieveUser();
-            retrieveSquareSet(next.params.id);
+            if (next.params.id) {
+                retrieveSquareSet(next.params.id);
+            }
         }
 
         function retrieveSquareSet(squareSetId) {
@@ -26,9 +28,9 @@
                     ratings: data.ratings,
                     pieces: {}
                 };
-                
-                
-                for(var i = 0; i < data.imageSources.length; i++) {
+
+
+                for (var i = 0; i < data.imageSources.length; i++) {
                     model.squareSet.pieces[i] = {
                         imgSource: data.imageSources[i],
                         position: {
@@ -58,8 +60,8 @@
                 var squareSets = response.data;
                 var randomIndex = randomIntBetween(0, squareSets.length - 1);
                 var randomId = squareSets[randomIndex].id;
-                
-                model.$router.navigate(['Create', {id: randomId}]);
+
+                model.$router.navigate(['Create', { id: randomId }]);
             });
         }
 
