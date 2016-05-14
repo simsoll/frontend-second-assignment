@@ -3,7 +3,7 @@
 </div>
 
 <div class="design-board-squares">
-    <div ng-repeat="imageSource in model.squareSet.imageSources track by $index" class="square" data-id="$index">
+    <div ng-repeat="imageSource in model.squareSet.imageSources track by $index" class="square" data-id="{{$index}}">
         <img ng-src="{{model.squareSet.imageSources[$index]}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}" />
     </div>
 </div>
