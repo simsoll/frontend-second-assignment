@@ -19,7 +19,24 @@
             $http.get('/api/squareSet/getById', {
                 params: { id: squareSetId }
             }).then(function (response) {
-                model.squareSet = response.data;
+                var data = response.data;
+                model.squareSet = {
+                    id: data.id,
+                    title: data.title,
+                    ratings: data.ratings
+                };
+                
+                
+                for(var i = 0; i < data.imageSources.length; i++) {
+                    model.squareSet[i] = {
+                        img: data.imageSources[i],
+                        position: {
+                            x: 0,
+                            y: 0
+                        },
+                        transform: 'translate(0px, 0px)'
+                    };
+                }
             });
         }
 

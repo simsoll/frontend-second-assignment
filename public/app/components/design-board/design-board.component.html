@@ -1,9 +1,15 @@
 <div class="design-board">
     <design-board-piece ng-repeat="designBoardPiece in model.designBoardPieces track by $index"></design-board-piece>
 </div>
-
+<!--{{model.squareSet}}
+{{model.squareAttributes}}-->
 <div class="design-board-squares">
-    <div ng-repeat="imageSource in model.squareSet.imageSources track by $index" class="square" data-id="{{$index}}">
-        <img ng-src="{{model.squareSet.imageSources[$index]}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}" />
+    <div ng-repeat="imageSource in model.squareSet.imageSources track by $index" class="square" data-id="{{$index}}" data-x="{{model.squareAttributes[$index].position.x}}"
+        data-y="{{model.squareAttributes[$index].position.y}}" ng-style="{'transform': {{model.squareAttributes[$index].transform}}, '-webkit-transform': {{model.squareAttributes[$index].transform}}, '-ms-transform': {{model.squareAttributes[$index].transform}}">
+        <img ng-src="{{model.squareSet.imageSources[$index]}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}"
+        />
     </div>
 </div>
+<a ng-click="model.saveToProfile()" class="btn btn-default">
+    <span class="glyphicon glyphicon-save"></span>
+</a>
