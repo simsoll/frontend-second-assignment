@@ -42,6 +42,7 @@ module.exports = (function () {
         for (var i = 0; i < users.length; i++) {
             if (users[i].username === username && users[i].password === password) {
                 currentUser = {
+                    id: users[i].id,
                     name: users[i].name,
                     username: users[i].username,
                     email: users[i].email,

@@ -13,8 +13,10 @@ module.exports = function(app) {
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);
     app.get('/api/art/getById', artHandler.getById);   
+    app.get('/api/art/getByUserId', artHandler.getByUserId);   
     
     // square set routes
     app.get('/api/squareSet/getAll', squareSetHandler.getAll);
     app.get('/api/squareSet/getById', squareSetHandler.getById);     
+    app.get('/api/squareSet/getByUserId', squareSetHandler.getByUserId);     
 };

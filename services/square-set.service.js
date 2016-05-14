@@ -71,6 +71,7 @@ module.exports = (function () {
     return {
         getAll: getAll,
         getById: getById,
+        getByUserId: getByUserId
     };
 
     function getAll() {
@@ -86,5 +87,11 @@ module.exports = (function () {
 
         return null;
     }
+    
+    function getByUserId(id) {
+        return squareSets.filter(function(value) {
+            return value.userId === id 
+        });
+    }    
 
 })();

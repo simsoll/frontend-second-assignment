@@ -57,20 +57,26 @@ module.exports = (function () {
     return {
         getAll: getAll,
         getById: getById,
+        getByUserId: getByUserId
     };
 
     function getAll() {
         return arts;
     }
-    
+
     function getById(id) {
         for (var i = 0; i < arts.length; i++) {
             if (arts[i].id === id) {
                 return arts[i];
             }
         }
-        
+
         return null;
     }
 
+    function getByUserId(id) {
+        return arts.filter(function(value) {
+            return value.userId === id 
+        });
+    }
 })();
