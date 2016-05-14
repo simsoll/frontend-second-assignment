@@ -33,7 +33,7 @@ module.exports = (function () {
     return {
         authenticate: authenticate,
         authenticated: authenticated,
-        hasAdminRights: hasAdminRights
+        logOut: logOut
     };
     
     function authenticate(username, password) {
@@ -68,11 +68,7 @@ module.exports = (function () {
         };
     };
     
-    function hasAdminRights() {
-        if (!currentUser) {
-            return false;
-        }
-        
-        return currentUser.isAdmin;
+    function logOut() {
+        currentUser = null;
     }
 })();

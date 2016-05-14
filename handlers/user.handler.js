@@ -17,3 +17,9 @@ module.exports.authenticate = function (request, response) {
 module.exports.authenticated = function (request, response) {
     return response.status(200).json(userService.authenticated());
 }
+
+module.exports.logOut = function(request, reponse) {
+    userService.logOut();
+    
+    return reponse.status(200).json({success: true});
+}

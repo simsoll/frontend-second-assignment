@@ -7,8 +7,9 @@ var squareSetHandler = require('./handlers/square-set.handler.js');
 module.exports = function(app) {
 
     // user routes
-    app.post('/api/authenticate', userHandler.authenticate);
-    app.get('/api/authenticated', userHandler.authenticated);
+    app.post('/api/user/authenticate', userHandler.authenticate);
+    app.get('/api/user/authenticated', userHandler.authenticated);
+    app.get('/api/user/logOut', userHandler.logOut);
 
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);

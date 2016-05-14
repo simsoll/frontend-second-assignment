@@ -14,7 +14,7 @@
         }
 
         function getUserStatus() {
-            return $http.get('/api/authenticated')
+            return $http.get('/api/user/authenticated')
                 .then(function (result) {
                     return result.data;
                 });
@@ -23,7 +23,7 @@
         function login(username, password) {
             var deferred = $q.defer();
 
-            $http.post('/api/authenticate', { username: username, password: password })
+            $http.post('/api/user/authenticate', { username: username, password: password })
                 .success(function (data, status) {
                     if (status === 200 && data.success) {
                         deferred.resolve();

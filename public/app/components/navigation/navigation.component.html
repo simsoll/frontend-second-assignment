@@ -25,6 +25,9 @@
                 <a ng-link="['Admin']">Admin</a>
             </li>
             <li ng-if="model.user">
+                <a ng-click="model.logOut()">Log Out</a>
+            </li>            
+            <li ng-if="model.user">
                 <a ng-link="['Profile']">{{model.user.username}}'s Profile</a>
             </li>
             <li ng-if="!model.user">

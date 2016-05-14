@@ -25,7 +25,7 @@
 
     module.component('artDetails', {
         bindings: {
-            "$router": "<"
+            '$router': '<'
         },
         templateUrl: '/app/components/art/art-details.component.html',
         $routeConfig: [
