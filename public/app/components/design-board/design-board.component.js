@@ -9,27 +9,8 @@
         model.designBoardPieces = new Array(25);
         model.saveToProfile = saveToProfile;
 
-        model.$onChanges = function () {
-            model.squareAttributes = {};
-
-            if (!model.squareSet) {
-                return;
-            }
-
-            console.log(model.squareSet);
-
-            var initialPosition = { x: 0, y: 0 };
-            for (var i = 0; i < model.squareSet.imageSources.length; i++) {
-                model.squareAttributes[i] = {
-                    // transform: applyTranslation('', initialPosition)
-                };
-            }
-
-            console.log(model.squareAttributes);
-        }
-
         function saveToProfile() {
-            var doStuffInHere = model.squareAttributes;
+            var doStuffInHere = model.squareSet;
         }
 
         interact('.square')
@@ -41,13 +22,9 @@
                         y: (parseFloat(target.dataset.y) || 0) + event.dy
                     }
 
-                    target.style.webkitTransform =
-                        target.style.transform =
-                        'translate(' + position.x + 'px, ' + position.y + 'px)';
+                    model.squareSet.pieces[target.dataset.id].position = position;
 
-                    model.squareAttributes[target.dataset.id].position = position;
-
-                    model.squareAttributes[target.dataset.id].transform = applyTranslation(model.squareAttributes[target.dataset.id].transform, position);
+                    model.squareSet.pieces[target.dataset.id].transform = applyTranslation(model.squareSet.pieces[target.dataset.id].transform, position);
 
                     $scope.$apply(); //TODO: fix this!
                 }
@@ -67,20 +44,28 @@
             .on('dragstart', function (event) {
                 var target = event.target;
 
-                if (!model.squareAttributes[target.dataset.id].startPosition) {
+                if (!model.squareSet.pieces[target.dataset.id].startPosition) {
                     var rect = interact.getElementRect(target);
 
                     // record center point when starting the very first drag
-                    model.squareAttributes[target.dataset.id].startPosition = {
+                    model.squareSet.pieces[target.dataset.id].startPosition = {
                         x: rect.left + rect.width / 2,
                         y: rect.top + rect.height / 2
                     };
                 }
 
                 // snap to the start position
-                event.interactable.snap({ anchors: [model.squareAttributes[target.dataset.id].startPosition] });
+                event.interactable.snap({ anchors: [model.squareSet.pieces[target.dataset.id].startPosition] });
 
                 $scope.$apply(); //TODO: fix this!            
+            })
+            .on('doubletap', function (event) {
+                event.preventDefault();
+                var target = event.currentTarget;
+
+                model.squareSet.pieces[target.dataset.id].transform = addRotation(model.squareSet.pieces[target.dataset.id].transform, 90);
+                
+                $scope.$apply(); //TODO: fix this!                            
             });
 
         function applyTranslation(transform, position) {
@@ -95,7 +80,19 @@
             return transform ? transform + ' ' + translate : translate;
         }
 
-        function applyRotation(transform, degrees) {
+        function addRotation(transform, degrees) {
+            var indexOfRotateStart = transform ? transform.indexOf('rotate') : -1;
+
+            if (indexOfRotateStart > -1) {
+                var indexOfRotateEnd = transform.indexOf(')', indexOfRotateStart) + 1;
+                var currentDegrees = parseInt(transform.substring(transform.indexOf('(', indexOfRotateStart) + 1, transform.indexOf('deg', indexOfRotateStart)));
+                var newDegress = currentDegrees + degrees > 360 ? currentDegrees + degrees - 360 : currentDegrees + degrees;
+                var rotate = 'rotate(' + newDegress + 'deg)';
+                return replaceBetween(transform, indexOfRotateStart, indexOfRotateEnd, rotate);
+            }
+
+            var rotate = 'rotate(' + degrees + 'deg)';
+            return transform ? transform + ' ' + rotate : rotate;
         }
 
         function replaceBetween(string, start, end, replacement) {

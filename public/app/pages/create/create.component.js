@@ -23,13 +23,14 @@
                 model.squareSet = {
                     id: data.id,
                     title: data.title,
-                    ratings: data.ratings
+                    ratings: data.ratings,
+                    pieces: {}
                 };
                 
                 
                 for(var i = 0; i < data.imageSources.length; i++) {
-                    model.squareSet[i] = {
-                        img: data.imageSources[i],
+                    model.squareSet.pieces[i] = {
+                        imgSource: data.imageSources[i],
                         position: {
                             x: 0,
                             y: 0
