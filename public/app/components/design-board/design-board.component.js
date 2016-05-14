@@ -55,6 +55,10 @@
             .on('dragstart', function (event) {
                 var target = event.target;
 
+                if (!model.squareSet) {
+                    return;
+                }
+
                 if (!model.squareSet.pieces[target.dataset.id].startPosition) {
                     var rect = interact.getElementRect(target);
 
