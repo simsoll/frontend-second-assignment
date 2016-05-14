@@ -10,6 +10,17 @@
         model.saveToProfile = saveToProfile;
 
         function saveToProfile() {
+            //TODO: fix padding-top
+            html2canvas(document.getElementById("canvas"), {
+                onrendered: function (canvas) {
+                    var img = canvas.toDataURL("image/png");
+                    // document.getElementById("design-board-result").appendChild(canvas);
+                    document.getElementById("asdf").src = img;
+                },
+                width: 500, //TODO: get from parent component
+                height: 500
+            });
+
             var doStuffInHere = model.squareSet;
         }
 
@@ -64,7 +75,7 @@
                 var target = event.currentTarget;
 
                 model.squareSet.pieces[target.dataset.id].transform = addRotation(model.squareSet.pieces[target.dataset.id].transform, 90);
-                
+
                 $scope.$apply(); //TODO: fix this!                            
             });
 
