@@ -77,6 +77,10 @@
             .on('doubletap', function (event) {
                 event.preventDefault();
                 var target = event.currentTarget;
+                
+                if (!model.squareSet) {
+                    return;
+                }                
 
                 model.squareSet.pieces[target.dataset.id].transform = addRotation(model.squareSet.pieces[target.dataset.id].transform, 90);
 
