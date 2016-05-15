@@ -3,14 +3,8 @@
 </div>
 <div class="design-board-squares" id="design-board-squares">
     <div ng-repeat="piece in model.squareSet.pieces track by $index" class="square" data-id="{{$index}}" data-x="{{piece.position.x}}"
-        data-y="{{piece.position.y}}" ng-style="{'transform': piece.transform, '-webkit-transform': piece.transform, '-ms-transform': piece.transform }">
+        data-y="{{piece.position.y}}" ng-style="{'transform': model.getTransform(piece), '-webkit-transform': model.getTransform(piece), '-ms-transform': model.getTransform(piece) }">
         <img ng-src="{{piece.imgSource}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}"
         />
     </div>
-</div>
-<a ng-if="model.squareSet" ng-click="model.saveToProfile()" class="btn btn-default">
-    <span class="glyphicon glyphicon-save"></span>
-</a>
-
-<div id="design-board-result">
 </div>

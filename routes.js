@@ -14,7 +14,8 @@ module.exports = function(app) {
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);
     app.get('/api/art/getById', artHandler.getById);   
-    app.get('/api/art/getByUserId', artHandler.getByUserId);   
+    app.get('/api/art/getByUserId', artHandler.getByUserId);  
+    app.post('/api/art/create', artHandler.create) 
     
     // square set routes
     app.get('/api/squareSet/getAll', squareSetHandler.getAll);

@@ -3,16 +3,22 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService) {
+    var controller = function ($scope, $http, authenticationService, artService) {
         var model = this;
-        model.user = null;
-        model.squareSet = null;
         model.goToPieces = goToPieces;
         model.goToCreateWithRandomId = goToCreateWithRandomId;
+        model.saveToProfile = saveToProfile;
+        model.squareSet = null;
+        model.user = null;
+        model.imgSrc = null;
 
         model.$routerOnActivate = function (next) {
             retrieveUser();
-            if (next.params.id) {
+            if (next.params.state) {
+                var decoded = LZString.decompressFromEncodedURIComponent(decodeURI(next.params.state));
+                model.squareSet = JSON.parse(decoded);
+            }
+            else if (next.params.id) {
                 retrieveSquareSet(next.params.id);
             }
         }
@@ -22,22 +28,20 @@
                 params: { id: squareSetId }
             }).then(function (response) {
                 var data = response.data;
+
+                if (!data) {
+                    return;
+                }
+
                 model.squareSet = {
                     id: data.id,
                     title: data.title,
-                    ratings: data.ratings,
                     pieces: {}
                 };
-
 
                 for (var i = 0; i < data.imageSources.length; i++) {
                     model.squareSet.pieces[i] = {
                         imgSource: data.imageSources[i],
-                        position: {
-                            x: 0,
-                            y: 0
-                        },
-                        transform: 'translate(0px, 0px)'
                     };
                 }
             });
@@ -53,6 +57,27 @@
 
         function goToPieces() {
             model.$router.navigate(['Pieces']);
+        }
+
+        function saveToProfile() {
+            //TODO: fix padding-top
+            html2canvas(document.getElementById("canvas"), {
+                onrendered: function (canvas) {
+                    var img = canvas.toDataURL("image/png");
+                    var state = encodeState();
+
+                    //TODO: get title!
+                    artService.create(model.user.id, 'Unknown', model.squareSet.id, img, state);
+                    model.$router.navigate(['Profile']);
+                },
+                width: 500, //TODO: get from parent component
+                height: 500
+            });
+        }
+
+        function encodeState() {
+            var squareSetStringified = JSON.stringify(model.squareSet);
+            return LZString.compressToEncodedURIComponent(squareSetStringified);
         }
 
         function goToCreateWithRandomId() {

@@ -55,10 +55,26 @@ module.exports = (function () {
     ];
 
     return {
+        create: create,
         getAll: getAll,
         getById: getById,
         getByUserId: getByUserId
     };
+
+    function create(userId, title, squareSetId, img, state) {
+        var art = {
+            id: nextId(),
+            userId: userId,
+            title: title,
+            imageSource: img,
+            state: state,
+            squareSetId: squareSetId
+        }
+        
+        arts.push(art);
+        
+        return art;
+    }
 
     function getAll() {
         return arts;
@@ -75,8 +91,20 @@ module.exports = (function () {
     }
 
     function getByUserId(id) {
-        return arts.filter(function(value) {
-            return value.userId === id 
+        return arts.filter(function (value) {
+            return value.userId === id
         });
+    }
+
+    function nextId() {
+        var id = 0;
+
+        for (var i = 0; i < arts.length; i++) {
+            if (id < arts[i].id) {
+                id = arts[i].id;
+            }
+        }
+        
+        return id + 1;
     }
 })();

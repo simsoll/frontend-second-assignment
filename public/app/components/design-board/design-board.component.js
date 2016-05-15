@@ -7,35 +7,18 @@
         var model = this;
 
         model.designBoardPieces = new Array(25);
-        model.saveToProfile = saveToProfile;
-
-        function saveToProfile() {
-            //TODO: fix padding-top
-            html2canvas(document.getElementById("canvas"), {
-                onrendered: function (canvas) {
-                    var img = canvas.toDataURL("image/png");
-                    // document.getElementById("design-board-result").appendChild(canvas);
-                    document.getElementById("asdf").src = img;
-                },
-                width: 500, //TODO: get from parent component
-                height: 500
-            });
-
-            var doStuffInHere = model.squareSet;
-        }
+        model.getTransform = getTransform;
 
         interact('.square')
             .draggable({
                 onmove: function (event) {
                     var target = event.target;
                     var position = {
-                        x: (parseFloat(target.dataset.x) || 0) + event.dx,
-                        y: (parseFloat(target.dataset.y) || 0) + event.dy
+                        x: (parseInt(target.dataset.x) || 0) + Math.round(event.dx),
+                        y: (parseInt(target.dataset.y) || 0) + Math.round(event.dy)
                     }
 
                     model.squareSet.pieces[target.dataset.id].position = position;
-
-                    model.squareSet.pieces[target.dataset.id].transform = applyTranslation(model.squareSet.pieces[target.dataset.id].transform, position);
 
                     $scope.$apply(); //TODO: fix this!
                 }
@@ -64,8 +47,8 @@
 
                     // record center point when starting the very first drag
                     model.squareSet.pieces[target.dataset.id].startPosition = {
-                        x: rect.left + rect.width / 2,
-                        y: rect.top + rect.height / 2
+                        x: Math.round(rect.left + rect.width / 2),
+                        y: Math.round(rect.top + rect.height / 2)
                     };
                 }
 
@@ -77,18 +60,29 @@
             .on('doubletap', function (event) {
                 event.preventDefault();
                 var target = event.currentTarget;
-                
+
                 if (!model.squareSet) {
                     return;
-                }                
+                }
 
-                model.squareSet.pieces[target.dataset.id].transform = addRotation(model.squareSet.pieces[target.dataset.id].transform, 90);
+                var rotation = 90;
+                var currentRotation = model.squareSet.pieces[target.dataset.id].degrees ? model.squareSet.pieces[target.dataset.id].degrees : 0;
+
+                model.squareSet.pieces[target.dataset.id].degrees = currentRotation + rotation > 360 ? currentRotation + rotation - 360 : currentRotation + rotation;
 
                 $scope.$apply(); //TODO: fix this!                            
             });
 
+        function getTransform(piece) {
+            var transform = applyTranslation('', piece.position);
+
+            return addRotation(transform, piece.degrees);
+        }
+
         function applyTranslation(transform, position) {
-            var translate = 'translate(' + position.x + 'px, ' + position.y + 'px)';
+            var pos = position || { x: 0, y: 0 };
+
+            var translate = 'translate(' + pos.x + 'px, ' + pos.y + 'px)';
             var indexOfTranslateStart = transform ? transform.indexOf('translate') : -1;
 
             if (indexOfTranslateStart > -1) {
@@ -100,23 +94,24 @@
         }
 
         function addRotation(transform, degrees) {
+            var deg = degrees || 0;
             var indexOfRotateStart = transform ? transform.indexOf('rotate') : -1;
 
             if (indexOfRotateStart > -1) {
                 var indexOfRotateEnd = transform.indexOf(')', indexOfRotateStart) + 1;
                 var currentDegrees = parseInt(transform.substring(transform.indexOf('(', indexOfRotateStart) + 1, transform.indexOf('deg', indexOfRotateStart)));
-                var newDegress = currentDegrees + degrees > 360 ? currentDegrees + degrees - 360 : currentDegrees + degrees;
+                var newDegress = currentDegrees + deg > 360 ? currentDegrees + deg - 360 : currentDegrees + deg;
                 var rotate = 'rotate(' + newDegress + 'deg)';
                 return replaceBetween(transform, indexOfRotateStart, indexOfRotateEnd, rotate);
             }
 
-            var rotate = 'rotate(' + degrees + 'deg)';
+            var rotate = 'rotate(' + deg + 'deg)';
             return transform ? transform + ' ' + rotate : rotate;
         }
 
         function replaceBetween(string, start, end, replacement) {
             return string.substring(0, start) + replacement + string.substring(end);
-        };
+        }
     }
 
     module.component('designBoard', {
