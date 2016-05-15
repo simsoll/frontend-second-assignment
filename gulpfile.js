@@ -136,6 +136,7 @@ gulp.task('browserSync', function () {
     });
 });
 
-gulp.task('dev', ['browserSync'], function () {
+gulp.task('dev', ['styles'], function () {
     gulp.watch(config.styles, ['styles']);
 })
+
