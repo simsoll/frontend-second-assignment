@@ -10,13 +10,9 @@
             create: create
         }
 
-        function create(userId, title, squareSetId, img, state) {
+        function create(art) {
             return $http.post('/api/art/create', {
-                userId: userId,
-                title: title,
-                squareSetId: squareSetId,
-                img: img,
-                state: state
+                art: art
             }).then(function (result) {
                 return result.data;
             });

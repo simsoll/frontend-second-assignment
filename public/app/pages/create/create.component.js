@@ -67,7 +67,15 @@
                     var state = encodeState();
 
                     //TODO: get title!
-                    artService.create(model.user.id, 'Unknown', model.squareSet.id, img, state);
+                    var art = {
+                        userId: model.user.id, 
+                        title: 'Unknown', 
+                        img: img, 
+                        state: state,
+                        squareSetId: model.squareSet.id 
+                    }
+                    
+                    artService.create(art);
                     model.$router.navigate(['Profile']);
                 },
                 width: 500, //TODO: get from parent component

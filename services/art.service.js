@@ -61,14 +61,14 @@ module.exports = (function () {
         getByUserId: getByUserId
     };
 
-    function create(userId, title, squareSetId, img, state) {
+    function create(art) {
         var art = {
             id: nextId(),
-            userId: userId,
-            title: title,
-            imageSource: img,
-            state: state,
-            squareSetId: squareSetId
+            userId: art.userId,
+            title: art.title,
+            imageSource: art.img,
+            state: art.state,
+            squareSetId: art.squareSetId
         }
         
         arts.push(art);

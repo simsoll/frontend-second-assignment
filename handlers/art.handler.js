@@ -23,9 +23,7 @@ module.exports.getByUserId = function (request, response) {
 }
 
 module.exports.create = function(request, response) {
-    var body = request.body;
-    
-    var art = artService.create(body.userId, body.title, body.squareSetId, body.img, body.state);
+    var art = artService.create(request.body.art);
     
     return response.json(art);    
 }
