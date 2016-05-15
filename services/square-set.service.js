@@ -69,10 +69,25 @@ module.exports = (function () {
     ];
 
     return {
+        create: create,
         getAll: getAll,
         getById: getById,
         getByUserId: getByUserId
     };
+
+    function create(squareSet) {
+        var squareSet = {
+            id: nextId(),
+            userId: squareSet.userId,
+            title: squareSet.title,
+            imageSources: squareSet.imageSources,
+            ratings: squareSet.ratings
+        }
+        
+        squareSets.push(squareSet);
+        
+        return squareSet;
+    }
 
     function getAll() {
         return squareSets;
@@ -87,11 +102,22 @@ module.exports = (function () {
 
         return null;
     }
-    
-    function getByUserId(id) {
-        return squareSets.filter(function(value) {
-            return value.userId === id 
-        });
-    }    
 
+    function getByUserId(id) {
+        return squareSets.filter(function (value) {
+            return value.userId === id
+        });
+    }
+
+    function nextId() {
+        var id = 0;
+
+        for (var i = 0; i < squareSets.length; i++) {
+            if (id < squareSets[i].id) {
+                id = squareSets[i].id;
+            }
+        }
+
+        return id + 1;
+    }
 })();

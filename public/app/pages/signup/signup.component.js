@@ -25,7 +25,7 @@
 
             userService.signUp(user).then(function (data) {
                 model.$router.navigate(['Profile']);
-            })
+            });
         }
 
     };

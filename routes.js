@@ -12,7 +12,6 @@ module.exports = function(app) {
     app.get('/api/user/logOut', userHandler.logOut);
     app.post('/api/user/signUp', userHandler.signUp);
     app.post('/api/user/create', userHandler.create);
-    
 
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);
@@ -24,4 +23,5 @@ module.exports = function(app) {
     app.get('/api/squareSet/getAll', squareSetHandler.getAll);
     app.get('/api/squareSet/getById', squareSetHandler.getById);     
     app.get('/api/squareSet/getByUserId', squareSetHandler.getByUserId);     
+    app.post('/api/squareSet/create', squareSetHandler.create)     
 };

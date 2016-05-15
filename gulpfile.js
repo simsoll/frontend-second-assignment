@@ -85,7 +85,7 @@ gulp.task('clean-css', function () {
         .pipe(clean());
 });
 
-gulp.task('bower-to-vendor', ['clean-vendor'], function () {
+gulp.task('bower-to-vendor', function () {
     return gulp.src(mainBowerFiles(), { base: './bower_components' })
         .pipe(gulp.dest(config.vendor));
 });

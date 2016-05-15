@@ -2,6 +2,39 @@ This is the profile page...
 
 <p>User is logged in: {{model.user.username}}</p>
 
+<!--<form name="upload" class="form" ng-submit="model.uploadSquareSet()">
+    <input ng-model="model.files" type="file" name="file" multiple/>
+    <button type="submit" class="btn btn-default">Upload Square Set</button>
+</form>-->
+
+<form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
+    <label for="title">Square Set Title</label>
+    <input ng-model="model.title" type="text" id="title" required/>
+    <span class="btn btn-default" flow-btn>
+        Upload Images
+        <input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/>
+    </span>
+    <span class="btn btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">
+        Upload Folder of Images
+        <input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/>
+    </span>
+    <div ng-repeat="file in $flow.files" class="gallery-box ng-scope">
+        <span class="title ng-binding">1.png</span>
+        <div class="thumbnail" ng-show="$flow.files.length">
+            <img flow-img="file">
+        </div>
+        <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
+            <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}"
+                style="width: 100%;">
+            </div>
+        </div>
+        <div class="btn-group">
+            <a class="btn btn-xs btn-danger" ng-click="file.cancel()">Remove</a>
+        </div>
+    </div>
+    <input type="submit" value="Add Square Set to Profile" class="btn btn-primary" />
+</form>
+
 <div ng-if="model.squareSets.length">
     <h1>Your square sets</h1>
     <square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet"></square-set>

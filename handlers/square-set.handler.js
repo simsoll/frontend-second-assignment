@@ -21,3 +21,9 @@ module.exports.getByUserId = function (request, response) {
     
     return response.json(squareSets);
 }
+
+module.exports.create = function(request, response) {
+    var squareSet = squareSetService.create(request.body.squareSet);
+    
+    return response.json(squareSet);    
+}
