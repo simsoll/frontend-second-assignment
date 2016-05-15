@@ -46,3 +46,6 @@ interactjs
 * snapping/grid
 * excellent documentation
 
+# Future improvements
+
+* improved ability to share with others: have the create page making unique URL's as http://paletton.com/
