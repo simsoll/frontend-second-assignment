@@ -23,3 +23,15 @@ module.exports.logOut = function(request, response) {
     
     return response.status(200).json({success: true});
 }
+
+module.exports.signUp = function(request, response) {
+    var user = userService.signUp(request.body.user);
+    
+    return response.json(user);
+}
+
+module.exports.create = function(request, response) {
+    var user = userService.create(request.body.user);
+    
+    return response.json(user);
+}

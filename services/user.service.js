@@ -8,7 +8,7 @@ module.exports = (function () {
             username: 'simsoll',
             email: 'asdf@asdf.com',
             password: 'asdf',
-            isAdmin: 'false'            
+            isAdmin: false
         },
         {
             id: 2,
@@ -16,29 +16,58 @@ module.exports = (function () {
             username: 'chef',
             email: 'admin@admin.com',
             password: 'admin',
-            isAdmin: 'true'            
+            isAdmin: true
         },
         {
-            id: 1,
+            id: 3,
             name: 'Mr Ordinary',
             username: 'yaya',
             email: 'ordinary@ordinary.com',
             password: 'ordinary',
-            isAdmin: 'false'            
+            isAdmin: false
         }
     ];
-      
-    var currentUser = null;      
-        
+
+    var currentUser = null;
+
     return {
         authenticate: authenticate,
         authenticated: authenticated,
+        signUp: signUp,
+        create: create,
         logOut: logOut
     };
-    
+
+    function signUp(user) {
+        var user = create(user);
+        currentUser = user;
+        return user;
+    }
+
+    function create(user) {
+        var user = {
+            id: nextId(),
+            name: user.name,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            isAdmin: false
+        };
+
+        users.push(user)
+
+        return {
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            email: user.email,
+            isAdmin: user.isAdmin
+        };
+    }
+
     function authenticate(username, password) {
         currentUser = null;
-        
+
         for (var i = 0; i < users.length; i++) {
             if (users[i].username === username && users[i].password === password) {
                 currentUser = {
@@ -51,10 +80,10 @@ module.exports = (function () {
                 break;
             }
         }
-        
+
         return authenticated();
     };
-    
+
     function authenticated() {
         if (currentUser) {
             return {
@@ -62,13 +91,25 @@ module.exports = (function () {
                 user: currentUser
             }
         }
-        
+
         return {
-            success: false    
+            success: false
         };
     };
-    
+
     function logOut() {
         currentUser = null;
+    }
+
+    function nextId() {
+        var id = 0;
+
+        for (var i = 0; i < users.length; i++) {
+            if (id < users[i].id) {
+                id = users[i].id;
+            }
+        }
+
+        return id + 1;
     }
 })();

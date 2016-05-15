@@ -1,1 +1,15 @@
-This is the signup page...
+<form ng-submit="model.signUp()">
+    <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
+    <label for="name">Name</label>
+    <input ng-model="model.name" type="text" id="name" required/>    
+    <label for="email">E-mail address</label>
+    <input ng-model="model.email" type="email" id="email" required/>    
+    <label for="username">Username</label>
+    <input ng-model="model.username" type="text" id="username" required/>
+    <label for="password">Password</label>
+    <input ng-model="model.password" type="password" id="password" required/>
+    <label for="repeatedPassword">Repeat password</label>
+    <input ng-model="model.repeatedPassword" type="password" id="repeatedPassword" required/>    
+    <input type="submit" value="Sign Up" class="btn btn-default"/>
+    <a ng-link="['Log In']" class="btn btn-default">Already a member?</a>
+</form>

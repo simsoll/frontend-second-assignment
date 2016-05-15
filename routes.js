@@ -10,6 +10,9 @@ module.exports = function(app) {
     app.post('/api/user/authenticate', userHandler.authenticate);
     app.get('/api/user/authenticated', userHandler.authenticated);
     app.get('/api/user/logOut', userHandler.logOut);
+    app.post('/api/user/signUp', userHandler.signUp);
+    app.post('/api/user/create', userHandler.create);
+    
 
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);

@@ -2,12 +2,12 @@ This is the profile page...
 
 <p>User is logged in: {{model.user.username}}</p>
 
-<div ng-if="model.squareSets">
+<div ng-if="model.squareSets.length">
     <h1>Your square sets</h1>
     <square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet"></square-set>
 </div>
 
-<div ng-if="model.arts">
+<div ng-if="model.arts.length">
     <h1>Your art works</h1>
     <art-piece ng-repeat="art in model.arts" art="art"></art-piece>
 </div>

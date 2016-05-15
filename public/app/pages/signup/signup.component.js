@@ -3,22 +3,39 @@
 
     var module = angular.module('squares');
 
-    var controller = function (authenticationService) {
+    var controller = function (userService) {
         var model = this;
-        model.user = null;
+        model.signUp = signUp;
+        model.error = null;        
 
-        model.$routerOnActivate = function (next) {
-            authenticationService.getUserStatus().then(function (data) {
-                if (data.success) {
-                    model.user = data.user;
-                }
-            });
+        function signUp() {
+            if (model.password !== model.repeatedPassword) {
+                model.error = true;
+                model.errorMessage = "The two submitted passwords was not the same"
+                return;
+            }
+            
+            model.error = false;
+            var user = {
+                name: model.name,
+                email: model.email,
+                username: model.username,
+                password: model.password
+            };
+
+            userService.signUp(user).then(function (data) {
+                model.$router.navigate(['Profile']);
+            })
         }
+
     };
 
     module.component('signup', {
-        templateUrl: '/app/pages/signup/signup.component.html',
+        bindings: {
+            '$router': '<'
+        },
         controllerAs: 'model',
-        controller: controller
+        controller: controller,
+        templateUrl: '/app/pages/signup/signup.component.html'
     });
 })();
