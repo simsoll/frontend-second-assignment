@@ -37,10 +37,10 @@ This is the profile page...
 
 <div ng-if="model.squareSets.length">
     <h1>Your square sets</h1>
-    <square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet"></square-set>
+    <square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet" can-see-details="true" can-create="true"></square-set>
 </div>
 
 <div ng-if="model.arts.length">
     <h1>Your art works</h1>
-    <art-piece ng-repeat="art in model.arts" art="art"></art-piece>
+    <art-piece ng-repeat="art in model.arts" art="art" can-see-details="true" can-create="true"></art-piece>
 </div>
