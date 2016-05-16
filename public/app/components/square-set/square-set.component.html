@@ -1,6 +1,8 @@
-<h1>{{model.squareSet.title}}</h1>
 <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
     alt="A square in the set called {{model.squareSet.title}}">
+
+<span ng-if="!model.squareSet.reviews.length">Not reviewed yet...</span>
+<rating ng-if="model.squareSet.reviews.length" rating="model.averageRating()" max="5"></rating>
 
 <div ng-if="model.canSeeDetails">
     <a ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default">
