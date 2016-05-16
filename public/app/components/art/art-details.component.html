@@ -1,5 +1,11 @@
 <h3>This is the details of art {{model.art.title}}</h3>
 
+<img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}">
+
+<a ng-if="model.art.state" ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default">
+    <span class="glyphicon glyphicon-picture"></span>
+</a>
+
 <div ng-repeat="rating in model.art.ratings">
     <span>{{rating.user.name}}:</span>
     <rating value="rating.value" max="5" set-rating="model.setRating(rating, value)"></rating>
