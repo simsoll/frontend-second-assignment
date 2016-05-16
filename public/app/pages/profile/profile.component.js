@@ -11,10 +11,18 @@
         model.user = null;
         model.flow = null;
         model.imageSources = null;
+        model.errorMessage = null;
 
         function saveSquareSet() {
             var fileCount = model.flow.files.length;
-
+            
+            if (fileCount < 5 || 25 < fileCount) {
+                model.errorMessage = 'Square sets have to consist of between 5 and 25 pieces';
+                return
+            }
+            
+            model.errorMessage = null;
+            
             model.imageSources = [];
             for (var i = 0; i < fileCount; i++) {
                 (function (i) {

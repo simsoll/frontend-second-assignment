@@ -1,5 +1,6 @@
 <p>User is logged in: {{model.user.username}}</p>
 
+<div ng-show="model.errorMessage" class="alert alert-danger">{{model.errorMessage}}</div>
 <form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
     <label for="title">Square Set Title</label>
     <input ng-model="model.title" type="text" id="title" required/>
@@ -17,8 +18,7 @@
             <img flow-img="file">
         </div>
         <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
-            <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}"
-                style="width: 100%;">
+            <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}" style="width: 100%;">
             </div>
         </div>
         <div class="btn-group">
