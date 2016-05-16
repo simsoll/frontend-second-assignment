@@ -15,8 +15,12 @@
     };
     
     module.component('admin', {
-        templateUrl: '/app/pages/admin/admin.component.html',
         controllerAs: 'model',
-        controller: controller
-    });
+        controller: controller,
+        $routeConfig: [
+            { path: '/users', component: 'userAdmin', name: 'UserAdmin' },
+            { path: '/squareSets', component: 'squareSetAdmin', name: 'SquareSetAdmin' }
+        ],        
+        templateUrl: '/app/pages/admin/admin.component.html'
+    }); 
 })();

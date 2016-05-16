@@ -33,9 +33,12 @@ module.exports = (function () {
     return {
         authenticate: authenticate,
         authenticated: authenticated,
-        signUp: signUp,
         create: create,
-        logOut: logOut
+        getAll: getAll,
+        logOut: logOut,
+        signUp: signUp,
+        remove: remove,
+        update: update
     };
 
     function signUp(user) {
@@ -63,6 +66,10 @@ module.exports = (function () {
             email: user.email,
             isAdmin: user.isAdmin
         };
+    }
+
+    function getAll() {
+        return users;
     }
 
     function authenticate(username, password) {
@@ -99,6 +106,30 @@ module.exports = (function () {
 
     function logOut() {
         currentUser = null;
+    }
+
+    function remove(id) {
+        var removed;
+
+        users = users.filter(function (element) {
+            if (element.id !== id) {
+                return true
+            }
+
+            removed = element;
+            return false;
+        });
+
+        return removed;
+    }
+
+    function update(user) {
+        for (var i = 0; i < users.length; i++) {
+            if (users[i].id === user.id) {
+                users[i] = user;
+                return users[i];
+            }
+        }
     }
 
     function nextId() {

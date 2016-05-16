@@ -35,3 +35,21 @@ module.exports.create = function(request, response) {
     
     return response.json(user);
 }
+
+module.exports.remove = function(request, response) {
+    var user = userService.remove(request.body.id);
+    
+    return response.json(user);
+}
+
+module.exports.update = function(request, response) {
+    var user = userService.update(request.body.user);
+    
+    return response.json(user);
+}
+
+module.exports.getAll = function(request, response) {
+    var users = userService.getAll();
+    
+    return response.json(users);
+}

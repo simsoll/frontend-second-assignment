@@ -27,13 +27,13 @@
         bindings: {
             '$router': '<'
         },
-        templateUrl: '/app/components/art/art-details.component.html',
+        controllerAs: 'model',
+        controller: controller,
         $routeConfig: [
             { path: '/overview', component: 'artOverview', name: 'Overview' },
             { path: '/reviews', component: 'artReviews', name: 'Reviews' }
-        ],
-        controllerAs: 'model',
-        controller: controller
+        ],        
+        templateUrl: '/app/components/art/art-details.component.html'
     });
 
     module.component('artOverview', {

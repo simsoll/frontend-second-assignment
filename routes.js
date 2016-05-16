@@ -12,6 +12,9 @@ module.exports = function(app) {
     app.get('/api/user/logOut', userHandler.logOut);
     app.post('/api/user/signUp', userHandler.signUp);
     app.post('/api/user/create', userHandler.create);
+    app.post('/api/user/remove', userHandler.remove);
+    app.put('/api/user/update', userHandler.update);
+    app.get('/api/user/getAll', userHandler.getAll);
 
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);
