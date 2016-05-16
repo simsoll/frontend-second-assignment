@@ -55,7 +55,7 @@ module.exports.getAll = function(request, response) {
 }
 
 module.exports.getById = function (request, response) {
-    var user = userService.getById(parseInt(request.query.id));
+    var user = userService.getById(parseInt(request.query.id, 10));
     
     return response.json(user);
 }

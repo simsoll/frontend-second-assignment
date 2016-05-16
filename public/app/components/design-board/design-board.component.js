@@ -14,8 +14,8 @@
                 onmove: function (event) {
                     var target = event.target;
                     var position = {
-                        x: (parseInt(target.dataset.x) || 0) + Math.round(event.dx),
-                        y: (parseInt(target.dataset.y) || 0) + Math.round(event.dy)
+                        x: (parseInt(target.dataset.x, 10) || 0) + Math.round(event.dx),
+                        y: (parseInt(target.dataset.y, 10) || 0) + Math.round(event.dy)
                     }
 
                     model.squareSet.pieces[target.dataset.id].position = position;
@@ -99,7 +99,7 @@
 
             if (indexOfRotateStart > -1) {
                 var indexOfRotateEnd = transform.indexOf(')', indexOfRotateStart) + 1;
-                var currentDegrees = parseInt(transform.substring(transform.indexOf('(', indexOfRotateStart) + 1, transform.indexOf('deg', indexOfRotateStart)));
+                var currentDegrees = parseInt(transform.substring(transform.indexOf('(', indexOfRotateStart) + 1, transform.indexOf('deg', indexOfRotateStart)), 10);
                 var newDegress = currentDegrees + deg > 360 ? currentDegrees + deg - 360 : currentDegrees + deg;
                 var rotate = 'rotate(' + newDegress + 'deg)';
                 return replaceBetween(transform, indexOfRotateStart, indexOfRotateEnd, rotate);

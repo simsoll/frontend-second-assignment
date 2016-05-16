@@ -9,14 +9,14 @@ module.exports.getAll = function (request, response) {
 };
 
 module.exports.getById = function (request, response) {
-    var id = parseInt(request.query.id);
+    var id = parseInt(request.query.id, 10);
     var squareSet = squareSetService.getById(id);
     
     return response.json(squareSet);
 }
 
 module.exports.getByUserId = function (request, response) {
-    var id = parseInt(request.query.id);
+    var id = parseInt(request.query.id, 10);
     var squareSets = squareSetService.getByUserId(id);
     
     return response.json(squareSets);
