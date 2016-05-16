@@ -38,7 +38,7 @@
             .on('dragstart', function (event) {
                 var target = event.target;
 
-                if (!model.squareSet) {
+                if (!model.squareSet || !model.squareSet.pieces) {
                     return;
                 }
 
@@ -61,7 +61,7 @@
                 event.preventDefault();
                 var target = event.currentTarget;
 
-                if (!model.squareSet) {
+                if (!model.squareSet || !model.squareSet.pieces) {
                     return;
                 }
 

@@ -69,7 +69,7 @@
                     //TODO: get title!
                     var art = {
                         userId: model.user.id, 
-                        title: 'Unknown', 
+                        title: model.title, 
                         img: img, 
                         state: state,
                         squareSetId: model.squareSet.id 

@@ -13,6 +13,11 @@
     </a>
 </div>
 
-<a ng-if="model.squareSet && model.user" ng-click="model.saveToProfile()" class="btn btn-default">
-    <span class="glyphicon glyphicon-save"></span>
-</a>
+<div ng-if="model.squareSet && model.user">
+    <label for="title">Title</label>
+    <input ng-model="model.title" type="text" id="title" required/>
+
+    <a ng-click="model.saveToProfile()" class="btn btn-default">
+        <span class="glyphicon glyphicon-save"></span>
+    </a>
+</div>

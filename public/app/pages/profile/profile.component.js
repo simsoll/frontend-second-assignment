@@ -13,10 +13,6 @@
         model.flow = null;
         model.imageSources = null;
 
-        // $scope.$on('flow::fileAdded', function (event, $flow, flowFile) {
-        //     event.preventDefault();//prevent file from uploading
-        // });
-
         function saveSquareSet() {
             model.imageSources = [];
             for (var i = 0; i < model.flow.files.length; i++) {

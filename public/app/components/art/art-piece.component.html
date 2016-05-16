@@ -4,3 +4,7 @@
 <a ng-link="['ArtDetails', {id: model.art.id}, 'Overview']" class="btn btn-default">
     <span class="glyphicon glyphicon-zoom-in"></span>
 </a>
+
+<a ng-if="model.art.state" ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default">
+    <span class="glyphicon glyphicon-picture"></span>
+</a>
