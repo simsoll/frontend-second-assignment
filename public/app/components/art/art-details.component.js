@@ -63,7 +63,7 @@
         }
 
         function retrieveActiveUser() {
-            authenticationService.getUserStatus().then(function (data) {
+            authenticationService.getActiveUser().then(function (data) {
                 if (data.success) {
                     model.user = data.user;
                 }

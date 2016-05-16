@@ -8,7 +8,7 @@
         model.user = null;
 
         model.$routerOnActivate = function (next) {
-            authenticationService.getUserStatus().then(function (data) {
+            authenticationService.getActiveUser().then(function (data) {
                 if (data.success) {
                     model.user = data.user;
                 }

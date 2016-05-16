@@ -9,11 +9,11 @@
     function authenticationService($http, $q) {
 
         return {
-            getUserStatus: getUserStatus,
+            getActiveUser: getActiveUser,
             login: login
         }
 
-        function getUserStatus() {
+        function getActiveUser() {
             return $http.get('/api/user/authenticated')
                 .then(function (result) {
                     return result.data;

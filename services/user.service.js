@@ -28,7 +28,7 @@ module.exports = (function () {
         }
     ];
 
-    var currentUser = null;
+    var activeUser = null;
 
     return {
         authenticate: authenticate,
@@ -44,7 +44,7 @@ module.exports = (function () {
 
     function signUp(user) {
         var user = create(user);
-        currentUser = user;
+        activeUser = user;
         return user;
     }
 
@@ -84,11 +84,11 @@ module.exports = (function () {
     }
     
     function authenticate(username, password) {
-        currentUser = null;
+        activeUser = null;
 
         for (var i = 0; i < users.length; i++) {
             if (users[i].username === username && users[i].password === password) {
-                currentUser = {
+                activeUser = {
                     id: users[i].id,
                     name: users[i].name,
                     username: users[i].username,
@@ -103,10 +103,10 @@ module.exports = (function () {
     };
 
     function authenticated() {
-        if (currentUser) {
+        if (activeUser) {
             return {
                 success: true,
-                user: currentUser
+                user: activeUser
             }
         }
 
@@ -116,7 +116,7 @@ module.exports = (function () {
     };
 
     function logOut() {
-        currentUser = null;
+        activeUser = null;
     }
 
     function remove(id) {
