@@ -1,7 +1,7 @@
 <img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}">
 
 <span ng-if="!model.art.reviews.length">Not reviewed yet...</span>
-<rating ng-if="model.art.reviews.length" rating="model.averageRating()" max="5"></rating>
+<rating ng-if="model.art.reviews.length" rating="model.art.averageRating" max="5"></rating>
 
 <div ng-if="model.canSeeDetails">
     <a ng-link="['ArtDetails', {id: model.art.id}, 'Overview']" class="btn btn-default">

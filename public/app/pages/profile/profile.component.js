@@ -3,26 +3,27 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($scope, $http, authenticationService, squareSetService) {
+    var controller = function (authenticationService, artService, squareSetService) {
         var model = this;
         model.arts = null;
         model.saveSquareSet = saveSquareSet;
         model.squareSets = null;
-        model.uploadSquareSet = uploadSquareSet;
         model.user = null;
         model.flow = null;
         model.imageSources = null;
 
         function saveSquareSet() {
+            var fileCount = model.flow.files.length;
+
             model.imageSources = [];
-            for (var i = 0; i < model.flow.files.length; i++) {
+            for (var i = 0; i < fileCount; i++) {
                 (function (i) {
                     var fileReader = new FileReader();
                     fileReader.onload = function (event) {
                         var uri = event.target.result;
                         model.imageSources[i] = uri;
 
-                        if (model.imageSources.length === model.flow.files.length) {
+                        if (model.imageSources.length === fileCount) {
                             var squareSet = {
                                 userId: model.user.id,
                                 title: model.title,
@@ -53,23 +54,15 @@
             });
         };
 
-        function uploadSquareSet() {
-
-        }
-
         function retrieveSquareSets(user) {
-            $http.get('/api/squareSet/getByUserId', {
-                params: { id: user.id }
-            }).then(function (response) {
-                model.squareSets = response.data;
+            squareSetService.getByUserId(user.id).then(function (data) {
+                model.squareSets = data;
             });
         }
 
         function retrieveArts(user) {
-            $http.get('/api/art/getByUserId', {
-                params: { id: user.id }
-            }).then(function (response) {
-                model.arts = response.data;
+            artService.getByUserId(user.id).then(function (data) {
+                model.arts = data;
             });
         }
     };

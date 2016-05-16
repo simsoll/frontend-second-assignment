@@ -10,12 +10,25 @@
             create: create,
             remove: remove,
             addReview: addReview,
-            getAll: getAll
+            getAll: getAll,
+            getByUserId: getByUserId
         }
 
         function getAll() {
             return $http.get('/api/squareSet/getAll').then(function (result) {
-                return result.data;
+                return result.data.map(function (squareSet) {
+                    return addAverageRatingProperty(squareSet);
+                });
+            });
+        }
+
+        function getByUserId(id) {
+            return $http.get('/api/squareSet/getByUserId', {
+                params: { id: id }
+            }).then(function (result) {
+                return result.data.map(function (squareSet) {
+                    return addAverageRatingProperty(squareSet);
+                });
             });
         }
 
@@ -41,6 +54,22 @@
             }).then(function (result) {
                 return result.data;
             });
+        }
+
+        function addAverageRatingProperty(squareSet) {
+            squareSet.averageRating = averageRating(squareSet.reviews);
+            return squareSet;
+        }
+
+        function averageRating(reviews) {
+            var sum = 0;
+            var count = reviews.length;
+
+            for (var i = 0; i < count; i++) {
+                sum += reviews[i].rating;
+            }
+
+            return count > 0 ? Math.ceil(sum / count) : 0;
         }
     }
 })();

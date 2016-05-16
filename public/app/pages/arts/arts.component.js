@@ -23,32 +23,12 @@
         
         function retrieveArts() {
             artService.getAll().then(function (data) {
-                model.arts = data;
-                //TODO: move to artService?
-                addAverageRatingProperty();
-                model.arts = artsSortedByAverageRating();
+                model.arts = artsSortedByAverageRating(data);
             });
         }      
         
-        function addAverageRatingProperty() {
-            for (var i = 0; i < model.arts.length; i++) {
-                model.arts[i].averageRating = averageRating(model.arts[i]);
-            }
-        }
-
-        function averageRating(arts) {
-            var sum = 0;
-            var count = arts.reviews.length;
-
-            for (var i = 0; i < count; i++) {
-                sum += arts.reviews[i].rating;
-            }
-
-            return count > 0 ? Math.ceil(sum / count) : 0;
-        }
-        
-        function artsSortedByAverageRating() {
-            return model.arts.sort(byAverageRating);
+        function artsSortedByAverageRating(array) {
+            return array.sort(byAverageRating);
         }
         
         function byAverageRating(a, b) {

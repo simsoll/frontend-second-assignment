@@ -1,11 +1,4 @@
-This is the profile page...
-
 <p>User is logged in: {{model.user.username}}</p>
-
-<!--<form name="upload" class="form" ng-submit="model.uploadSquareSet()">
-    <input ng-model="model.files" type="file" name="file" multiple/>
-    <button type="submit" class="btn btn-default">Upload Square Set</button>
-</form>-->
 
 <form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
     <label for="title">Square Set Title</label>

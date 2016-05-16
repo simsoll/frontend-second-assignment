@@ -44,7 +44,7 @@ module.exports = (function () {
                 {
                     user: {
                         id: 3,
-                        name: "yaya"
+                        username: "yaya"
                     },
                     rating: 5,
                     comment: "See, this is a masterpiece!"
