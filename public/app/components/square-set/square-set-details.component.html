@@ -1,5 +1,5 @@
 <h3>This is the details of square-set {{model.squareSet.title}}</h3>
-
+<small>Created by {{model.squareSet.user.username}}</small>
 <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
     alt="A square in the set called {{model.squareSet.title}}" />
 

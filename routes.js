@@ -15,6 +15,7 @@ module.exports = function(app) {
     app.post('/api/user/remove', userHandler.remove);
     app.put('/api/user/update', userHandler.update);
     app.get('/api/user/getAll', userHandler.getAll);
+    app.get('/api/user/getById', userHandler.getById);
 
     // art routes
     app.get('/api/art/getAll', artHandler.getAll);

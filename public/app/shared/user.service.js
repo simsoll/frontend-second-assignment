@@ -10,6 +10,7 @@
             signUp: signUp,
             create: create,
             getAll: getAll,
+            getById: getById,
             update: update,
             remove: remove
         };
@@ -35,6 +36,14 @@
                 return result.data;
             });
         };
+        
+        function getById(id) {
+            return $http.get('/api/user/getById', {
+                params: { id: id }
+            }).then(function (result) {
+                return result.data;
+            });
+        };        
 
         function update(user) {
             return $http.put('/api/user/update', {

@@ -3,7 +3,7 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService, squareSetService) {
+    var controller = function ($http, authenticationService, squareSetService, userService) {
         var model = this;
         model.squareSet = null;
         model.user = null;
@@ -15,7 +15,7 @@
         model.$routerOnActivate = function (next, previous) {
             var squareSetId = next.params.id;
             retrieveSquareSet(squareSetId);
-            retrieveUser();
+            retrieveActiveUser();
         };
 
         function addReview(review) {
@@ -50,10 +50,19 @@
                 params: { id: squareSetId }
             }).then(function (response) {
                 model.squareSet = response.data;
+                retrieveUser(model.squareSet.userId).then(function (data) {
+                    model.squareSet.user = data;
+                });                
             });
         }
+        
+        function retrieveUser(id) {
+            return userService.getById(id).then(function (data) {
+                return data;
+            });
+        }        
 
-        function retrieveUser() {
+        function retrieveActiveUser() {
             authenticationService.getUserStatus().then(function (data) {
                 if (data.success) {
                     model.user = data.user;

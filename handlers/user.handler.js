@@ -53,3 +53,9 @@ module.exports.getAll = function(request, response) {
     
     return response.json(users);
 }
+
+module.exports.getById = function (request, response) {
+    var user = userService.getById(parseInt(request.query.id));
+    
+    return response.json(user);
+}

@@ -3,7 +3,7 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService, artService) {
+    var controller = function ($http, authenticationService, artService, userService) {
         var model = this;
         model.art = null;
         model.user = null;
@@ -15,7 +15,7 @@
         model.$routerOnActivate = function (next, previous) {
             var artId = next.params.id;
             retrieveArtSet(artId);
-            retrieveUser();
+            retrieveActiveUser();
         }
 
         function addReview(review) {
@@ -26,7 +26,7 @@
                 model.art = data;
             });
         }
-        
+
         function isMadeByUser() {
             return model.art.userId === model.user.id;
         }
@@ -50,10 +50,19 @@
                 params: { id: artId }
             }).then(function (response) {
                 model.art = response.data;
+                retrieveUser(model.art.userId).then(function (data) {
+                    model.art.user = data;
+                });
             });
         }
 
-        function retrieveUser() {
+        function retrieveUser(id) {
+            return userService.getById(id).then(function (data) {
+                return data;
+            });
+        }
+
+        function retrieveActiveUser() {
             authenticationService.getUserStatus().then(function (data) {
                 if (data.success) {
                     model.user = data.user;

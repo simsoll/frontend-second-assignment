@@ -35,6 +35,7 @@ module.exports = (function () {
         authenticated: authenticated,
         create: create,
         getAll: getAll,
+        getById: getById,
         logOut: logOut,
         signUp: signUp,
         remove: remove,
@@ -72,6 +73,16 @@ module.exports = (function () {
         return users;
     }
 
+    function getById(id) {
+        for (var i = 0; i < users.length; i++) {
+            if (users[i].id === id) {
+                return users[i];
+            }
+        }
+
+        return null;
+    }
+    
     function authenticate(username, password) {
         currentUser = null;
 
