@@ -10,6 +10,7 @@
         model.goToArts = goToArts;
         model.addReview = addReview;
         model.hasUserReviewed = hasUserReviewed;
+        model.isMadeByUser = isMadeByUser;
 
         model.$routerOnActivate = function (next, previous) {
             var artId = next.params.id;
@@ -24,6 +25,10 @@
             artService.addReview(review).then(function (data) {
                 model.art = data;
             });
+        }
+        
+        function isMadeByUser() {
+            return model.art.userId === model.user.id;
         }
 
         function hasUserReviewed() {

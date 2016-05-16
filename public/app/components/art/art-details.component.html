@@ -6,7 +6,7 @@
     <span class="glyphicon glyphicon-picture"></span>
 </a>
 
-<add-review ng-if="model.user && !model.hasUserReviewed()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
+<add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
 
 <div ng-repeat="review in model.art.reviews">
     <review review="review" max="5"></review>

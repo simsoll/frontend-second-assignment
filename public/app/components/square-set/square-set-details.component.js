@@ -10,6 +10,7 @@
         model.goToSquareSets = goToSquareSets;
         model.addReview = addReview;
         model.hasUserReviewed = hasUserReviewed;
+        model.isMadeByUser = isMadeByUser;
 
         model.$routerOnActivate = function (next, previous) {
             var squareSetId = next.params.id;
@@ -25,6 +26,10 @@
                 model.squareSet = data;
             });
         }
+        
+        function isMadeByUser() {
+            return model.squareSet.userId === model.user.id;
+        }        
         
         function hasUserReviewed() {
             for(var i = 0; i < model.squareSet.reviews.length; i++) {
