@@ -30,6 +30,10 @@ Persona (designer): Peter 28, single, graduate from London School of Arts as Ill
 
 * Sharing is important - need proper routing for that to work
 
+* list all external libraries
+** pros/cons
+** alternatives?
+
 ## Canvas libraries
 
 Pure AngularJS using directives and mousedown, mouseup and mouseover events
