@@ -5,24 +5,9 @@
 
     var controller = function (userService) {
         var model = this;
-        model.signUp = signUp;
-        model.error = null;        
+        model.create = create;
 
-        function signUp() {
-            if (model.password !== model.repeatedPassword) {
-                model.error = true;
-                model.errorMessage = "The two submitted passwords was not the same"
-                return;
-            }
-            
-            model.error = false;
-            var user = {
-                name: model.name,
-                email: model.email,
-                username: model.username,
-                password: model.password
-            };
-
+        function create(user) {
             userService.signUp(user).then(function (data) {
                 model.$router.navigate(['Profile']);
             });
