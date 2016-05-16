@@ -45,11 +45,9 @@
 
     module.component('user', {
         bindings: {
-            canCreate: '<',
-            canUpdate: '<',
             user: '<',
-            onCreate: '&',
-            onUpdate: '&'
+            onCreate: '&?',
+            onUpdate: '&?'
         },
         controllerAs: 'model',
         controller: controller,

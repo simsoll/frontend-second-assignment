@@ -8,12 +8,12 @@
     <input ng-model="model.user.username" type="text" id="username" required/>
     <label for="password">Password</label>
     <input ng-model="model.user.password" type="password" id="password" required/>
-    <div ng-if="model.canCreate">
+    <div ng-if="model.onCreate">
         <label for="repeatedPassword">Repeat password</label>
         <input ng-model="model.user.repeatedPassword" type="password" id="repeatedPassword" required/>
         <input type="submit" ng-click="model.isCreating = true" value="Create User" class="btn btn-default"/>
     </div>
-    <div ng-if="model.canUpdate">
+    <div ng-if="model.onUpdate">
         <input type="submit" ng-click="model.isUpdating = true" value="Update User" class="btn btn-default"/>
     </div>    
 </form>

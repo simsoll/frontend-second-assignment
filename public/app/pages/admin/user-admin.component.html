@@ -1,8 +1,8 @@
 <h1>Create new user</h1>
-<user user="{}" can-create="true" on-create="model.create(user)"></user>
+<user user="{}" on-create="model.create(user)"></user>
 
 <h1>Current users</h1>
 <div ng-repeat="user in model.users">
-    <user user="user" can-update="true" on-update="model.update(user)"></user>
+    <user user="user" on-update="model.update(user)"></user>
     <a ng-click="model.remove(user)" class="btn btn-default">Delete user</a>
 </div>
