@@ -5,7 +5,7 @@
 
     var controller = function ($scope, $http, authenticationService, artService) {
         var model = this;
-        model.goToPieces = goToPieces;
+        model.goToSquareSets = goToSquareSets;
         model.goToCreateWithRandomId = goToCreateWithRandomId;
         model.saveToProfile = saveToProfile;
         model.squareSet = null;
@@ -55,8 +55,8 @@
             });
         }
 
-        function goToPieces() {
-            model.$router.navigate(['Pieces']);
+        function goToSquareSets() {
+            model.$router.navigate(['Square Sets']);
         }
 
         function saveToProfile() {

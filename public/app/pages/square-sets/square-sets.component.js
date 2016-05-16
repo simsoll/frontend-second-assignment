@@ -28,9 +28,9 @@
         }
     };
 
-    module.component('pieces', {
+    module.component('squareSets', {
         controllerAs: 'model',
         controller: controller,
-        templateUrl: '/app/pages/pieces/pieces.component.html'
+        templateUrl: '/app/pages/square-sets/square-sets.component.html'
     });
 })();

@@ -23,7 +23,7 @@
     module.component('squaresApp', {
         $routeConfig: [
             { path: '/', component: 'home', name: 'Home' },
-            { path: '/pieces', component: 'pieces', name: 'Pieces' },
+            { path: '/squareSets', component: 'squareSets', name: 'Square Sets' },
             { path: '/arts', component: 'arts', name: 'Arts' },
             { path: '/create', component: 'create', name: 'Create' },
             { path: '/about', component: 'about', name: 'About' },

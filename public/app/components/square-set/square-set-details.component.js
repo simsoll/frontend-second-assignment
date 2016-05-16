@@ -6,7 +6,7 @@
     var controller = function ($http) {
         var model = this;
         model.squareSet = null;
-        model.goToPieces = goToPieces;
+        model.goToSquareSets = goToSquareSets;
 
         model.$routerOnActivate = function (next, previous) {
             var squareSetId = next.params.id;
@@ -18,8 +18,8 @@
             });
         };
         
-        function goToPieces() {
-            model.$router.navigate(['Pieces']);
+        function goToSquareSets() {
+            model.$router.navigate(['Square Sets']);
         }        
     }
 
