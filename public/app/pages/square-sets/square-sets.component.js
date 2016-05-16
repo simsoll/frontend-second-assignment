@@ -3,7 +3,7 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService) {
+    var controller = function (authenticationService, squareSetService) {
         var model = this;
         model.user = null;
         model.squareSets = null;
@@ -20,11 +20,46 @@
                 }
             });
         }
-        
+
         function retrieveSquareSets() {
-            $http.get('/api/squareSet/getAll').then(function (response) {
-                model.squareSets = response.data;
-            });            
+            squareSetService.getAll().then(function (data) {
+                model.squareSets = data;
+                //TODO: move to squareSetService?
+                addAverageRatingProperty();
+                model.squareSets = squareSetsSortedByAverageRating();
+            });
+        }
+
+        function addAverageRatingProperty() {
+            for (var i = 0; i < model.squareSets.length; i++) {
+                model.squareSets[i].averageRating = averageRating(model.squareSets[i]);
+            }
+        }
+
+        function averageRating(squareSet) {
+            var sum = 0;
+            var count = squareSet.reviews.length;
+
+            for (var i = 0; i < count; i++) {
+                sum += squareSet.reviews[i].rating;
+            }
+
+            return count > 0 ? Math.ceil(sum / count) : 0;
+        }
+        
+        function squareSetsSortedByAverageRating() {
+            return model.squareSets.sort(byAverageRating);
+        }
+        
+        function byAverageRating(a, b) {
+            if (a.averageRating < b.averageRating) {
+                return 1;
+            }
+            else if (b.averageRating < a.averageRating) {
+                return -1;
+            }
+            
+            return 0;
         }
     };
 

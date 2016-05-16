@@ -9,7 +9,14 @@
         return {
             create: create,
             remove: remove,
-            addReview: addReview
+            addReview: addReview,
+            getAll: getAll
+        }
+
+        function getAll() {
+            return $http.get('/api/squareSet/getAll').then(function (result) {
+                return result.data;
+            });
         }
 
         function create(squareSet) {

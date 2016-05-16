@@ -9,7 +9,8 @@
         return {
             create: create,
             remove: remove,
-            addReview: addReview
+            addReview: addReview,
+            getAll: getAll
         }
 
         function create(art) {
@@ -27,13 +28,19 @@
                 return result.data;
             });
         }
-        
+
         function addReview(review) {
             return $http.post('/api/art/addReview', {
                 review: review
             }).then(function (result) {
                 return result.data;
             });
-        }        
+        }
+
+        function getAll() {
+            return $http.get('/api/art/getAll').then(function (result) {
+                return result.data;
+            });
+        }
     }
 })();
