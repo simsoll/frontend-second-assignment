@@ -22,6 +22,7 @@ module.exports = function(app) {
     app.get('/api/art/getByUserId', artHandler.getByUserId);  
     app.post('/api/art/create', artHandler.create); 
     app.post('/api/art/remove', artHandler.remove);
+    app.post('/api/art/addReview', artHandler.addReview);
     
     // square set routes
     app.get('/api/squareSet/getAll', squareSetHandler.getAll);
@@ -29,5 +30,6 @@ module.exports = function(app) {
     app.get('/api/squareSet/getByUserId', squareSetHandler.getByUserId);     
     app.post('/api/squareSet/create', squareSetHandler.create);
     app.post('/api/squareSet/remove', squareSetHandler.remove);
+    app.post('/api/squareSet/addReview', squareSetHandler.addReview);
        
 };

@@ -8,7 +8,8 @@
     function squareSetService($http) {
         return {
             create: create,
-            remove: remove
+            remove: remove,
+            addReview: addReview
         }
 
         function create(squareSet) {
@@ -22,6 +23,14 @@
         function remove(id) {
             return $http.post('/api/squareSet/remove', {
                 id: id
+            }).then(function (result) {
+                return result.data;
+            });
+        }
+
+        function addReview(review) {
+            return $http.post('/api/squareSet/addReview', {
+                review: review
             }).then(function (result) {
                 return result.data;
             });

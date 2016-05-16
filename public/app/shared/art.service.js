@@ -8,7 +8,8 @@
     function artService($http) {
         return {
             create: create,
-            remove: remove
+            remove: remove,
+            addReview: addReview
         }
 
         function create(art) {
@@ -26,5 +27,13 @@
                 return result.data;
             });
         }
+        
+        function addReview(review) {
+            return $http.post('/api/art/addReview', {
+                review: review
+            }).then(function (result) {
+                return result.data;
+            });
+        }        
     }
 })();

@@ -18,21 +18,21 @@ module.exports = (function () {
                 "images/squareSets/1/9.png",
                 "images/squareSets/1/10.png"
             ],
-            ratings: [
+            reviews: [
                 {
                     user: {
                         id: 1,
-                        name: "Simon"
+                        username: "simsoll"
                     },
-                    value: 5,
+                    rating: 5,
                     comment: "This is cool!"
                 },
                 {
                     user: {
-                        id: 2,
-                        name: "John"
+                        id: 3,
+                        username: "yaya"
                     },
-                    value: 2,
+                    rating: 2,
                     comment: "Bahhh..."
                 }
             ]
@@ -55,13 +55,13 @@ module.exports = (function () {
                 "images/squareSets/2/11.png",
                 "images/squareSets/2/12.png"
             ],
-            ratings: [
+            reviews: [
                 {
                     user: {
-                        id: 2,
-                        name: "John"
+                        id: 3,
+                        username: "yaya"
                     },
-                    value: 5,
+                    rating: 5,
                     comment: "See, this is a very nice set!"
                 }
             ]
@@ -69,12 +69,27 @@ module.exports = (function () {
     ];
 
     return {
+        addReview: addReview,
         create: create,
         getAll: getAll,
         getById: getById,
         getByUserId: getByUserId,
         remove: remove
     };
+    
+    function addReview(review) {
+        var squareSet = getById(review.squareSet.id);
+        squareSet.reviews.push({
+            user: {
+                id: review.user.id,
+                username: review.user.username
+            },
+            rating: review.rating,
+            comment: review.comment
+        });
+        
+        return squareSet;
+    }
 
     function create(squareSet) {
         var squareSet = {
@@ -82,7 +97,7 @@ module.exports = (function () {
             userId: squareSet.userId,
             title: squareSet.title,
             imageSources: squareSet.imageSources,
-            ratings: squareSet.ratings
+            reviews: squareSet.reviews
         }
         
         squareSets.push(squareSet);

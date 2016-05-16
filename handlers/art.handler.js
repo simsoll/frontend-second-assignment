@@ -29,7 +29,13 @@ module.exports.create = function(request, response) {
 }
 
 module.exports.remove = function(request, response) {
-    var user = artService.remove(request.body.id);
+    var art = artService.remove(request.body.id);
     
-    return response.json(user);
+    return response.json(art);
+}
+
+module.exports.addReview = function(request, response) {
+    var art = artService.addReview(request.body.review);
+    
+    return response.json(art);
 }

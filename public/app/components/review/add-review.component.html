@@ -1,0 +1,7 @@
+<form ng-submit="model.addReview()">
+    <label for="rating">Rating</label>
+    <input ng-model="model.rating" type="number" min="{{model.min}}" max="{{model.max}}" id="rating" required/>
+    <label for="comment">Comment</label>
+    <input ng-model="model.comment" type="text" id="comment" />
+    <input type="submit" value="Add Review" class="btn btn-default" />
+</form>

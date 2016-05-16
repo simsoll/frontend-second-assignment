@@ -7,21 +7,21 @@ module.exports = (function () {
             userId: 2,
             title: "Proto 1",
             imageSource: "images/arts/1.png",
-            ratings: [
+            reviews: [
                 {
                     user: {
                         id: 1,
-                        name: "Simon"
+                        username: "simsoll"
                     },
-                    value: 5,
+                    rating: 5,
                     comment: "This is cool!"
                 },
                 {
                     user: {
-                        id: 2,
-                        name: "John"
+                        id: 3,
+                        username: "yaya"
                     },
-                    value: 2,
+                    rating: 2,
                     comment: "Bahhh..."
                 }
             ],
@@ -32,7 +32,7 @@ module.exports = (function () {
             userId: 1,
             title: "Proto 2",
             imageSource: "images/arts/2.png",
-            ratings: [],
+            reviews: [],
             squareSetId: 3
         },
         {
@@ -40,13 +40,13 @@ module.exports = (function () {
             userId: 1,
             title: "Proto 3",
             imageSource: "images/arts/3.png",
-            ratings: [
+            reviews: [
                 {
                     user: {
-                        id: 2,
-                        name: "John"
+                        id: 3,
+                        name: "yaya"
                     },
-                    value: 5,
+                    rating: 5,
                     comment: "See, this is a masterpiece!"
                 }
             ],
@@ -55,12 +55,27 @@ module.exports = (function () {
     ];
 
     return {
+        addReview: addReview,
         create: create,
         getAll: getAll,
         getById: getById,
         getByUserId: getByUserId,
         remove: remove
     };
+
+    function addReview(review) {
+        var art = getById(review.art.id);
+        art.reviews.push({
+            user: {
+                id: review.user.id,
+                username: review.user.username
+            },
+            rating: review.rating,
+            comment: review.comment
+        });
+
+        return art;
+    }
 
     function create(art) {
         var art = {

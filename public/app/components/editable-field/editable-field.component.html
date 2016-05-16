@@ -1,0 +1,5 @@
+<span ng-switch="model.editMode">
+  <input ng-switch-when="true" type="{{model.type}}" ng-model="model.value">
+  <span ng-switch-default>{{model.value}}</span>
+</span>
+<button ng-click="model.handleModeChange()">{{model.editMode ? 'Save' : 'Edit'}}</button>

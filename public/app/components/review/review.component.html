@@ -1,0 +1,9 @@
+<div class="review">
+    {{model.review.user.username}}
+</div>
+<span ng-repeat="entry in model.entries track by $index">
+    <span class="glyphicon {{entry}}"></span>
+</span>
+<div class="review-comment">
+    {{model.review.comment}}
+</div>

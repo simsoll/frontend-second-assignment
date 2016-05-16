@@ -29,7 +29,13 @@ module.exports.create = function(request, response) {
 }
 
 module.exports.remove = function(request, response) {
-    var user = squareSetService.remove(request.body.id);
+    var squareSet = squareSetService.remove(request.body.id);
     
-    return response.json(user);
+    return response.json(squareSet);
+}
+
+module.exports.addReview = function(request, response) {
+    var squareSet = squareSetService.addReview(request.body.review);
+    
+    return response.json(squareSet);
 }

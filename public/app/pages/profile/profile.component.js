@@ -27,7 +27,7 @@
                                 userId: model.user.id,
                                 title: model.title,
                                 imageSources: model.imageSources,
-                                ratings: []
+                                reviews: []
                             }
 
                             squareSetService.create(squareSet).then(function (data) {
