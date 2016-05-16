@@ -27,3 +27,9 @@ module.exports.create = function(request, response) {
     
     return response.json(squareSet);    
 }
+
+module.exports.remove = function(request, response) {
+    var user = squareSetService.remove(request.body.id);
+    
+    return response.json(user);
+}

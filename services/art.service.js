@@ -58,7 +58,8 @@ module.exports = (function () {
         create: create,
         getAll: getAll,
         getById: getById,
-        getByUserId: getByUserId
+        getByUserId: getByUserId,
+        remove: remove
     };
 
     function create(art) {
@@ -70,10 +71,25 @@ module.exports = (function () {
             state: art.state,
             squareSetId: art.squareSetId
         }
-        
+
         arts.push(art);
-        
+
         return art;
+    }
+
+    function remove(id) {
+        var removed;
+
+        arts = arts.filter(function (element) {
+            if (element.id !== id) {
+                return true
+            }
+
+            removed = element;
+            return false;
+        });
+
+        return removed;
     }
 
     function getAll() {
@@ -104,7 +120,7 @@ module.exports = (function () {
                 id = arts[i].id;
             }
         }
-        
+
         return id + 1;
     }
 })();

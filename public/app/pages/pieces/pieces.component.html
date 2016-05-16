@@ -1,1 +1,3 @@
-<square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet"></square-set>
+<div ng-repeat="squareSet in model.squareSets">
+    <square-set square-set="squareSet" can-create="true" can-see-details="true"></square-set>
+</div>

@@ -21,7 +21,6 @@
     }
 
     module.component('squaresApp', {
-        templateUrl: '/app/squares-app.component.html',
         $routeConfig: [
             { path: '/', component: 'home', name: 'Home' },
             { path: '/pieces', component: 'pieces', name: 'Pieces' },
@@ -37,6 +36,7 @@
             { path: '/**', redirectTo: ['Home'] }
         ],
         controllerAs: 'model',
-        controller: controller
+        controller: controller,
+        templateUrl: '/app/squares-app.component.html'        
     });
 })();

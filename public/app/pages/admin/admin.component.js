@@ -18,6 +18,7 @@
         controllerAs: 'model',
         controller: controller,
         $routeConfig: [
+            { path: '/arts', component: 'artAdmin', name: 'ArtAdmin' },
             { path: '/users', component: 'userAdmin', name: 'UserAdmin' },
             { path: '/squareSets', component: 'squareSetAdmin', name: 'SquareSetAdmin' }
         ],        

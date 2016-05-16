@@ -20,11 +20,14 @@ module.exports = function(app) {
     app.get('/api/art/getAll', artHandler.getAll);
     app.get('/api/art/getById', artHandler.getById);   
     app.get('/api/art/getByUserId', artHandler.getByUserId);  
-    app.post('/api/art/create', artHandler.create) 
+    app.post('/api/art/create', artHandler.create); 
+    app.post('/api/art/remove', artHandler.remove);
     
     // square set routes
     app.get('/api/squareSet/getAll', squareSetHandler.getAll);
     app.get('/api/squareSet/getById', squareSetHandler.getById);     
     app.get('/api/squareSet/getByUserId', squareSetHandler.getByUserId);     
-    app.post('/api/squareSet/create', squareSetHandler.create)     
+    app.post('/api/squareSet/create', squareSetHandler.create);
+    app.post('/api/squareSet/remove', squareSetHandler.remove);
+       
 };

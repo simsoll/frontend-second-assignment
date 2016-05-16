@@ -13,6 +13,8 @@
 
     module.component('squareSet', {
         bindings: {
+            canCreate: '<',
+            canSeeDetails: '<',
             squareSet: '<'
         },
         controllerAs: 'model',

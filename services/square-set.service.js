@@ -72,7 +72,8 @@ module.exports = (function () {
         create: create,
         getAll: getAll,
         getById: getById,
-        getByUserId: getByUserId
+        getByUserId: getByUserId,
+        remove: remove
     };
 
     function create(squareSet) {
@@ -108,6 +109,21 @@ module.exports = (function () {
             return value.userId === id
         });
     }
+    
+    function remove(id) {
+        var removed;
+
+        squareSets = squareSets.filter(function (element) {
+            if (element.id !== id) {
+                return true
+            }
+
+            removed = element;
+            return false;
+        });
+
+        return removed;
+    }    
 
     function nextId() {
         var id = 0;

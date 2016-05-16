@@ -3,34 +3,31 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService) {
+    var controller = function ($http, squareSetService) {
         var model = this;
-        model.user = null;
         model.squareSets = null;
+        model.remove = remove;
 
         model.$routerOnActivate = function (next) {
-            retrieveUser();
             retrieveSquareSets();
         };
 
-        function retrieveUser() {
-            authenticationService.getUserStatus().then(function (data) {
-                if (data.success) {
-                    model.user = data.user;
-                }
+        function remove(squareSet) {
+            squareSetService.remove(squareSet.id).then(function (data) {
+                retrieveSquareSets();
             });
         }
-        
+
         function retrieveSquareSets() {
             $http.get('/api/squareSet/getAll').then(function (response) {
                 model.squareSets = response.data;
-            });            
+            });
         }
     };
 
-    module.component('pieces', {
+    module.component('squareSetAdmin', {
         controllerAs: 'model',
         controller: controller,
-        templateUrl: '/app/pages/pieces/pieces.component.html'
+        templateUrl: '/app/pages/admin/square-set-admin.component.html'
     });
 })();

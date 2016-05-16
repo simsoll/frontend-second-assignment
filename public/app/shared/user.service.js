@@ -13,40 +13,43 @@
             update: update,
             remove: remove
         };
-        
+
         function signUp(user) {
-            return $http.post('/api/user/signUp', { user: user })
-                .then(function (result) {
-                    return result.data;
-                });
-        };        
+            return $http.post('/api/user/signUp', {
+                user: user
+            }).then(function (result) {
+                return result.data;
+            });
+        };
 
         function create(user) {
-            return $http.post('/api/user/create', { user: user })
-                .then(function (result) {
-                    return result.data;
-                });
+            return $http.post('/api/user/create', {
+                user: user
+            }).then(function (result) {
+                return result.data;
+            });
         };
-        
+
         function getAll() {
-            return $http.get('/api/user/getAll')
-                .then(function (result) {
-                    return result.data;
-                });
+            return $http.get('/api/user/getAll').then(function (result) {
+                return result.data;
+            });
         };
-        
+
         function update(user) {
-            return $http.put('/api/user/update', { user: user })
-                .then(function (result) {
-                    return result.data;
-                });
+            return $http.put('/api/user/update', {
+                user: user
+            }).then(function (result) {
+                return result.data;
+            });
         };
-        
+
         function remove(id) {
-            return $http.post('/api/user/remove', { id: id })
-                .then(function (result) {
-                    return result.data;
-                });
-        };                        
+            return $http.post('/api/user/remove', {
+                id: id
+            }).then(function (result) {
+                return result.data;
+            });
+        };
     }
 })();

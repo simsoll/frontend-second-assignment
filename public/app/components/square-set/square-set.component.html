@@ -1,10 +1,14 @@
 <h1>{{model.squareSet.title}}</h1>
-<img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}" alt="A square in the set called {{model.squareSet.title}}">
+<img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
+    alt="A square in the set called {{model.squareSet.title}}">
 
-<a ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default">
-    <span class="glyphicon glyphicon-zoom-in"></span>
-</a>
-
-<a ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default">
-    <span class="glyphicon glyphicon-picture"></span>
-</a>
+<div ng-if="model.canSeeDetails">
+    <a ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default">
+        <span class="glyphicon glyphicon-zoom-in"></span>
+    </a>
+</div>
+<div ng-if="model.canCreate">
+    <a ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default">
+        <span class="glyphicon glyphicon-picture"></span>
+    </a>
+</div>

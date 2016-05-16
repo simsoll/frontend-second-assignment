@@ -27,3 +27,9 @@ module.exports.create = function(request, response) {
     
     return response.json(art);    
 }
+
+module.exports.remove = function(request, response) {
+    var user = artService.remove(request.body.id);
+    
+    return response.json(user);
+}

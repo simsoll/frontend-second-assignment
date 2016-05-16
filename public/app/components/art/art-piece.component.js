@@ -13,6 +13,8 @@
 
     module.component('artPiece', {
         bindings: {
+            canCreate: '<',
+            canSeeDetails: '<',
             art: '<'
         },
         controllerAs: 'model',

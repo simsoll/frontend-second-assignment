@@ -7,7 +7,8 @@
 
     function squareSetService($http) {
         return {
-            create: create
+            create: create,
+            remove: remove
         }
 
         function create(squareSet) {
@@ -16,6 +17,14 @@
             }).then(function (result) {
                 return result.data;
             });
-        };
+        }
+
+        function remove(id) {
+            return $http.post('/api/squareSet/remove', {
+                id: id
+            }).then(function (result) {
+                return result.data;
+            });
+        }
     }
 })();

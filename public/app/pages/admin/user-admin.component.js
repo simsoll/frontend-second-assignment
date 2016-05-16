@@ -42,6 +42,6 @@
     module.component('userAdmin', {
         controllerAs: 'model',
         controller: controller,
-        templateUrl: '/app/pages/admin/userAdmin.component.html'
+        templateUrl: '/app/pages/admin/user-admin.component.html'
     });
 })();
