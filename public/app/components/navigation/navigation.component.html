@@ -1,42 +1,39 @@
-<nav class="navbar navbar-default navbar-inverse container-fluid">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" ng-link="['Home']">SQUARES</a>
-        </div>
-        <ul class="nav navbar-nav navbar-left">
-            <li>
-                <a ng-link="['Home']">Home</a>
-            </li>
-            <li>
-                <a ng-link="['Square Sets']">Square Sets</a>
-            </li>
-            <li>
-                <a ng-link="['Arts']">Arts</a>
-            </li>
-            <li>
-                <a ng-link="['Create']">Create</a>
-            </li>
-            <li>
-                <a ng-link="['About']">About</a>
-            </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li ng-if="model.user.isAdmin">
-                <a ng-link="['Admin', 'SquareSetAdmin']">Admin</a>
-            </li>
-            <li ng-if="model.user">
-                <a ng-click="model.logOut()">Log Out</a>
-            </li>            
-            <li ng-if="model.user">
-                <a ng-link="['Profile']">{{model.user.username}}'s Profile</a>
-            </li>
-            <li ng-if="!model.user">
-                <a ng-link="['Sign Up']">Sign Up</a>
-            </li>
-            <li ng-if="!model.user">
-                <a ng-link="['Log In']">Log In</a>
-            </li>
-        </ul>
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" ng-link="['Home']">SQUARES</a>
     </div>
-
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <a ng-link="['Home']">Home</a>
+        </li>
+        <li>
+            <a ng-link="['Square Sets']">Square Sets</a>
+        </li>
+        <li>
+            <a ng-link="['Arts']">Arts</a>
+        </li>
+        <li>
+            <a ng-link="['Create']">Create</a>
+        </li>
+        <li>
+            <a ng-link="['About']">About</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li ng-if="model.user.isAdmin">
+            <a ng-link="['Admin', 'SquareSetAdmin']">Admin</a>
+        </li>
+        <li ng-if="model.user">
+            <a ng-click="model.logOut()">Log Out</a>
+        </li>
+        <li ng-if="model.user">
+            <a ng-link="['Profile']">{{model.user.username}}'s Profile</a>
+        </li>
+        <li ng-if="!model.user">
+            <a ng-link="['Sign Up']">Sign Up</a>
+        </li>
+        <li ng-if="!model.user">
+            <a ng-link="['Log In']">Log In</a>
+        </li>
+    </ul>
 </nav>
