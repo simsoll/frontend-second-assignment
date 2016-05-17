@@ -1,0 +1,1 @@
+Run the command "pandoc handover.md -o handover.pdf -V geometry:margin=1.5in" to compile the PDF document
