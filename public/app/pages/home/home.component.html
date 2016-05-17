@@ -1,6 +1,6 @@
-<div class="well">
+<div ng-if="!model.disclaimerAccepted" class="well">
     <p>
-        This website is a prototype developed during a student project on Business Academy Aarhus, BAAA. The business concept is developed by Esben Kjær Ravn, CEO and Founder of <a href="http://www.kongorange.com/">Kong Orange</a>.
+        This website is a prototype developed as a student project on Business Academy Aarhus, BAAA. The business concept is developed by Esben Kjær Ravn, CEO and Founder of <a href="http://www.kongorange.com/">Kong Orange</a>.
     </p>
 
     <p>
@@ -12,7 +12,7 @@
     <p>
         All rights reserved.
     </p>
-    <a class="btn btn-default">Accept</a>
+    <a class="btn btn-default" ng-click="model.disclaimerAccepted = true">Accept</a>
 </div>
 
 <h1>SQUARES</h1>
