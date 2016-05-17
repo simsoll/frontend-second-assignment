@@ -54,11 +54,11 @@ body {
   font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif; }
 
 h1 {
-  margin: 10rem 0 7.5rem;
+  margin: 10rem 0;
   text-align: center;
   font-size: 2.4rem; }
   h1 .-squared {
-    border: 4px solid #000;
+    border: 3px solid #000;
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -95,11 +95,24 @@ a, p {
     font-size: 1.8rem; }
   a, p {
     font-size: 1.2rem;
-    line-height: 1.8rem; } }
+    line-height: 2rem;
+    margin-bottom: 0.2rem; } }
 
 /* Large devices (large desktops, 1200px and up) */
 .btn {
-  border-radius: 0; }
+  border: 3px solid #000;
+  font-weight: 500;
+  border-radius: 0;
+  width: 17.5vh;
+  height: 17.5vh;
+  max-height: 17.5vw;
+  max-width: 17.5vw;
+  white-space: pre-wrap; }
+  .btn.-small {
+    width: 10vh;
+    height: 10vh;
+    max-height: 10vw;
+    max-width: 10vw; }
 
 design-board {
   display: block; }
