@@ -20,6 +20,7 @@
     "bootstrap": "^3.3.6",
     "ng-resource": "^0.0.2",
     "interact": "^1.2.6",
-    "ng-flow": "~2"
+    "ng-flow": "~2",
+    "open-sans-fontface": "^1.4.2"
   }
 }
