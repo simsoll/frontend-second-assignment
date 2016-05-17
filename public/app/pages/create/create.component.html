@@ -5,10 +5,10 @@
         </div>
     </div>
 
-    <a ng-hide="model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default">
+    <a ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default">
         <span class="glyphicon glyphicon-zoom-in"></span> <span>Browse square sets</span>
     </a>
-    <a ng-hide="model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default">
+    <a ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default">
         <span class="glyphicon glyphicon-th"></span> <span>Pick random square set</span>
     </a>
     <div ng-if="model.squareSet && model.user">
@@ -19,8 +19,22 @@
             <span class="glyphicon glyphicon-save"></span>
         </a>
     </div>
+    <div ng-if="!model.user">
+        <h2>Would you like to save your work?</h2>
+        <a ng-if="!model.user" ng-link="['Log In']" class="btn btn-default">
+            Log In
+        </a>
+    </div>
 
-    <a ng-if="!model.user" ng-link="['Log In']" class="btn btn-default">
-        Log In
-    </a>
+
+    <div ng-if="model.squareSet">
+        <h2>Need some inspiration?</h2>
+        <div>
+            <!-- TODO -->
+            <a class="btn btn-default">
+                See what others have created using this square set.
+            </a>
+        </div>
+    </div>
+
 </div>
