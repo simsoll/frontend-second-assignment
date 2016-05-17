@@ -25,6 +25,14 @@ module.exports = (function () {
             email: 'ordinary@ordinary.com',
             password: 'ordinary',
             isAdmin: false
+        },
+        {
+            id: 4,
+            name: 'Jens Jensen',
+            username: 'the_great_artist',
+            email: 'jens@jensen.com',
+            password: '1234',
+            isAdmin: false
         }
     ];
 

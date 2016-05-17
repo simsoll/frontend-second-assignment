@@ -38,7 +38,7 @@
             .on('dragstart', function (event) {
                 var target = event.target;
 
-                if (!model.squareSet || !model.squareSet.pieces) {
+                if (!model.squareSet || !model.squareSet.pieces || !model.squareSet.pieces[target.dataset.id]) {
                     return;
                 }
 
@@ -61,7 +61,7 @@
                 event.preventDefault();
                 var target = event.currentTarget;
 
-                if (!model.squareSet || !model.squareSet.pieces) {
+                if (!model.squareSet || !model.squareSet.pieces || !model.squareSet.pieces[target.dataset.id]) {
                     return;
                 }
 

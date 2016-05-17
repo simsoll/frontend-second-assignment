@@ -4,7 +4,7 @@
 <div class="design-board-squares" id="design-board-squares">
     <div ng-repeat="piece in model.squareSet.pieces track by $index" class="square" data-id="{{$index}}" data-x="{{piece.position.x}}"
         data-y="{{piece.position.y}}" ng-style="{'transform': model.getTransform(piece), '-webkit-transform': model.getTransform(piece), '-ms-transform': model.getTransform(piece) }">
-        <img ng-src="{{piece.imgSource}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}"
+        <img ng-src="{{piece.imgSource}}" alt="Pierce number $index in the square set titled {{model.squareSet.title}}" class="square-set-piece"
         />
     </div>
 </div>

@@ -3,7 +3,7 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, authenticationService, artService, userService) {
+    var controller = function (authenticationService, artService, userService) {
         var model = this;
         model.art = null;
         model.user = null;
@@ -14,7 +14,7 @@
 
         model.$routerOnActivate = function (next, previous) {
             var artId = next.params.id;
-            retrieveArtSet(artId);
+            retrieveArt(artId);
             retrieveActiveUser();
         }
 
@@ -45,13 +45,11 @@
             model.$router.navigate(['Arts']);
         }
 
-        function retrieveArtSet(artId) {
-            $http.get('/api/art/getById', {
-                params: { id: artId }
-            }).then(function (response) {
-                model.art = response.data;
-                retrieveUser(model.art.userId).then(function (data) {
-                    model.art.user = data;
+        function retrieveArt(id) {
+            return artService.getById(id).then(function (art) {
+                model.art = art;
+                retrieveUser(model.art.userId).then(function (user) {
+                    model.art.user = user;
                 });
             });
         }

@@ -24,7 +24,7 @@ module.exports = (function () {
                         id: 1,
                         username: "simsoll"
                     },
-                    rating: 5,
+                    rating: 4,
                     comment: "This is cool!"
                 },
                 {
@@ -61,11 +61,83 @@ module.exports = (function () {
                         id: 3,
                         username: "yaya"
                     },
-                    rating: 5,
-                    comment: "See, this is a very nice set!"
+                    rating: 0,
+                    comment: "Booooring!"
                 }
             ]
-        }
+        },
+        {
+            id: 3,
+            userId: 4,
+            title: "Personas - Part 1",
+            imageSources: [
+                "images/squareSets/3/1.jpg",
+                "images/squareSets/3/2.jpg",
+                "images/squareSets/3/3.jpg",
+                "images/squareSets/3/4.jpg",
+                "images/squareSets/3/5.jpg",
+                "images/squareSets/3/6.jpg",
+                "images/squareSets/3/7.jpg",
+                "images/squareSets/3/8.jpg",
+                "images/squareSets/3/9.jpg",
+                "images/squareSets/3/10.jpg",
+                "images/squareSets/3/11.jpg",
+                "images/squareSets/3/12.jpg",
+                "images/squareSets/3/13.jpg",
+                "images/squareSets/3/14.jpg",
+                "images/squareSets/3/15.jpg",
+                "images/squareSets/3/16.jpg",
+                "images/squareSets/3/17.jpg",
+                "images/squareSets/3/18.jpg",
+                "images/squareSets/3/19.jpg",
+                "images/squareSets/3/20.jpg"
+            ],
+            reviews: [
+                {
+                    user: {
+                        id: 3,
+                        username: "yaya"
+                    },
+                    rating: 5,
+                    comment: "Just, amazing!"
+                }
+            ]
+        },
+        {
+            id: 4,
+            userId: 4,
+            title: "Personas - Part 2",
+            imageSources: [
+                "images/squareSets/4/1.jpg",
+                "images/squareSets/4/2.jpg",
+                "images/squareSets/4/3.jpg",
+                "images/squareSets/4/4.jpg",
+                "images/squareSets/4/5.jpg",
+                "images/squareSets/4/6.jpg",
+                "images/squareSets/4/7.jpg",
+                "images/squareSets/4/8.jpg",
+                "images/squareSets/4/9.jpg",
+                "images/squareSets/4/10.jpg",
+                "images/squareSets/4/11.jpg",
+                "images/squareSets/4/12.jpg",
+                "images/squareSets/4/13.jpg",
+                "images/squareSets/4/14.jpg",
+                "images/squareSets/4/15.jpg",
+                "images/squareSets/4/16.jpg",
+                "images/squareSets/4/17.jpg",
+                "images/squareSets/4/18.jpg"
+            ],
+            reviews: [
+                {
+                    user: {
+                        id: 1,
+                        username: "simsoll"
+                    },
+                    rating: 4,
+                    comment: "Nice!"
+                }
+            ]
+        }                
     ];
 
     return {

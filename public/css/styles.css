@@ -53,9 +53,9 @@ design-board {
   display: block; }
 
 .design-board {
-  background-color: #999;
   height: 500px;
-  width: 500px; }
+  width: 500px;
+  box-sizing: content-box; }
 
 .square {
   height: 100px;
@@ -68,7 +68,6 @@ design-board {
 .design-board-piece {
   height: 100px;
   width: 100px;
-  background-color: #ccc;
   float: left;
   border: dashed 4px transparent;
   -webkit-transition: background-color 0.3s;
@@ -78,8 +77,7 @@ design-board {
   clear: both;
   margin-top: 5rem;
   height: 200px;
-  width: 500px;
-  background-color: #666; }
+  width: 500px; }
 
 .drop-active {
   border-color: #aaa; }
@@ -104,3 +102,7 @@ design-board {
 .drag-drop.can-drop {
   color: #000;
   background-color: #4e4; }
+
+.square-set-piece {
+  width: 100px;
+  height: 100px; }

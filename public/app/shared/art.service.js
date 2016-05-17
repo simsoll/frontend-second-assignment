@@ -11,10 +11,12 @@
             remove: remove,
             addReview: addReview,
             getAll: getAll,
+            getById: getById,
             getByUserId: getByUserId
         }
 
         function create(art) {
+            art.img = LZString.compressToEncodedURIComponent(art.img);
             return $http.post('/api/art/create', {
                 art: art
             }).then(function (result) {
@@ -41,6 +43,7 @@
         function getAll() {
             return $http.get('/api/art/getAll').then(function (result) {
                 return result.data.map(function (art) {
+                    art.imageSource = LZString.decompressFromEncodedURIComponent(art.imageSource);
                     return addAverageRatingProperty(art);
                 });
             });
@@ -51,8 +54,21 @@
                 params: { id: id }
             }).then(function (result) {
                 return result.data.map(function (art) {
+                    var decompressed = LZString.decompressFromEncodedURIComponent(art.imageSource);
+                    art.imageSource = decompressed;
                     return addAverageRatingProperty(art);
                 });
+            });
+        }
+
+        function getById(id) {
+            return $http.get('/api/art/getById', {
+                params: { id: id }
+            }).then(function (response) {
+                var art = response.data;
+                var decompressed = LZString.decompressFromEncodedURIComponent(art.imageSource);
+                art.imageSource = decompressed;
+                return art;
             });
         }
 

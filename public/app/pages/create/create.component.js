@@ -66,13 +66,13 @@
                     var img = canvas.toDataURL("image/png");
                     var state = encodeState();
 
-                    //TODO: get title!
                     var art = {
                         userId: model.user.id, 
                         title: model.title, 
                         img: img, 
                         state: state,
-                        squareSetId: model.squareSet.id 
+                        squareSetId: model.squareSet.id,
+                        reviews: []
                     }
                     
                     artService.create(art);
