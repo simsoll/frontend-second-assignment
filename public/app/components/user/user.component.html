@@ -11,9 +11,9 @@
     <div ng-if="model.onCreate">
         <label for="repeatedPassword">Repeat password</label>
         <input ng-model="model.user.repeatedPassword" type="password" id="repeatedPassword" required/>
-        <input type="submit" ng-click="model.isCreating = true" value="Create User" class="btn btn-default"/>
+        <input type="submit" ng-click="model.isCreating = true" value="Create User" class="btn btn-default -md"/>
     </div>
     <div ng-if="model.onUpdate">
-        <input type="submit" ng-click="model.isUpdating = true" value="Update User" class="btn btn-default"/>
+        <input type="submit" ng-click="model.isUpdating = true" value="Update User" class="btn btn-default -md"/>
     </div>    
 </form>

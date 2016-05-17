@@ -5,12 +5,8 @@
 <rating ng-if="model.squareSet.reviews.length" rating="model.squareSet.averageRating" max="5"></rating>
 
 <div ng-if="model.canSeeDetails">
-    <a ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default">
-        <span class="glyphicon glyphicon-zoom-in"></span>
-    </a>
+    <button ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
 </div>
 <div ng-if="model.canCreate">
-    <a ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default">
-        <span class="glyphicon glyphicon-picture"></span>
-    </a>
+    <button ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default"><span class="glyphicon glyphicon-picture"></span></button>
 </div>

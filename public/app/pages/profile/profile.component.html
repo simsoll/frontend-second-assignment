@@ -4,14 +4,8 @@
 <form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
     <label for="title">Square Set Title</label>
     <input ng-model="model.title" type="text" id="title" required/>
-    <span class="btn btn-default" flow-btn>
-        Upload Images
-        <input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/>
-    </span>
-    <span class="btn btn-default" flow-btn flow-directory ng-show="$flow.supportDirectory">
-        Upload Folder of Images
-        <input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/>
-    </span>
+    <button class="btn btn-default -md" flow-btn>Upload Images<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/></button>
+    <button class="btn btn-default -md" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/></button>
     <div ng-repeat="file in $flow.files" class="gallery-box ng-scope">
         <span class="title ng-binding">1.png</span>
         <div class="thumbnail" ng-show="$flow.files.length">
@@ -25,7 +19,7 @@
             <a class="btn btn-xs btn-danger" ng-click="file.cancel()">Remove</a>
         </div>
     </div>
-    <input type="submit" value="Add Square Set to Profile" class="btn btn-primary" />
+    <input type="submit" value="Add Square Set to Profile" class="btn btn-primary -md" />
 </form>
 
 <div ng-if="model.squareSets.length">

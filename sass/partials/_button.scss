@@ -2,16 +2,27 @@
     border: $square-border-size solid #000;
     font-weight: 500;
     border-radius: 0;
-    width: 17.5vh;
-    height: 17.5vh;
-    max-height: 17.5vw;
-    max-width: 17.5vw;
+    width: 7.5vh;
+    height: 7.5vh;
+    max-height: 7.5vw;
+    max-width: 7.5vw;        
     white-space: pre-wrap;
-    
-    &.-small {
-        width: 10vh;
-        height: 10vh;
-        max-height: 10vw;
-        max-width: 10vw;        
+
+    &.-md {
+        width: 12.5vh;
+        height: 12.5vh;
+        max-height: 12.5vw;
+        max-width: 12.5vw;
     }
+    
+    &.-lg {
+        width: 17.5vh;
+        height: 17.5vh;
+        max-height: 17.5vw;
+        max-width: 17.5vw;
+    }
+}
+
+span.glyphicon {
+    font-size: 1.8em;
 }

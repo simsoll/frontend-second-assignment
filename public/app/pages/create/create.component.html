@@ -1,24 +1,16 @@
 <design-board square-set="model.squareSet" id="canvas"></design-board>
 
-<a ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default">
-    <span class="glyphicon glyphicon-zoom-in"></span> <span>Browse square sets</span>
-</a>
-<a ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default">
-    <span class="glyphicon glyphicon-th"></span> <span>Pick random square set</span>
-</a>
+<button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -md">Browse square sets</button>
+<button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -md">Pick a random square set</button>
 <div ng-if="model.squareSet && model.user">
     <label for="title">Title</label>
     <input ng-model="model.title" type="text" id="title" required/>
 
-    <a ng-click="model.saveToProfile()" class="btn btn-default">
-        <span class="glyphicon glyphicon-save"></span>
-    </a>
+    <button ng-click="model.saveToProfile()" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
 </div>
 <div ng-if="!model.user">
     <h2>Would you like to save your work?</h2>
-    <a ng-if="!model.user" ng-link="['Log In']" class="btn btn-default">
-            Log In
-        </a>
+    <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -md">Log In</button>
 </div>
 
 
@@ -26,8 +18,6 @@
     <h2>Need some inspiration?</h2>
     <div>
         <!-- TODO -->
-        <a class="btn btn-default">
-            See what others have created using this square set.
-        </a>
+        <button class="btn btn-default -md">See what others have created using this square set.</button>
     </div>
 </div>
