@@ -49,6 +49,55 @@ table {
 button {
   font: inherit; }
 
+/* font-size 1em = 10px on default browser settings */
+body {
+  font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif; }
+
+h1 {
+  margin: 10rem 0 7.5rem;
+  text-align: center;
+  font-size: 2.4rem; }
+  h1 .-squared {
+    border: 4px solid #000;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center; }
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem; }
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem; }
+
+a, p {
+  font-size: 0.7rem;
+  line-height: 1.2rem; }
+
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 3rem; }
+    h1 .-squared {
+      border: 4px solid #000;
+      display: inline-block;
+      width: 250px;
+      height: 250px;
+      line-height: 250px;
+      text-align: center; }
+  h2 {
+    font-size: 2.2rem; }
+  h3 {
+    font-size: 1.8rem; }
+  a, p {
+    font-size: 1.2rem;
+    line-height: 1.8rem; } }
+
+/* Large devices (large desktops, 1200px and up) */
 design-board {
   display: block; }
 

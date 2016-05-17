@@ -18,39 +18,39 @@
     <a class="btn btn-default" ng-click="model.disclaimerAccepted = true">Accept</a>
 </div>
 
-<h1>SQUARES</h1>
+<h1>Welcome to <span class="-squared">SQUARES</span></h1>
 
 <h2>We believe in the power of your individuality</h2>
 <p>We enable people with a desire to express their individuality to work together with digital designers to build that individuality.</p>
 
 <div class="row">
     <div class="col-md-6">
-        <h3>Do you want to express your individuality?</h3>
+        <h3>Want to express your individuality?</h3>
         <p>Customize real designers work to fit your own individuality</p>
         <a ng-link="['Square Sets']" class="btn btn-default">
-            <span>Start browsing square sets</span>
+            <span>Browse square sets created by digital designers</span>
         </a>
         <a ng-link="['Create']" class="btn btn-default">
-            <span>Try out the Create Board</span>
+            <span>Create your custom artwork based on a square set</span>
         </a>
+        <a ng-link="['Arts']" class="btn btn-default">
+            <span>Get inspired by artworks created by other people</span>
+        </a>        
     </div>
 
     <div class="col-md-6">
         <h3>Are you a digital designer?</h3>
-        <p>Make users identify themselves, through buying your designs</p>
+        <p>Make users identify themselves through your designs and profit from your work</p>
         <a ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default">
             <span>Become part of the SQUARES community</span>
         </a>
 
         <a ng-if="!model.user" ng-link="['Log In']" class="btn btn-default">
-            <span>Log in and make your work come to life</span>
+            <span>Log in and start uploading your square sets</span>
         </a>
 
         <a ng-if="model.user" ng-link="['Profile']" class="btn btn-default">
-            <span>Upload your own square sets</span>
-        </a>
-        <a ng-if="model.user" ng-link="['Profile']" class="btn btn-default">
-            <span>Make your work come to life</span>
+            <span>Upload your square sets to SQUARES</span>
         </a>
     </div>
 </div>
