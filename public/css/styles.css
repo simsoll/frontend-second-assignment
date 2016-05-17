@@ -1,0 +1,106 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: inherit; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  font: inherit; }
+
+design-board {
+  display: block; }
+
+.design-board {
+  background-color: #999;
+  height: 500px;
+  width: 500px; }
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #29e;
+  color: #fff;
+  border-radius: 4px;
+  float: left; }
+
+.design-board-piece {
+  height: 100px;
+  width: 100px;
+  background-color: #ccc;
+  float: left;
+  border: dashed 4px transparent;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
+
+.design-board-squares {
+  clear: both;
+  margin-top: 5rem;
+  height: 200px;
+  width: 500px;
+  background-color: #666; }
+
+.drop-active {
+  border-color: #aaa; }
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid; }
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2em 0.5em;
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4; }
