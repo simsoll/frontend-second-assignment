@@ -103,6 +103,9 @@ design-board {
   color: #000;
   background-color: #4e4; }
 
+art-piece img {
+  border: 1px solid #000; }
+
 .square-set-piece {
   width: 100px;
   height: 100px; }
