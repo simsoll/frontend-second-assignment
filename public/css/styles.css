@@ -209,7 +209,7 @@ art-piece img {
   position: relative;
   text-align: center; }
 
-square-set {
+.square-set {
   height: 280px;
   width: 280px;
   border: 2px solid #666;
@@ -238,7 +238,7 @@ square-set {
 @media screen and (min-width: 768px) {
   .square-set-container {
     height: 500px; }
-  square-set {
+  .square-set {
     height: 500px;
     width: 500px; }
   .square-set-piece {

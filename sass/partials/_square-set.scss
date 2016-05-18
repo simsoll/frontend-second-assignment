@@ -5,7 +5,7 @@
     text-align: center;
 }
 
-square-set {
+.square-set {
     height: $canvas-size-sm;    
     width: $canvas-size-sm;
     border: $square-border-size solid $base-color;
@@ -41,7 +41,7 @@ square-set {
         height: $canvas-size;    
     }
 
-    square-set {
+    .square-set {
         height: $canvas-size;    
         width: $canvas-size;
     }
