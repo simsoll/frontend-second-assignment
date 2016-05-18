@@ -1,21 +1,21 @@
 .square-set-container {
-    height: 500px;    
+    height: $canvas-size-sm;    
     margin-bottom: 2rem;
     position: relative;
     text-align: center;
 }
 
 square-set {
-    height: 500px;    
-    width: 500px;
+    height: $canvas-size-sm;    
+    width: $canvas-size-sm;
     border: $square-border-size solid $base-color;
     display: inline-block;
     box-sizing: content-box;
 }
 
 .square-set-piece {
-    width: 100px;
-    height: 100px;
+    width: $piece-size-sm;
+    height: $piece-size-sm;
     float: left;
 }
 
@@ -33,4 +33,31 @@ square-set {
 .square-set-review {
     background-color: white;
     text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+    .square-set-container {
+        height: $canvas-size;    
+    }
+
+    square-set {
+        height: $canvas-size;    
+        width: $canvas-size;
+    }
+
+    .square-set-piece {
+        width: $piece-size;
+        height: $piece-size;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) {
+    
 }

@@ -1,35 +1,37 @@
 design-board {
+  margin-top: 2rem;
   display: block;    
+  text-align: center;
 }
 
 .design-board {
-  height: 500px;
-  width: 500px;
-  box-sizing: content-box;    
+  display: inline-block;
+  height: $canvas-size-sm;
+  width: $canvas-size-sm;
+  box-sizing: content-box;
 }
 
 .square {
-  height: 100px;
-  width: 100px;
+  height: $piece-size-sm;
+  width: $piece-size-sm;
   background-color: #29e;
   color: #fff;
-  border-radius: 4px;
   float: left;
 }
 
 .design-board-piece {
-  height: 100px;
-  width: 100px;
+  height: $piece-size-sm;
+  width: $piece-size-sm;
   float: left;
   border: dashed 4px transparent;
   transition: background-color 0.3s;
 }
 
 .design-board-squares {
-  clear: both;
   margin-top: 5rem;
-  height: 200px;
-  width: 500px;
+  height: $canvas-size-sm;
+  width: $canvas-size-sm;
+  display: inline-block;
 }
 
 .drop-active {
@@ -37,27 +39,52 @@ design-board {
 }
 
 .drop-target {
-  background-color: #29e;
+  background-color: $base-color;
   border-color: #fff;
-  border-style: solid;
 }
 
 .drag-drop {
   display: inline-block;
-  min-width: 40px;
-  padding: 2em 0.5em;
-
   color: #fff;
-  background-color: #29e;
-  border: solid 2px #fff;
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-
+  background-color: $base-color;
+  transform: translate(0px, 0px);
   transition: background-color 0.3s;
 }
 
 .drag-drop.can-drop {
   color: #000;
   background-color: #4e4;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+  .design-board {
+    height: $canvas-size;
+    width: $canvas-size;
+  }
+
+  .square {
+    height: $piece-size;
+    width: $piece-size;
+  }
+
+  .design-board-piece {
+    height: $piece-size;
+    width: $piece-size;
+  }
+
+  .design-board-squares {
+    height: $canvas-size;
+    width: $canvas-size;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) {
+    
 }

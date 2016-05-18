@@ -132,52 +132,50 @@ span.glyphicon {
   color: #666; }
 
 design-board {
-  display: block; }
+  margin-top: 2rem;
+  display: block;
+  text-align: center; }
 
 .design-board {
-  height: 500px;
-  width: 500px;
+  display: inline-block;
+  height: 280px;
+  width: 280px;
   box-sizing: content-box; }
 
 .square {
-  height: 100px;
-  width: 100px;
+  height: 56px;
+  width: 56px;
   background-color: #29e;
   color: #fff;
-  border-radius: 4px;
   float: left; }
 
 .design-board-piece {
-  height: 100px;
-  width: 100px;
+  height: 56px;
+  width: 56px;
   float: left;
   border: dashed 4px transparent;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s; }
 
 .design-board-squares {
-  clear: both;
   margin-top: 5rem;
-  height: 200px;
-  width: 500px; }
+  height: 280px;
+  width: 280px;
+  display: inline-block; }
 
 .drop-active {
   border-color: #aaa; }
 
 .drop-target {
-  background-color: #29e;
-  border-color: #fff;
-  border-style: solid; }
+  background-color: #666;
+  border-color: #fff; }
 
 .drag-drop {
   display: inline-block;
-  min-width: 40px;
-  padding: 2em 0.5em;
   color: #fff;
-  background-color: #29e;
-  border: solid 2px #fff;
+  background-color: #666;
   -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s; }
 
@@ -185,25 +183,42 @@ design-board {
   color: #000;
   background-color: #4e4; }
 
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .design-board {
+    height: 500px;
+    width: 500px; }
+  .square {
+    height: 100px;
+    width: 100px; }
+  .design-board-piece {
+    height: 100px;
+    width: 100px; }
+  .design-board-squares {
+    height: 500px;
+    width: 500px; } }
+
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
 art-piece img {
   border: 1px solid #000; }
 
 .square-set-container {
-  height: 500px;
+  height: 280px;
   margin-bottom: 2rem;
   position: relative;
   text-align: center; }
 
 square-set {
-  height: 500px;
-  width: 500px;
+  height: 280px;
+  width: 280px;
   border: 2px solid #666;
   display: inline-block;
   box-sizing: content-box; }
 
 .square-set-piece {
-  width: 100px;
-  height: 100px;
+  width: 56px;
+  height: 56px;
   float: left; }
 
 .square-set-info {
@@ -218,3 +233,17 @@ square-set {
 .square-set-review {
   background-color: white;
   text-align: center; }
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .square-set-container {
+    height: 500px; }
+  square-set {
+    height: 500px;
+    width: 500px; }
+  .square-set-piece {
+    width: 100px;
+    height: 100px; } }
+
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */

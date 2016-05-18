@@ -1,23 +1,31 @@
-<design-board square-set="model.squareSet" id="canvas"></design-board>
-
-<button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -md">Browse square sets</button>
-<button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -md">Pick a random square set</button>
-<div ng-if="model.squareSet && model.user">
-    <label for="title">Title</label>
-    <input ng-model="model.title" type="text" id="title" required/>
-
-    <button ng-click="model.saveToProfile()" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
+<div class="row">
+    <div class="col-md-12">
+        <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -md">Browse square sets</button>
+        <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -md">Pick a random square set</button>
+        <div ng-if="model.squareSet && model.user">
+            <label for="title">Title</label>
+            <input ng-model="model.title" type="text" id="title" required/>
+            <button ng-click="model.saveToProfile()" class="btn btn-default -sm"><span class="glyphicon glyphicon-save"></span></button>
+        </div>
+    </div>
 </div>
-<div ng-if="!model.user">
-    <h2>Would you like to save your work?</h2>
-    <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -md">Log In</button>
+<div class="row">
+    <div class="col-md-12">
+        <design-board square-set="model.squareSet" id="canvas"></design-board>
+    </div>
 </div>
-
-
-<div ng-if="model.squareSet">
-    <h2>Need some inspiration?</h2>
-    <div>
-        <!-- TODO -->
-        <button class="btn btn-default -md">See what others have created using this square set.</button>
+<div class="row">
+    <div ng-if="!model.user && model.squareSet" class="clearfix">
+        <h2>Would you like to save your work?</h2>
+        <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default">Log In</button>
+    </div>
+</div>
+<div class="row">
+    <div ng-if="model.squareSet" class="clearfix">
+        <h2>Need some inspiration?</h2>
+        <div>
+            <!-- TODO -->
+            <button class="btn btn-default -md">See what others have created using this square set.</button>
+        </div>
     </div>
 </div>
