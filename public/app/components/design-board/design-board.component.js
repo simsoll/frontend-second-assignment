@@ -20,7 +20,7 @@
 
                     model.squareSet.pieces[target.dataset.id].position = position;
 
-                    $scope.$apply(); //TODO: fix this!
+                    $scope.$apply();
                 }
             })
             .restrict({
@@ -55,7 +55,7 @@
                 // snap to the start position
                 event.interactable.snap({ anchors: [model.squareSet.pieces[target.dataset.id].startPosition] });
 
-                $scope.$apply(); //TODO: fix this!            
+                $scope.$apply();           
             })
             .on('doubletap', function (event) {
                 event.preventDefault();
@@ -70,7 +70,7 @@
 
                 model.squareSet.pieces[target.dataset.id].degrees = currentRotation + rotation > 360 ? currentRotation + rotation - 360 : currentRotation + rotation;
 
-                $scope.$apply(); //TODO: fix this!                            
+                $scope.$apply();                           
             });
 
         function getTransform(piece) {
