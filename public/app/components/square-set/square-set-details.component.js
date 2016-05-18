@@ -76,19 +76,7 @@
             "$router": "<"
         },
         templateUrl: '/app/components/square-set/square-set-details.component.html',
-        $routeConfig: [
-            { path: '/overview', component: 'squareSetOverview', name: 'Overview' },
-            { path: '/reviews', component: 'squareSetReviews', name: 'Reviews' }
-        ],
         controllerAs: 'model',
         controller: controller
-    });
-
-    module.component('squareSetOverview', {
-        template: 'This is the square set overview component'
-    });
-
-    module.component('squareSetReviews', {
-        template: 'This is the square set reviews component'
     });
 })();
