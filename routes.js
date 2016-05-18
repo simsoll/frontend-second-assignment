@@ -1,8 +1,8 @@
 'use strict';
-
-var userHandler = require('./handlers/user.handler.js');
-var artHandler = require('./handlers/art.handler.js');
-var squareSetHandler = require('./handlers/square-set.handler.js');
+var path = require('path');
+var userHandler = require(path.join(__dirname, '/handlers/user.handler.js'));
+var artHandler = require(path.join(__dirname, 'handlers/art.handler.js'));
+var squareSetHandler = require(path.join(__dirname, 'handlers/square-set.handler.js'));
 
 module.exports = function(app) {
 
