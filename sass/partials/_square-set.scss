@@ -1,4 +1,36 @@
+.square-set-container {
+    height: 500px;    
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+square-set {
+    height: 500px;    
+    width: 500px;
+    border: $square-border-size solid $base-color;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
 .square-set-piece {
     width: 100px;
     height: 100px;
+    float: left;
+}
+
+.square-set-info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+    
+    button {
+        float:left;
+    }
+}
+
+.square-set-review {
+    background-color: white;
+    text-align: center;
 }

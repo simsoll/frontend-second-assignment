@@ -49,16 +49,22 @@ table {
 button {
   font: inherit; }
 
+/* Bootstrap */
+@media screen and (min-width: 768px) {
+  .navbar-right {
+    margin-right: 0; } }
+
 /* font-size 1em = 10px on default browser settings */
 body {
-  font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif; }
+  font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #666; }
 
 h1 {
   margin: 10rem 0;
   text-align: center;
   font-size: 2.4rem; }
   h1 .-squared {
-    border: 3px solid #000;
+    border: 2px solid #666;
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -83,12 +89,9 @@ a, p {
   h1 {
     font-size: 3rem; }
     h1 .-squared {
-      border: 4px solid #000;
-      display: inline-block;
       width: 250px;
       height: 250px;
-      line-height: 250px;
-      text-align: center; }
+      line-height: 250px; }
   h2 {
     font-size: 2.2rem; }
   h3 {
@@ -100,7 +103,7 @@ a, p {
 
 /* Large devices (large desktops, 1200px and up) */
 .btn {
-  border: 3px solid #000;
+  border: 2px solid #666;
   font-weight: 500;
   border-radius: 0;
   width: 7.5vh;
@@ -108,6 +111,11 @@ a, p {
   max-height: 7.5vw;
   max-width: 7.5vw;
   white-space: pre-wrap; }
+  .btn.-sm {
+    width: 5vh;
+    height: 5vh;
+    max-height: 5vw;
+    max-width: 5vw; }
   .btn.-md {
     width: 12.5vh;
     height: 12.5vh;
@@ -120,7 +128,8 @@ a, p {
     max-width: 17.5vw; }
 
 span.glyphicon {
-  font-size: 1.8em; }
+  font-size: 1.8em;
+  color: #666; }
 
 design-board {
   display: block; }
@@ -179,6 +188,33 @@ design-board {
 art-piece img {
   border: 1px solid #000; }
 
+.square-set-container {
+  height: 500px;
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: center; }
+
+square-set {
+  height: 500px;
+  width: 500px;
+  border: 2px solid #666;
+  display: inline-block;
+  box-sizing: content-box; }
+
 .square-set-piece {
   width: 100px;
-  height: 100px; }
+  height: 100px;
+  float: left; }
+
+.square-set-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .square-set-info button {
+    float: left; }
+
+.square-set-review {
+  background-color: white;
+  text-align: center; }

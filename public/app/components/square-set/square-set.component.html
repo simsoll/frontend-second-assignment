@@ -1,12 +1,15 @@
 <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
     alt="A square in the set called {{model.squareSet.title}}" class="square-set-piece">
 
-<span ng-if="!model.squareSet.reviews.length">Not reviewed yet...</span>
-<rating ng-if="model.squareSet.reviews.length" rating="model.squareSet.averageRating" max="5"></rating>
-
-<div ng-if="model.canSeeDetails">
-    <button ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
-</div>
-<div ng-if="model.canCreate">
-    <button ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default"><span class="glyphicon glyphicon-picture"></span></button>
+<div class="square-set-info">
+    <div class="square-set-review">
+        <span ng-if="!model.squareSet.reviews.length">Not reviewed yet...</span>
+        <rating ng-if="model.squareSet.reviews.length" rating="model.squareSet.averageRating" max="5"></rating>
+    </div>
+    <span ng-if="model.canSeeDetails">
+        <button ng-link="['SquareSetDetails', {id: model.squareSet.id}, 'Overview']" class="btn btn-default -sm"><span class="glyphicon glyphicon-zoom-in"></span></button>
+    </span>
+    <span ng-if="model.canCreate">
+        <button ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default -sm"><span class="glyphicon glyphicon-picture"></span></button>
+    </span>
 </div>

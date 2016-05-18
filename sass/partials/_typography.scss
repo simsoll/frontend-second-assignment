@@ -1,6 +1,7 @@
 /* font-size 1em = 10px on default browser settings */
 body {
     font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif;
+    color: $base-color;
 }
 
 h1 {
@@ -9,7 +10,7 @@ h1 {
     font-size: 2.4rem;
     
     & .-squared {
-        border: $square-border-size solid #000;
+        border: $square-border-size solid $base-color;
         display: inline-block;
         width: 200px;
         height: 200px;
@@ -44,12 +45,9 @@ a, p {
         font-size: 3rem;
         
         & .-squared {
-            border: 4px solid #000;
-            display: inline-block;
             width: 250px;
             height: 250px;
             line-height: 250px;
-            text-align: center;        
         }        
     }
     

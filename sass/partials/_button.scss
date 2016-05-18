@@ -1,5 +1,5 @@
 .btn {
-    border: $square-border-size solid #000;
+    border: $square-border-size solid $base-color;
     font-weight: 500;
     border-radius: 0;
     width: 7.5vh;
@@ -7,6 +7,13 @@
     max-height: 7.5vw;
     max-width: 7.5vw;        
     white-space: pre-wrap;
+
+    &.-sm {
+        width: 5vh;
+        height: 5vh;
+        max-height: 5vw;
+        max-width: 5vw;           
+    }
 
     &.-md {
         width: 12.5vh;
@@ -25,4 +32,5 @@
 
 span.glyphicon {
     font-size: 1.8em;
+    color: $base-color;
 }
