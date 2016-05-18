@@ -125,3 +125,4 @@ As on http://paletton.com/.
 
 
 # Future improvements
+* square set slider on canvas page
