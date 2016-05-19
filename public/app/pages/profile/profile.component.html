@@ -1,33 +1,56 @@
-<p>User is logged in: {{model.user.username}}</p>
-
-<div ng-show="model.errorMessage" class="alert alert-danger">{{model.errorMessage}}</div>
-<form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
-    <label for="title">Square Set Title</label>
-    <input ng-model="model.title" type="text" id="title" required/>
-    <button class="btn btn-default -md" flow-btn>Upload Images<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/></button>
-    <button class="btn btn-default -md" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/></button>
-    <div ng-repeat="file in $flow.files" class="gallery-box ng-scope">
-        <span class="title ng-binding">1.png</span>
-        <div class="thumbnail" ng-show="$flow.files.length">
-            <img flow-img="file">
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <h2>Welcome {{model.user.username}}!</h2>
+    </div>
+    <form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
+        <div class="col-xs-12">
+            <h2>Upload your own square sets</h2>
+            <button class="btn btn-default -md" flow-btn>Upload Images<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/></button>
+            <button class="btn btn-default -md" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/></button>
         </div>
-        <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
-            <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}" style="width: 100%;">
+        <div ng-repeat="file in $flow.files" class="gallery-box ng-scope col-xs-6 col-md-3">
+            <span class="title ng-binding">1.png</span>
+            <div class="thumbnail" ng-show="$flow.files.length">
+                <img flow-img="file">
+            </div>
+            <div class="progress" ng-class="{active: file.isUploading()}">
+                <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}" style="width: 100%;">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default btn-danger" ng-click="file.cancel()">Remove</button>
             </div>
         </div>
-        <div class="btn-group">
-            <a class="btn btn-xs btn-danger" ng-click="file.cancel()">Remove</a>
+        <div ng-show="$flow.files.length">
+            <div class="col-xs-12">
+                <input type="submit" value="Add Square Set to Profile" class="btn btn-primary -md" />
+                <label for="title">Square Set Title</label>
+                <input ng-model="model.title" type="text" id="title" required/>
+                <div ng-show="model.errorMessage" class="alert alert-danger">
+                    <p>{{model.errorMessage}}</p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div ng-if="model.squareSets.length">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Your square sets</h2>
+        </div>
+        <div ng-repeat="squareSet in model.squareSets" class="creation-container col-md-12 col-lg-6">
+            <square-set class="creation" square-set="squareSet" show-info="true"></square-set>
         </div>
     </div>
-    <input type="submit" value="Add Square Set to Profile" class="btn btn-primary -md" />
-</form>
-
-<div ng-if="model.squareSets.length">
-    <h1>Your square sets</h1>
-    <square-set ng-repeat="squareSet in model.squareSets" square-set="squareSet" can-see-details="true" can-create="true"></square-set>
 </div>
 
 <div ng-if="model.arts.length">
-    <h1>Your art works</h1>
-    <art-piece ng-repeat="art in model.arts" art="art" can-see-details="true" can-create="true"></art-piece>
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Your art works</h2>
+        </div>
+        <div ng-repeat="art in model.arts" class="creation-container col-md-12 col-lg-6">
+            <art-piece class="creation" art="art" show-info="true"></art-piece>
+        </div>
+    </div>
 </div>
