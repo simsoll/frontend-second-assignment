@@ -38,7 +38,7 @@ gulp.task('lint', function () {
         .pipe(eslint.failAfterError());
 });
 
-gulp.task('styles', ['clean-css'], function () {
+gulp.task('styles', function () {
     return gulp.src(config.styles)
         .pipe(plumber())
         .pipe(sass())
