@@ -1,10 +1,22 @@
-<form ng-submit="model.login()">
-    <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
-    <label for="username">Username</label>
-    <input ng-model="model.username" type="text" id="username" required/>
-    <label for="password">Password</label>
-    <input ng-model="model.password" type="password" id="password" required/>
-    <input type="submit" value="Log in" class="btn btn-default -md"/>
-    <button ng-link="['Sign Up']" class="btn btn-default -md">Sign Up</button>
-    <button href="" class="btn btn-default -md">Forgot your password?</button>
-</form>
+<div class="row">
+    <form ng-submit="model.login()">
+        <div class="col-xs-12 col-md-3">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" ng-model="model.username" type="text" id="username" placeholder="Username" required/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control" ng-model="model.password" type="password" id="password" placeholder="Password" required/>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <input type="submit" value="Log in" class="btn btn-default -md" />
+            <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
+            <button href="" class="btn btn-default -md">Forgot your password?</button>
+        </div>
+        <div class="col-xs-12">
+            <button ng-link="['Sign Up']" class="btn btn-default -md">Sign Up</button>
+        </div>
+    </form>
+</div>
