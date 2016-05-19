@@ -1,8 +1,8 @@
 <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
-    alt="A square in the set called {{model.squareSet.title}}" class="square-set-piece">
+    alt="A square in the set called {{model.squareSet.title}}" class="creation-piece">
 
-<div class="square-set-info">
-    <div class="square-set-review">
+<div class="creation-info">
+    <div class="creation-review">
         <span ng-if="!model.squareSet.reviews.length">Not reviewed yet...</span>
         <rating ng-if="model.squareSet.reviews.length" rating="model.squareSet.averageRating" max="5"></rating>
     </div>

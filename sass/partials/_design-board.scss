@@ -34,6 +34,12 @@ design-board {
   display: inline-block;
 }
 
+.square-set-piece {
+    width: $piece-size-sm;
+    height: $piece-size-sm;
+    float: left;
+}
+
 .drop-active {
   border-color: #aaa;
 }
@@ -77,6 +83,11 @@ design-board {
     height: $canvas-size;
     width: $canvas-size;
   }
+  
+  .square-set-piece {
+      width: $piece-size;
+      height: $piece-size;
+  }  
 }
 
 /* Medium devices (desktops, 992px and up) */

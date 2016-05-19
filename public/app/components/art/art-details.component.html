@@ -1,24 +1,22 @@
-<h3>This is the details of art {{model.art.title}}</h3>
-<p>Created by {{model.art.user.username}}</p>
-<img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}">
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <h3>{{model.art.title}}</h3>
+    </div>
+    <div class="col-xs-12 text-center">
+        <div class="creation">
+            <img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}">
+        </div>
+        <p>Created by {{model.art.user.username}}</p>
+    </div>
+    <div class="col-xs-12 text-center">
+        <button ng-click="model.goToArts()" class="btn btn-default -sm"><span class="glyphicon glyphicon-arrow-left"></span></button>
+        <button ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default -sm"><span class="glyphicon glyphicon-picture"></span></button>
+    </div>
+    <div class="col-xs-12 text-center">
+        <add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
 
-<a ng-if="model.art.state" ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default">
-    <span class="glyphicon glyphicon-picture"></span>
-</a>
-
-<add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
-
-<div ng-repeat="review in model.art.reviews">
-    <review review="review" max="5"></review>
+        <div ng-repeat="review in model.art.reviews">
+            <review review="review" max="5"></review>
+        </div>
+    </div>
 </div>
-
-<a ng-click="model.goToArts()" class="btn btn-default">
-    <span class="glyphicon glyphicon-arrow-left"></span>
-</a>
-
-<ul>
-    <li><a ng-link="['Overview']">Overview</a></li>
-    <li><a ng-link="['Reviews']">Reviews</a></li>
-</ul>
-
-<ng-outlet></ng-outlet>

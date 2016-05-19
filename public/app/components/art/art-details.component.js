@@ -75,18 +75,6 @@
         },
         controllerAs: 'model',
         controller: controller,
-        $routeConfig: [
-            { path: '/overview', component: 'artOverview', name: 'Overview' },
-            { path: '/reviews', component: 'artReviews', name: 'Reviews' }
-        ],
         templateUrl: '/app/components/art/art-details.component.html'
-    });
-
-    module.component('artOverview', {
-        template: 'This is the art overview component'
-    });
-
-    module.component('artReviews', {
-        template: 'This is the art reviews component'
     });
 })();

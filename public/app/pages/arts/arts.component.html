@@ -1,1 +1,5 @@
-<art-piece ng-repeat="art in model.arts" art="art" can-see-details="true" can-create="true"></art-piece>
+<div class="row">
+    <div ng-repeat="art in model.arts" class="creation-container col-md-12 col-lg-6">
+        <art-piece class="creation" art="art"></art-piece>
+    </div>
+</div>

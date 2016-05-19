@@ -3,9 +3,9 @@
         <h2>{{model.squareSet.title}}</h2>
     </div>
     <div class="col-xs-12 text-center">
-        <div class="square-set">
+        <div class="creation">
             <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
-                alt="A square in the set called {{model.squareSet.title}}" class="square-set-piece" />
+                alt="A square in the set called {{model.squareSet.title}}" class="creation-piece" />
         </div>
         <p>Created by {{model.squareSet.user.username}}</p>
     </div>

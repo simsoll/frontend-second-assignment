@@ -1,11 +1,11 @@
-.square-set-container {
+.creation-container {
     height: $canvas-size-sm;    
     margin-bottom: 2rem;
     position: relative;
     text-align: center;
 }
 
-.square-set {
+.creation {
     height: $canvas-size-sm;    
     width: $canvas-size-sm;
     border: $square-border-size solid $base-color;
@@ -13,13 +13,13 @@
     box-sizing: content-box;
 }
 
-.square-set-piece {
+.creation-piece {
     width: $piece-size-sm;
     height: $piece-size-sm;
     float: left;
 }
 
-.square-set-info {
+.creation-info {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -30,23 +30,23 @@
     }
 }
 
-.square-set-review {
+.creation-review {
     background-color: white;
     text-align: center;
 }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: $screen-sm-min) { 
-    .square-set-container {
+    .creation-container {
         height: $canvas-size;    
     }
 
-    .square-set {
+    .creation {
         height: $canvas-size;    
         width: $canvas-size;
     }
 
-    .square-set-piece {
+    .creation-piece {
         width: $piece-size;
         height: $piece-size;
     }

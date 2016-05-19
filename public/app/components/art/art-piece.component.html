@@ -1,11 +1,11 @@
-<img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}">
+<img ng-src="{{model.art.imageSource}}" alt="Picture of an artwork called {{model.art.title}}" class="creation-img">
 
-<span ng-if="!model.art.reviews.length">Not reviewed yet...</span>
-<rating ng-if="model.art.reviews.length" rating="model.art.averageRating" max="5"></rating>
+<div class="creation-info">
+    <div class="creation-review">
+        <span ng-if="!model.art.reviews.length">Not reviewed yet...</span>
+        <rating ng-if="model.art.reviews.length" rating="model.art.averageRating" max="5"></rating>
+    </div>
 
-<div ng-if="model.canSeeDetails">
-    <button ng-link="['ArtDetails', {id: model.art.id}, 'Overview']" class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
-</div>
-<div ng-if="model.canCreate">
+    <button ng-link="['ArtDetails', {id: model.art.id}]" class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span></button>
     <button ng-if="model.art.state" ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default"><span class="glyphicon glyphicon-picture"></span></button>
 </div>
