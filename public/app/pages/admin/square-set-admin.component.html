@@ -1,4 +1,6 @@
-<div ng-repeat="squareSet in model.squareSets">
-    <square-set square-set="squareSet"></square-set>
-    <a ng-click="model.remove(squareSet)" class="btn btn-default">Delete Square Set</a>    
+<div class="row">
+    <div ng-repeat="squareSet in model.squareSets" class="creation-container col-md-12 col-lg-6">
+        <square-set class="creation" square-set="squareSet" show-info="false"></square-set>
+        <button ng-click="model.remove(squareSet)" class="btn btn-default btn-danger -md -dead-center">Delete Square Set</button>
+    </div>
 </div>

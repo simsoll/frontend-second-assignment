@@ -28,6 +28,13 @@
         max-height: 17.5vw;
         max-width: 17.5vw;
     }
+    
+    &.-dead-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 span.glyphicon {

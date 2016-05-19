@@ -3,7 +3,7 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($http, artService) {
+    var controller = function (artService) {
         var model = this;
         model.arts = null;
         model.remove = remove;
@@ -19,8 +19,8 @@
         }
 
         function retrieveArts() {
-            $http.get('/api/art/getAll').then(function (response) {
-                model.arts = response.data;
+            artService.getAll().then(function (data) {
+                model.arts = data;
             });
         }
     };

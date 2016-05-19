@@ -9,8 +9,7 @@
 
     module.component('artPiece', {
         bindings: {
-            canCreate: '<',
-            canSeeDetails: '<',
+            showInfo: '<',
             art: '<'
         },
         controllerAs: 'model',

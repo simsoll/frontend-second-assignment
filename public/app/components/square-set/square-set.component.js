@@ -9,8 +9,7 @@
 
     module.component('squareSet', {
         bindings: {
-            canCreate: '<',
-            canSeeDetails: '<',
+            showInfo: '<',
             squareSet: '<'
         },
         controllerAs: 'model',
