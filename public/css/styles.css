@@ -57,7 +57,8 @@ a, label, p {
   height: 7.5vh;
   max-height: 7.5vw;
   max-width: 7.5vw;
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  position: relative; }
   .btn.-sm {
     width: 5vh;
     height: 5vh;
@@ -74,6 +75,12 @@ a, label, p {
     max-height: 17.5vw;
     max-width: 17.5vw; }
   .btn.-dead-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .btn span {
     position: absolute;
     top: 50%;
     left: 50%;
