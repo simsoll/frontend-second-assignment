@@ -7,7 +7,7 @@
         model.error = null;
 
         function submit() {
-            if (model.user.password !== model.user.repeatedPassword) {
+            if (model.isCreating && model.user.password !== model.user.repeatedPassword) {
                 model.error = true;
                 model.errorMessage = "The two submitted passwords was not the same"
                 return;
@@ -30,6 +30,10 @@
                 user.id = model.user.id;
                 model.onUpdate({ user: user });
             }
+            else if (model.isRemoving) {
+                user.id = model.user.id;
+                model.onRemove({ user: user });
+            }            
         }
 
         function resetFormInputs() {
@@ -47,7 +51,8 @@
         bindings: {
             user: '<',
             onCreate: '&?',
-            onUpdate: '&?'
+            onUpdate: '&?',
+            onRemove: '&?'
         },
         controllerAs: 'model',
         controller: controller,

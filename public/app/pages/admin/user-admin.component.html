@@ -1,8 +1,12 @@
-<h1>Create new user</h1>
-<user user="{}" on-create="model.create(user)"></user>
-
-<h1>Current users</h1>
-<div ng-repeat="user in model.users">
-    <user user="user" on-update="model.update(user)"></user>
-    <a ng-click="model.remove(user)" class="btn btn-default">Delete user</a>
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h2>Create new user</h2>
+        <user user="{}" on-create="model.create(user)"></user>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h2>Current users</h2>
+        <user ng-repeat="user in model.users" class="clearfix" user="user" on-update="model.update(user)" on-remove="model.remove(user)"></user>
+    </div>
 </div>

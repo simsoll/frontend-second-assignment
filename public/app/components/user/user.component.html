@@ -1,4 +1,5 @@
 <form ng-submit="model.submit()" class="user">
+    <p ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</p>
     <div class="form-group">
         <label for="name">Name</label>
         <input class="form-control" ng-model="model.user.name" type="text" id="name" placeholder="Name" required/>
@@ -22,11 +23,14 @@
                 required/>
         </div>
         <div class="form-group pull-right">
-            <input type="submit" ng-click="model.isCreating = true" value="Create User" class="btn btn-default -md" />
-            <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
+            <input type="submit" ng-click="model.isCreating = true" value="Create user" class="btn btn-default -md" />
         </div>
     </div>
+    <div ng-if="model.onRemove">
+        <input type="submit" ng-click="model.isRemoving = true" value="Remove user" class="btn btn-default btn-danger -md pull-right"
+        />
+    </div>
     <div ng-if="model.onUpdate">
-        <input type="submit" ng-click="model.isUpdating = true" value="Update User" class="btn btn-default -md" />
+        <input type="submit" ng-click="model.isUpdating = true" value="Update user" class="btn btn-default -md pull-right" />
     </div>
 </form>

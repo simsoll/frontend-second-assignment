@@ -15,7 +15,6 @@
     </div>
     <div class="col-xs-12 text-center">
         <add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
-
         <div ng-repeat="review in model.squareSet.reviews">
             <review review="review" max="5"></review>
         </div>
