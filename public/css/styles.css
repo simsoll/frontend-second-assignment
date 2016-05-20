@@ -96,6 +96,16 @@ span.glyphicon {
 .form-control {
   border-radius: 0; }
 
+.design-board-container {
+  position: relative; }
+
+.design-board-helpers {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+
 design-board {
   margin-top: 2rem;
   display: block;

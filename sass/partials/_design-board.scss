@@ -1,3 +1,11 @@
+.design-board-container {
+  position: relative;  
+}
+
+.design-board-helpers {
+  @include dead-center();
+}
+
 design-board {
   margin-top: 2rem;
   display: block;    
