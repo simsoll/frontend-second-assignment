@@ -21,40 +21,36 @@
 <h1>Welcome to <span class="-squared">SQUARES</span></h1>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-xs-12">
         <h2>We believe in the power of your individuality</h2>
         <p>We enable people with a desire to express their individuality to work together with digital designers to build that
             individuality.
         </p>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <h3>Want to express your individuality?</h3>
             </div>
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <p>Customize real designers work to fit your own individuality</p>
             </div>
-            <div class="col-md-12 text-center">
-                <div class="btn-group">
-                    <button ng-link="['Square Sets']" class="btn btn-default -lg">Browse square sets</button>
-                    <button ng-link="['Create']" class="btn btn-default -lg">Create your own artworks</button>
-                    <button ng-link="['Arts']" class="btn btn-default -lg">Get inspired by others</button>
-                </div>
+            <div class="col-xs-12">
+                <button ng-link="['Arts']" class="btn btn-default -lg pull-right">Get inspired by others</button>
+                <button ng-link="['Create']" class="btn btn-default -lg pull-right">Create your own artworks</button>
+                <button ng-link="['Square Sets']" class="btn btn-default -lg pull-right">Browse square sets</button>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <h3>Are you a digital designer?</h3>
             </div>
-            <div class="col-md-12">
+            <div class="col-xs-12">
                 <p>Make users identify themselves through your designs and make a profit from your work</p>
             </div>
-            <div class="col-md-12 text-center">
-                <div class="btn-group">
-                    <button ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default -lg">Be part of the SQUARES community</button>
-                    <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -lg">Log in and upload your square sets</button>
-                    <button ng-if="model.user" ng-link="['Profile']" class="btn btn-default -lg">Upload your square sets</button>
-                </div>
+            <div class="col-xs-12">
+                <button ng-if="model.user" ng-link="['Profile']" class="btn btn-default -lg pull-right">Upload your square sets</button>
+                <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -lg pull-right">Log in and upload your square sets</button>
+                <button ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default -lg pull-right">Be part of the SQUARES community</button>
             </div>
         </div>
     </div>
