@@ -93,6 +93,9 @@ span.glyphicon {
   span.glyphicon.glyphicon-star, span.glyphicon.glyphicon-star-empty {
     font-size: 2.8em; }
 
+.form-control {
+  border-radius: 0; }
+
 design-board {
   margin-top: 2rem;
   display: block;
