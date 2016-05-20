@@ -4,7 +4,13 @@ This document is part of the second mandatory assignment in the course Front-end
 * Link to Heroku app
 
 # Case description
-* Is this okay to include?
+Squares is a digital gallery for new art, where gallery visitors can fashion and create the final expression of the art pieces. 
+
+On Squares artists create new artworks that are divided into small digital pieces that visitors can play around with and put together via a digital interface. Squares is an open art playground where you can purchase printed versions of the artists' works reworked into your particular personal design. 
+
+Squares will be a global, user-driven and interactive gallery where people from around the globe can dive into the artworks and create works that fit their expression and experience. At the same time Squares is a fascinating and imaginative business concept that attracts artists, both because, of the initial challenge to their creativity, and because they can sell and profit from their work. 
+
+Squares is a new project lunched by Kong Orange. Kong Orange is a freelance-based development bureau specialising in digital entertainment across multiple platforms (kongorange.com/)
 
 ## User Persona
 Julie 23, single, studying Media Science, lives in Aarhus, wants to live in Copenhagen, Northside-fan, listens to P6 Beat (indie cool), changes for P3 (mainstream), when alone. Loves Instagram, just began on Snapchat, reads Danish fashion blogs, reads eb.dk for news, Zulu & DR3 as flow tv, has iPhone 5s, watches House of Cards, because people say it’s cool, watches Game of Thrones, because she loves it & read all of the Harry Potter books. 
@@ -115,9 +121,17 @@ The implementation in SQUARES is still sub-optimal as the generated URL is quite
 This feature has a useful side effect as the canvas state can be stored along with each artwork, whenever an artwork is saved by a user on SQUARES. When browsing through the art gallery users can then pick whatever artwork they like and load the stored state directly into the canvas starting where the creator of the art saved his work.
 
 ### HTML to image
+Whenever a user want to save his/her work on the Canvas page, the artwork is transformed to an image and stored on the back-end server. For this to work the library called html2canvas is used on the website, which can convert an HTML element and all its child elements into a canvas. From their the HTMLCanvasElement.toDataURL() method, which is part of the HTML5 specification, can be used to transform the canvas into a data URI containing an representation of the canvas image.
+
+This way of saving the artwork put some limitations on how the Canvas page mark-up should be structured. For instance, the square set pieces needs to be child elements of the artwork frame. It could be beneficial to use a library, which takes a screenshot of the page instead based on a position, width and height, but this needs more investigation before a change can be made to the implementation.  
 
 ### Square set upload
-
+Instead of relying on the native HTML input file type to handle upload of square sets ng-flow is used, which is a HTML5 file upload extension specifically to the AngularJS framework. This extension comes with a few interesting features, such as pause/resume uploads, folder upload and upload progress, but also enables a fast implementaion with only a minimum of mark-up and JavaScript to be specified for the extension to work.
 
 # Future improvements
-* improved mobile experience using square set slider on canvas page
+* mention ngAnimate?
+The mobile experience on the SQUARES prototype could be improved significantly. Due to a smaller screen size on mobile devices it can be cumbersome to effectively use the Canvas page in it's current form. This is because the distance between the top of the artwork frame and the bottom of the square set is greater than the height of the majority of mobile devices. To improve on this a carousel-like library called Swiper has been consider. However, implementing this library will be a bit involved, as with Swiper and InteractJS uses the CSS transform property to manipulate an items position. This means that whenever the user interacts with a square within the slider created by Swiper, InteractJS should be notified that it can manipulate the square. At the same time Swiper must also be notified that the square cannot be manipulate until the square has been put back into the slider. If this is not done, every square in the artwork frame will be moved whenever the slider is activated. Due to time constraints this has not been investigated further.
+
+As mentioned before the look and feel of the website could be improved by removing Bootstrap and instead put some time into creating custom styling for the website.
+
+* list more stuff from the Nice to Have list in Trello
