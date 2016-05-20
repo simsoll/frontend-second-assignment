@@ -3,7 +3,6 @@
 
 <div class="creation-info" ng-if="model.showInfo">
     <div class="creation-review">
-        <span ng-if="!model.squareSet.reviews.length">Not reviewed yet...</span>
         <rating ng-if="model.squareSet.reviews.length" rating="model.squareSet.averageRating" max="5"></rating>
     </div>
     <button ng-link="['SquareSetDetails', {id: model.squareSet.id}]" class="btn btn-default -sm"><span class="glyphicon glyphicon-zoom-in"></span></button>

@@ -42,4 +42,8 @@
 span.glyphicon {
     font-size: 1.8em;
     color: $base-color;
+    
+    &.glyphicon-star,&.glyphicon-star-empty  {
+        font-size: 2.8em;        
+    }
 }

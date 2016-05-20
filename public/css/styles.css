@@ -90,6 +90,8 @@ a, label, p {
 span.glyphicon {
   font-size: 1.8em;
   color: #666; }
+  span.glyphicon.glyphicon-star, span.glyphicon.glyphicon-star-empty {
+    font-size: 2.8em; }
 
 design-board {
   margin-top: 2rem;

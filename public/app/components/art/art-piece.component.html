@@ -2,7 +2,6 @@
 
 <div class="creation-info" ng-if="model.showInfo">
     <div class="creation-review">
-        <span ng-if="!model.art.reviews.length">Not reviewed yet...</span>
         <rating ng-if="model.art.reviews.length" rating="model.art.averageRating" max="5"></rating>
     </div>
 
