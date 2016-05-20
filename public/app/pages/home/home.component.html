@@ -15,7 +15,7 @@
     <p>
         All rights reserved.
     </p>
-    <button class="btn btn-default pull-right" ng-click="model.disclaimerAccepted = true">Accept</button>
+    <button class="btn btn-default pull-right -md" ng-click="model.disclaimerAccepted = true">Accept</button>
 </div>
 
 <h1>Welcome to <span class="-squared">SQUARES</span></h1>
@@ -36,9 +36,9 @@
             </div>
             <div class="col-md-12 text-center">
                 <div class="btn-group">
-                    <button ng-link="['Square Sets']" class="btn btn-default -lg">Browse square sets created by digital designers</button>
-                    <button ng-link="['Create']" class="btn btn-default -lg">Create your custom artwork based on a square set</button>
-                    <button ng-link="['Arts']" class="btn btn-default -lg">Get inspired by artworks created by other people</button>
+                    <button ng-link="['Square Sets']" class="btn btn-default -lg">Browse square sets</button>
+                    <button ng-link="['Create']" class="btn btn-default -lg">Create your own artworks</button>
+                    <button ng-link="['Arts']" class="btn btn-default -lg">Get inspired by others</button>
                 </div>
             </div>
         </div>
@@ -51,9 +51,9 @@
             </div>
             <div class="col-md-12 text-center">
                 <div class="btn-group">
-                    <button ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default -lg">Become part of the SQUARES community</button>
+                    <button ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default -lg">Be part of the SQUARES community</button>
                     <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -lg">Log in and upload your square sets</button>
-                    <button ng-if="model.user" ng-link="['Profile']" class="btn btn-default -lg">Upload your square sets to SQUARES</button>
+                    <button ng-if="model.user" ng-link="['Profile']" class="btn btn-default -lg">Upload your square sets</button>
                 </div>
             </div>
         </div>
