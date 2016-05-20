@@ -42,7 +42,7 @@ a, label, p {
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: $screen-md-min) {
     h1 {
-        font-size: 3rem;
+        font-size: 5rem;
         
         & .-squared {
             width: 250px;
@@ -52,16 +52,16 @@ a, label, p {
     }
     
     h2 {
-        font-size: 2.2rem;
+        font-size: 4rem;
     }    
     
     h3 {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }      
     
-    a, label, p {
-        font-size: 1.2rem;  
-        line-height: 2rem;  
+    a, .btn, label, p {
+        font-size: 2rem;  
+        line-height: 3rem;  
         margin-bottom: 0.2rem;
     }
 }
