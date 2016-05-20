@@ -115,7 +115,8 @@ design-board {
   display: inline-block;
   height: 280px;
   width: 280px;
-  box-sizing: content-box; }
+  box-sizing: content-box;
+  border: 2px solid #666; }
 
 .square {
   height: 56px;
@@ -136,7 +137,9 @@ design-board {
   margin-top: 5rem;
   height: 280px;
   width: 280px;
-  display: inline-block; }
+  display: inline-block;
+  box-sizing: content-box;
+  border: 2px solid #666; }
 
 .square-set-piece {
   width: 56px;
