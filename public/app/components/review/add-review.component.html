@@ -1,7 +1,16 @@
-<form ng-submit="model.addReview()">
-    <label for="rating">Rating</label>
-    <input ng-model="model.rating" type="number" min="{{model.min}}" max="{{model.max}}" id="rating" required/>
-    <label for="comment">Comment</label>
-    <input ng-model="model.comment" type="text" id="comment" />
-    <input type="submit" value="Add Review" class="btn btn-default" />
+<form ng-submit="model.addReview()" class="form-horizontal">
+    <div class="form-group">
+        <label for="rating" class="col-sm-2 control-label">Rating</label>
+        <div class="col-sm-10">
+            <input ng-model="model.rating" class="form-control" type="number" min="{{model.min}}" max="{{model.max}}" id="rating" required/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comment" class="col-sm-2 control-label">Comment</label>
+        <div class="col-sm-10">
+            <input ng-model="model.comment" class="form-control" type="text" id="comment" />
+        </div>
+    </div>
+    <input type="submit" value="Add Review" class="btn btn-default -md pull-right" />
 </form>
+<div class="clear-fix"></div>

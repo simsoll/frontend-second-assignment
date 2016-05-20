@@ -217,3 +217,9 @@ design-board {
 
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
+rating {
+  display: inline-block; }
+
+review {
+  display: block;
+  margin-bottom: 2rem; }

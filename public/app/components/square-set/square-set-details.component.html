@@ -1,22 +1,25 @@
 <div class="row">
-    <div class="col-xs-12 text-center">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
         <h2>{{model.squareSet.title}}</h2>
     </div>
-    <div class="col-xs-12 text-center">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
         <div class="creation">
             <img ng-repeat="imageSource in model.squareSet.imageSources track by $index" ng-src="{{model.squareSet.imageSources[$index]}}"
                 alt="A square in the set called {{model.squareSet.title}}" class="creation-piece" />
         </div>
         <p>Created by {{model.squareSet.user.username}}</p>
     </div>
-    <div class="col-xs-12 text-center">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
         <button ng-click="model.goToSquareSets()" class="btn btn-default -sm"><span class="glyphicon glyphicon-arrow-left"></span></button>
         <button ng-link="['Create', {id: model.squareSet.id}]" class="btn btn-default -sm"><span class="glyphicon glyphicon-picture"></span></button>
     </div>
-    <div class="col-xs-12 text-center">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
         <add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>
-        <div ng-repeat="review in model.squareSet.reviews">
-            <review review="review" max="5"></review>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div ng-if="model.squareSet.reviews.length">
+            <h3>Reviews</h3>
+            <review ng-repeat="review in model.squareSet.reviews" review="review" max="5"></review>
         </div>
     </div>
 </div>
