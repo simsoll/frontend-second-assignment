@@ -182,6 +182,10 @@ design-board {
     height: 100px; } }
 
 /* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .design-board-squares {
+    margin-top: 0; } }
+
 /* Large devices (large desktops, 1200px and up) */
 .creation-container {
   height: 280px;
