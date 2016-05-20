@@ -3,10 +3,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" ng-link="['Home']">SQUARES</a>
         </div>
-        <ul class="nav navbar-nav navbar-left">
-            <li ng-class="{active: model.isActive('/')}">
-                <a ng-link="['Home']" ng-click="model.activeMenu = 'home'">Home</a>
-            </li>
+        <ul class="nav navbar-nav navbar-right">
             <li ng-class="{active: model.isActive('/squareSet')}">
                 <a ng-link="['Square Sets']">Square Sets</a>
             </li>
@@ -19,8 +16,6 @@
             <li ng-class="{active: model.isActive('/about')}">
                 <a ng-link="['About']">About</a>
             </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
             <li ng-if="model.user.isAdmin" ng-class="{active: model.isActive('/admin')}">
                 <a ng-link="['Admin', 'SquareSetAdmin']">Admin</a>
             </li>
