@@ -1,4 +1,4 @@
-<form ng-submit="model.submit()" class="user form-horizontal">
+<form ng-submit="model.submit()" class="user">
     <div class="form-group">
         <label for="name">Name</label>
         <input class="form-control" ng-model="model.user.name" type="text" id="name" placeholder="Name" required/>
@@ -21,7 +21,7 @@
             <input class="form-control" ng-model="model.user.repeatedPassword" type="password" id="repeatedPassword" placeholder="Repeat Password"
                 required/>
         </div>
-        <div class="form-group">
+        <div class="form-group pull-right">
             <input type="submit" ng-click="model.isCreating = true" value="Create User" class="btn btn-default -md" />
             <div ng-show="model.error" class="alert alert-danger">{{model.errorMessage}}</div>
         </div>
