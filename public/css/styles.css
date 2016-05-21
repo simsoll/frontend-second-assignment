@@ -57,14 +57,26 @@ a, label, p {
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-  a, label, p {
-    font-size: 0.7rem;
-    line-height: 1.2rem; } }
+  h1 {
+    margin: 10rem 0;
+    font-size: 3.7rem; }
+    h1 .-squared {
+      width: 180px;
+      height: 180px;
+      line-height: 180px; }
+  h2 {
+    font-size: 3.2rem; }
+  h3 {
+    font-size: 2.8rem; }
+  a, .btn, label, p {
+    font-size: 1.8rem; }
+  .btn, label, p {
+    line-height: 3rem;
+    margin-bottom: 0.6rem; } }
 
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   h1 {
-    margin: 10rem 0;
     font-size: 5rem; }
     h1 .-squared {
       width: 250px;
@@ -73,12 +85,7 @@ a, label, p {
   h2 {
     font-size: 4rem; }
   h3 {
-    font-size: 3rem; }
-  a, .btn, label, p {
-    font-size: 2rem; }
-  .btn, label, p {
-    line-height: 3rem;
-    margin-bottom: 0.2rem; } }
+    font-size: 3rem; } }
 
 /* Large devices (large desktops, 1200px and up) */
 .btn {
@@ -89,7 +96,8 @@ a, label, p {
   height: 58px;
   white-space: pre-wrap;
   position: relative;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  margin-bottom: 2rem; }
   .btn.-sm {
     width: 58px;
     height: 58px; }
@@ -145,17 +153,18 @@ span.glyphicon {
 
 .navbar {
   height: 80px;
-  background-color: #f1f1f1;
-  box-shadow: 0 0 15px -5px #aaa; }
+  background-color: #E9CBF9;
+  box-shadow: 0 0 15px -5px #aaa;
+  border: none; }
 
 .navbar-header {
   height: 80px;
-  background-color: #f1f1f1; }
+  background-color: #E9CBF9; }
 
 .navbar-brand {
   line-height: 80px;
   height: 80px;
-  padding: 0 15px;
+  padding: 0 10px;
   font-size: 2.2rem; }
 
 .navbar-logo {
@@ -168,7 +177,7 @@ span.glyphicon {
   margin-right: 10px; }
 
 .navbar-nav {
-  background-color: #f1f1f1;
+  background-color: #E9CBF9;
   margin: 0 -15px; }
 
 .navbar-toggle {
@@ -186,7 +195,8 @@ span.glyphicon {
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
   .navbar-nav > li > a {
-    padding: 0 20px;
+    padding: 0 12px;
+    font-size: 1.5rem;
     line-height: 80px; }
   .navbar-brand {
     font-size: 2.3rem; } }
@@ -194,6 +204,7 @@ span.glyphicon {
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   .navbar-nav > li > a {
+    padding: 0 20px;
     font-size: 1.6rem; }
   .navbar-brand {
     font-size: 2.5rem; } }
@@ -275,20 +286,27 @@ design-board {
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
   .design-board {
-    height: 500px;
-    width: 500px; }
+    height: 400px;
+    width: 400px; }
   .square {
-    height: 100px;
-    width: 100px; }
+    height: 80px;
+    width: 80px; }
   .design-board-piece {
-    height: 100px;
-    width: 100px; }
+    height: 80px;
+    width: 80px; }
   .design-board-squares {
-    height: 500px;
-    width: 500px; }
+    height: 400px;
+    width: 400px; }
   .square-set-piece {
-    width: 100px;
-    height: 100px; }
+    width: 80px;
+    height: 80px; }
+  .design-board-helpers {
+    width: 360px; } }
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .design-board-squares {
+    margin-top: 0; }
   .design-board-helpers {
     width: auto;
     margin: 0;
@@ -297,11 +315,6 @@ design-board {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); } }
-
-/* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: 992px) {
-  .design-board-squares {
-    margin-top: 0; } }
 
 /* Large devices (large desktops, 1200px and up) */
 .creation-container {
@@ -338,13 +351,13 @@ design-board {
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
   .creation-container {
-    height: 500px; }
+    height: 400px; }
   .creation {
-    height: 500px;
-    width: 500px; }
+    height: 400px;
+    width: 400px; }
   .creation-piece {
-    width: 100px;
-    height: 100px; } }
+    width: 80px;
+    height: 80px; } }
 
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
