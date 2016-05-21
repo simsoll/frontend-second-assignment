@@ -17,6 +17,10 @@ body {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
 
+img {
+  max-width: 100%;
+  height: auto; }
+
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   .about-info {
