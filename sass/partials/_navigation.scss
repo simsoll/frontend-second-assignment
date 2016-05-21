@@ -85,6 +85,19 @@
     }
 }
 
+.navbar-default .navbar-toggle {
+    background-color: $navigation-background-color;
+    
+    &:hover {
+        background-color: $navigation-background-color-active;                
+    }
+    
+    &:active,
+    &:focus {
+        background-color: $navigation-background-color;        
+    }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: $screen-sm-min) { 
     .navbar-nav > li > a {

@@ -227,6 +227,13 @@ span.glyphicon {
   .navbar-default .navbar-brand:focus {
     color: #DCD7FC; }
 
+.navbar-default .navbar-toggle {
+  background-color: #6754CE; }
+  .navbar-default .navbar-toggle:hover {
+    background-color: #3F2BAE; }
+  .navbar-default .navbar-toggle:active, .navbar-default .navbar-toggle:focus {
+    background-color: #6754CE; }
+
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
   .navbar-nav > li > a {
