@@ -36,7 +36,8 @@ h1 {
   text-align: center;
   font-size: 2.4rem; }
   h1 .-squared {
-    border: 2px solid #666;
+    background-color: #6754CE;
+    color: #DCD7FC;
     display: inline-block;
     width: 150px;
     height: 150px;
@@ -124,6 +125,9 @@ a, label, p {
   .btn:hover {
     background-color: #3F2BAE;
     color: #fff; }
+  .btn:active, .btn:focus {
+    background-color: #6754CE;
+    color: #DCD7FC; }
 
 .no-outline-focus:focus {
   outline: none;
@@ -265,7 +269,7 @@ design-board {
   height: 280px;
   width: 280px;
   box-sizing: content-box;
-  border: 2px solid #666; }
+  border: 2px solid #DCD7FC; }
 
 .square {
   height: 56px;
@@ -287,7 +291,7 @@ design-board {
   width: 280px;
   display: inline-block;
   box-sizing: content-box;
-  border: 2px solid #666; }
+  border: 2px solid #DCD7FC; }
 
 .square-set-piece {
   width: 56px;
@@ -357,7 +361,7 @@ design-board {
 .creation {
   height: 280px;
   width: 280px;
-  border: 2px solid #666;
+  border: 2px solid #DCD7FC;
   display: inline-block;
   box-sizing: content-box; }
 

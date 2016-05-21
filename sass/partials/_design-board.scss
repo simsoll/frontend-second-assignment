@@ -19,7 +19,7 @@ design-board {
   height: $canvas-size-sm;
   width: $canvas-size-sm;
   box-sizing: content-box;
-  border: $square-border-size solid $base-color;
+  border: $square-border-size solid $border-color;
 }
 
 .square {
@@ -43,7 +43,7 @@ design-board {
   width: $canvas-size-sm;
   display: inline-block;
   box-sizing: content-box;
-  border: $square-border-size solid $base-color;
+  border: $square-border-size solid $border-color;
 }
 
 .square-set-piece {

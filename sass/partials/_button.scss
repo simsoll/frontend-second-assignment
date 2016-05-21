@@ -38,6 +38,12 @@
         background-color: $button-background-color-hover;
         color: $text-color-hover;        
     }
+    
+    &:active,
+    &:focus {
+        background-color: $button-background-color;
+        color: $text-color;        
+    }
 }
 
 .no-outline-focus {
