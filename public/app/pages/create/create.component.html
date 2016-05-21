@@ -26,10 +26,10 @@
 </div>
 <div class="row">
     <div class="col-xs-12 design-board-container">
-        <design-board square-set="model.squareSet" id="canvas"></design-board>
         <div class="design-board-helpers">
             <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -lg pull-left">Browse square sets</button>
             <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -lg pull-left">Pick a random square set</button>
-        </div>
+        </div>        
+        <design-board square-set="model.squareSet" id="canvas"></design-board>
     </div>
 </div>

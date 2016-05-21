@@ -2,34 +2,44 @@ body {
     padding-top: $navigation-height + 20px;
 }
 
-.about-container {
-    position: relative;
-}
-
-.about-title {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    
-    & h1 {
-        margin: 0 5rem 0 0;
-        top: 50%;
-        right: 0;
-        position: absolute;
-        transform: translateY(-50%);        
-    }
-}
-
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+    .about-container {
+        position: relative;
+    }
+
+    .about-title {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        
+        & h1 {
+            margin: 0 5rem 0 0;
+            top: 50%;
+            right: 0;
+            position: absolute;
+            transform: translateY(-50%);        
+        }
+    }
+
+    .about-info {
+        float: right;
+    }      
+}
+
 
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: $screen-md-min) {
-    .about-info {
-        float: right;
-    }   
+ 
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) {
+    
 }

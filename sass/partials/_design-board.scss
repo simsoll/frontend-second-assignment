@@ -3,7 +3,9 @@
 }
 
 .design-board-helpers {
-  @include dead-center();
+    width: 190px;
+    margin: 0 auto;
+    z-index: 1;
 }
 
 design-board {
@@ -37,7 +39,6 @@ design-board {
 }
 
 .design-board-squares {
-  margin-top: 5rem;
   height: $canvas-size-sm;
   width: $canvas-size-sm;
   display: inline-block;
@@ -98,6 +99,12 @@ design-board {
   .square-set-piece {
       width: $piece-size;
       height: $piece-size;
+  }  
+  
+  .design-board-helpers {
+    width: auto;
+    margin: 0;    
+    @include dead-center();
   }  
 }
 
