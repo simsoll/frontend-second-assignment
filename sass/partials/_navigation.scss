@@ -5,6 +5,7 @@
 
 .navbar-header {
     height: $navigation-height;
+    background-color: $navigation-background-color;    
 }
 
 .navbar-brand {
@@ -24,10 +25,28 @@
     margin-right: 10px;
 }
 
+.navbar-nav {
+    background-color: $navigation-background-color;
+    margin: 0 -15px;
+}
+
+.navbar-toggle {
+    margin-top: 23px;
+}
+
 .navbar-nav > li > a {
     padding: 0 15px;
     line-height: $navigation-height;
     font-size: 1.3rem;
+}
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
+.navbar-fixed-top .navbar-collapse, 
+.navbar-fixed-bottom .navbar-collapse {
+    max-height: 0;
 }
 
 /* Small devices (tablets, 768px and up) */

@@ -122,7 +122,8 @@ span.glyphicon {
   box-shadow: 0 0 15px -5px #aaa; }
 
 .navbar-header {
-  height: 80px; }
+  height: 80px;
+  background-color: #f1f1f1; }
 
 .navbar-brand {
   line-height: 80px;
@@ -139,10 +140,24 @@ span.glyphicon {
   margin-top: 10px;
   margin-right: 10px; }
 
+.navbar-nav {
+  background-color: #f1f1f1;
+  margin: 0 -15px; }
+
+.navbar-toggle {
+  margin-top: 23px; }
+
 .navbar-nav > li > a {
   padding: 0 15px;
   line-height: 80px;
   font-size: 1.3rem; }
+
+.navbar-collapse.in {
+  overflow-y: visible; }
+
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 0; }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
