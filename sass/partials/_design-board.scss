@@ -102,9 +102,7 @@ design-board {
   }  
   
   .design-board-helpers {
-    width: auto;
-    margin: 0;    
-    @include dead-center();
+      width: 360px;
   }  
 }
 
@@ -113,6 +111,12 @@ design-board {
   .design-board-squares {
     margin-top: 0;
   }  
+  
+  .design-board-helpers {
+    width: auto;
+    margin: 0;    
+    @include dead-center();
+  }    
 }
 
 /* Large devices (large desktops, 1200px and up) */

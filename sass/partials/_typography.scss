@@ -36,23 +36,45 @@ a, label, p {
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: $screen-sm-min) { 
-    a, label, p {
-        font-size: 0.7rem;
-        line-height: 1.2rem;
+    h1 {
+        margin: 10rem 0;        
+        font-size: 3.7rem;
+        
+        & .-squared {
+            width: 180px;
+            height: 180px;
+            line-height: 180px;
+        }        
+    }
+    
+    h2 {
+        font-size: 3.2rem;
+    }    
+    
+    h3 {
+        font-size: 2.8rem;
+    }      
+    
+    a, .btn, label, p {
+        font-size: 1.8rem;  
+    }
+    
+    .btn, label, p {
+        line-height: 3rem;  
+        margin-bottom: 0.2rem;        
     }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: $screen-md-min) {    
     h1 {
-        margin: 10rem 0;        
         font-size: 5rem;
         
         & .-squared {
             width: 250px;
             height: 250px;
             line-height: 250px;
-        }        
+        }         
     }
     
     h2 {
@@ -61,16 +83,7 @@ a, label, p {
     
     h3 {
         font-size: 3rem;
-    }      
-    
-    a, .btn, label, p {
-        font-size: 2rem;  
-    }
-    
-    .btn, label, p {
-        line-height: 3rem;  
-        margin-bottom: 0.2rem;        
-    }
+    }       
 }
 
 /* Large devices (large desktops, 1200px and up) */
