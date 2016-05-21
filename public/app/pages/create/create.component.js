@@ -62,31 +62,45 @@
 
         function saveToProfile() {
             //TODO: fix padding-top
-            html2canvas(document.getElementById("canvas"), {
+            var canvasAsHtml = document.getElementById("canvas");
+            var width = 400;
+            var height = 400;
+            
+            html2canvas(canvasAsHtml, {
                 onrendered: function (canvas) {
-                    var img = canvas.toDataURL("image/png");
+                    var croppedCanvas = document.createElement("canvas");
+                    var context = croppedCanvas.getContext("2d");
+                    
+                    croppedCanvas.width = width;
+                    croppedCanvas.height = height;
+                    
+                    context.drawImage(canvas,
+                        78, 78,   // Start at 70/20 pixels from the left and the top of the image (crop),
+                        width, height,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
+                        0, 0,     // Place the result at 0, 0 in the canvas,
+                        width, height); // With as width / height: 100 * 100 (scale)
+
+                    var imgCropped = croppedCanvas.toDataURL("image/png")
                     var state = encodeState();
 
                     var art = {
-                        userId: model.user.id, 
-                        title: model.title, 
-                        img: img, 
+                        userId: model.user.id,
+                        title: model.title,
+                        img: imgCropped,
                         state: state,
                         squareSetId: model.squareSet.id,
                         reviews: []
                     }
-                    
+
                     artService.create(art);
                     model.$router.navigate(['Profile']);
-                },
-                width: 500, //TODO: get from parent component
-                height: 500
+                }
             });
         }
-        
+
         function share() {
             var state = encodeState();
-            model.url = urlService.create(state); 
+            model.url = urlService.create(state);
         }
 
         function encodeState() {
