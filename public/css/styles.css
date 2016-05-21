@@ -29,7 +29,7 @@ img {
 /* font-size 1em = 10px on default browser settings */
 body {
   font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif;
-  color: #666; }
+  color: #6754CE; }
 
 h1 {
   margin: 5rem 0;
@@ -153,13 +153,13 @@ span.glyphicon {
 
 .navbar {
   height: 80px;
-  background-color: #E9CBF9;
-  box-shadow: 0 0 15px -5px #aaa;
+  background-color: #6754CE;
+  box-shadow: 0 0 25px #6754CE;
   border: none; }
 
 .navbar-header {
   height: 80px;
-  background-color: #E9CBF9; }
+  background-color: #6754CE; }
 
 .navbar-brand {
   line-height: 80px;
@@ -171,19 +171,20 @@ span.glyphicon {
   float: left;
   height: 60px;
   width: 60px;
-  border: 2px solid #666;
+  border: 2px solid #DCD7FC;
   display: block;
   margin-top: 10px;
   margin-right: 10px; }
 
 .navbar-nav {
-  background-color: #E9CBF9;
+  background-color: #6754CE;
   margin: 0 -15px; }
 
 .navbar-toggle {
   margin-top: 23px; }
 
 .navbar-nav > li > a {
+  color: #DCD7FC;
   padding: 0 15px;
   line-height: 80px;
   font-size: 1.3rem; }
@@ -191,6 +192,30 @@ span.glyphicon {
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
   max-height: 60vh; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #DCD7FC; }
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #fff; }
+
+.navbar-default .navbar-nav > .active > a {
+  color: #DCD7FC;
+  background-color: #3F2BAE; }
+
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #3F2BAE; }
+
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #DCD7FC;
+  background-color: #3F2BAE; }
+
+.navbar-default .navbar-brand {
+  color: #DCD7FC; }
+  .navbar-default .navbar-brand:hover {
+    color: #fff; }
+  .navbar-default .navbar-brand:focus {
+    color: #DCD7FC; }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
