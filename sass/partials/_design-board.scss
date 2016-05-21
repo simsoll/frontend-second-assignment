@@ -7,7 +7,7 @@
 }
 
 design-board {
-  margin-top: 2rem;
+  margin: 4rem 0;
   display: block;    
   text-align: center;
 }
@@ -68,9 +68,9 @@ design-board {
   transition: background-color 0.3s;
 }
 
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4;
+.social-media-url {
+  overflow: auto;
+  margin: 2rem 0;
 }
 
 /* Small devices (tablets, 768px and up) */

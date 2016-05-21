@@ -1,6 +1,27 @@
 body {
   padding-top: 100px; }
 
+.about-container {
+  position: relative; }
+
+.about-title {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .about-title h1 {
+    margin: 0 5rem 0 0;
+    top: 50%;
+    right: 0;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+  .about-info {
+    float: right; } }
+
 /* font-size 1em = 10px on default browser settings */
 body {
   font: 62.5% 'Open Sans', Helvetica, Arial, sans-serif;
@@ -154,7 +175,7 @@ span.glyphicon {
           transform: translate(-50%, -50%); }
 
 design-board {
-  margin-top: 2rem;
+  margin: 4rem 0;
   display: block;
   text-align: center; }
 
@@ -209,9 +230,9 @@ design-board {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s; }
 
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4; }
+.social-media-url {
+  overflow: auto;
+  margin: 2rem 0; }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {

@@ -1,27 +1,35 @@
 <div class="row">
     <div class="col-xs-12">
         <div ng-if="model.squareSet" class="clearfix">
-            <h2>Would you like to save your work?</h2>
             <div ng-if="!model.user">
+                <h2>Would you like to save your work?</h2>
                 <p>You need to be logged in to save your work.</p>
                 <button ng-link="['Log In']" class="btn btn-default -md pull-right">Log In</button>
             </div>
             <div ng-if="model.user">
+                <h2>Would you like to store or share your work?</h2>
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input class="form-control" ng-model="model.title" type="text" id="title" required/>
                 </div>
                 <button ng-click="model.saveToProfile()" class="btn btn-default -md pull-right"><span>Save artwork</span></button>
+                <button ng-click="model.share()" class="btn btn-default -md pull-right"><span>Share artwork</span></button>
             </div>
         </div>
+    </div>
+</div>
+<div class="row" ng-if="model.url">
+    <div class="col-xs-12">
+        <h2>You can copy this link to share your work</h2>
+        <p class="social-media-url alert alert-info">{{model.url}}</p>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12 design-board-container">
         <design-board square-set="model.squareSet" id="canvas"></design-board>
         <div class="design-board-helpers">
-            <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -lg">Browse square sets</button>
-            <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -lg">Pick a random square set</button>
+            <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -lg pull-left">Browse square sets</button>
+            <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -lg pull-left">Pick a random square set</button>
         </div>
     </div>
 </div>

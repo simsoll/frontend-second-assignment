@@ -3,11 +3,12 @@
 
     var module = angular.module('squares');
 
-    var controller = function ($scope, $http, authenticationService, artService) {
+    var controller = function ($scope, $http, authenticationService, artService, urlService) {
         var model = this;
         model.goToSquareSets = goToSquareSets;
         model.goToCreateWithRandomId = goToCreateWithRandomId;
         model.saveToProfile = saveToProfile;
+        model.share = share;
         model.squareSet = null;
         model.user = null;
         model.imgSrc = null;
@@ -81,6 +82,11 @@
                 width: 500, //TODO: get from parent component
                 height: 500
             });
+        }
+        
+        function share() {
+            var state = encodeState();
+            model.url = urlService.create(state); 
         }
 
         function encodeState() {
