@@ -192,9 +192,9 @@ design-board {
 /* Large devices (large desktops, 1200px and up) */
 .creation-container {
   height: 280px;
-  margin-bottom: 2rem;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  margin: 5rem 0; }
 
 .creation {
   height: 280px;
