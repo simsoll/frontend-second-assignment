@@ -28,33 +28,39 @@ body {
   color: #666; }
 
 h1 {
-  margin: 10rem 0;
+  margin: 5rem 0;
   text-align: center;
   font-size: 2.4rem; }
   h1 .-squared {
     border: 2px solid #666;
     display: inline-block;
-    width: 200px;
-    height: 200px;
-    line-height: 200px;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
     text-align: center; }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 2.4rem 0 0.8rem; }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   margin: 2.4rem 0 0.8rem; }
 
 a, label, p {
-  font-size: 0.7rem;
-  line-height: 1.2rem; }
+  font-size: 1.2rem;
+  line-height: 1.8rem; }
 
 /* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  a, label, p {
+    font-size: 0.7rem;
+    line-height: 1.2rem; } }
+
 /* Medium devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   h1 {
+    margin: 10rem 0;
     font-size: 5rem; }
     h1 .-squared {
       width: 250px;
@@ -74,27 +80,19 @@ a, label, p {
   border: 2px solid #666;
   font-weight: 500;
   border-radius: 0;
-  width: 7.5vh;
-  height: 7.5vh;
-  max-height: 7.5vw;
-  max-width: 7.5vw;
+  width: 58px;
+  height: 58px;
   white-space: pre-wrap;
   position: relative; }
   .btn.-sm {
-    width: 5vh;
-    height: 5vh;
-    max-height: 5vw;
-    max-width: 5vw; }
+    width: 58px;
+    height: 58px; }
   .btn.-md {
-    width: 12.5vh;
-    height: 12.5vh;
-    max-height: 12.5vw;
-    max-width: 12.5vw; }
+    width: 78px;
+    height: 78px; }
   .btn.-lg {
-    width: 17.5vh;
-    height: 17.5vh;
-    max-height: 17.5vw;
-    max-width: 17.5vw; }
+    width: 95px;
+    height: 95px; }
   .btn.-dead-center {
     position: absolute;
     top: 50%;
@@ -114,11 +112,29 @@ span.glyphicon {
   span.glyphicon.glyphicon-star, span.glyphicon.glyphicon-star-empty {
     font-size: 2.8em; }
 
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .btn {
+    width: 80px;
+    height: 80px; }
+    .btn.-sm {
+      width: 55px;
+      height: 55px; }
+    .btn.-md {
+      width: 130px;
+      height: 130px; }
+    .btn.-lg {
+      width: 180px;
+      height: 180px; } }
+
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
 .form-control {
   border-radius: 0; }
 
 .navbar {
   height: 80px;
+  background-color: #f1f1f1;
   box-shadow: 0 0 15px -5px #aaa; }
 
 .navbar-header {
@@ -152,12 +168,9 @@ span.glyphicon {
   line-height: 80px;
   font-size: 1.3rem; }
 
-.navbar-collapse.in {
-  overflow-y: visible; }
-
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 0; }
+  max-height: 60vh; }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {

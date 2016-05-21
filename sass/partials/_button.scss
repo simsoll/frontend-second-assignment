@@ -2,32 +2,24 @@
     border: $square-border-size solid $base-color;
     font-weight: 500;
     border-radius: 0;
-    width: 7.5vh;
-    height: 7.5vh;
-    max-height: 7.5vw;
-    max-width: 7.5vw;        
+    width: 58px;
+    height: 58px;       
     white-space: pre-wrap;
     position: relative;
 
     &.-sm {
-        width: 5vh;
-        height: 5vh;
-        max-height: 5vw;
-        max-width: 5vw;           
+        width: 58px;
+        height: 58px;
     }
 
     &.-md {
-        width: 12.5vh;
-        height: 12.5vh;
-        max-height: 12.5vw;
-        max-width: 12.5vw;
+        width: 78px;
+        height: 78px;
     }
     
     &.-lg {
-        width: 17.5vh;
-        height: 17.5vh;
-        max-height: 17.5vw;
-        max-width: 17.5vw;
+        width: 95px;
+        height: 95px;
     }
     
     &.-dead-center {
@@ -46,4 +38,36 @@ span.glyphicon {
     &.glyphicon-star,&.glyphicon-star-empty  {
         font-size: 2.8em;        
     }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width: $screen-sm-min) { 
+    .btn {
+        width: 80px;
+        height: 80px;       
+
+        &.-sm {
+            width: 55px;
+            height: 55px;
+        }
+
+        &.-md {
+            width: 130px;
+            height: 130px;
+        }
+        
+        &.-lg {
+            width: 180px;
+            height: 180px;
+        }
+    }  
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: $screen-md-min) {
+
+}
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: $screen-lg-min) {
+      
 }

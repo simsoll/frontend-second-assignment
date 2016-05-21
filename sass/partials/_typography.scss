@@ -5,43 +5,47 @@ body {
 }
 
 h1 {
-    margin: 10rem 0;
+    margin: 5rem 0;
     text-align: center;
     font-size: 2.4rem;
     
     & .-squared {
         border: $square-border-size solid $base-color;
         display: inline-block;
-        width: 200px;
-        height: 200px;
-        line-height: 200px;
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
         text-align: center;        
     }
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 2.4rem 0 0.8rem;    
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin: 2.4rem 0 0.8rem;    
 }
 
 a, label, p {
-    font-size: 0.7rem;
-    line-height: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
 }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: $screen-sm-min) { 
-
+    a, label, p {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media screen and (min-width: $screen-md-min) {
+@media screen and (min-width: $screen-md-min) {    
     h1 {
+        margin: 10rem 0;        
         font-size: 5rem;
         
         & .-squared {

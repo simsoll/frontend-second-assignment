@@ -1,5 +1,6 @@
 .navbar {
     height: $navigation-height;
+    background-color: $navigation-background-color;
     box-shadow: 0 0 15px -5px #aaa;
 }
 
@@ -40,13 +41,10 @@
     font-size: 1.3rem;
 }
 
-.navbar-collapse.in {
-    overflow-y: visible;
-}
 
 .navbar-fixed-top .navbar-collapse, 
 .navbar-fixed-bottom .navbar-collapse {
-    max-height: 0;
+    max-height: 60vh;
 }
 
 /* Small devices (tablets, 768px and up) */
