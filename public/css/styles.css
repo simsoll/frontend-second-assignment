@@ -75,7 +75,8 @@ a, label, p {
   h3 {
     font-size: 3rem; }
   a, .btn, label, p {
-    font-size: 2rem;
+    font-size: 2rem; }
+  .btn, label, p {
     line-height: 3rem;
     margin-bottom: 0.2rem; } }
 

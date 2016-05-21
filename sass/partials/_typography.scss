@@ -65,8 +65,11 @@ a, label, p {
     
     a, .btn, label, p {
         font-size: 2rem;  
+    }
+    
+    .btn, label, p {
         line-height: 3rem;  
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.2rem;        
     }
 }
 
