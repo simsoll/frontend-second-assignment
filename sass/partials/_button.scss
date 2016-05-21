@@ -29,6 +29,13 @@
     
     & span {
         @include dead-center();
+    }    
+}
+
+.no-outline-focus {
+    &:focus {
+        outline: none;
+        outline-offset: 0; 
     }
 }
 

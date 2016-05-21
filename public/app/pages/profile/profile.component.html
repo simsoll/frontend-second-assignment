@@ -5,8 +5,9 @@
     <form flow-init flow-files-submitted="$flow.upload()" flow-name="model.flow" ng-submit="model.saveSquareSet()">
         <div class="col-xs-12">
             <h2>Upload your own square sets</h2>
-            <button class="btn btn-default -md" flow-btn>Upload Images<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"/></button>
-            <button class="btn btn-default -md" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" style="visibility: hidden; position: absolute;"/></button>
+            <p>See your work come to life by uploading a full square set</p>
+            <button class="btn btn-default -md pull-right no-outline-focus" flow-btn flow-directory ng-show="$flow.supportDirectory">Upload Folder of Images<input type="file" multiple="multiple" webkitdirectory="webkitdirectory" class="hide"/></button>
+            <button class="btn btn-default -md pull-right no-outline-focus" flow-btn>Upload Images<input type="file" multiple="multiple" class="hide"/></button>
         </div>
         <div ng-repeat="file in $flow.files" class="gallery-box ng-scope col-xs-6 col-md-3">
             <span class="title ng-binding">1.png</span>
@@ -17,15 +18,15 @@
                 <div class="progress-bar" role="progressbar" ng-style="{width: (file.progress() * 100) + '%'}" style="width: 100%;">
                 </div>
             </div>
-            <div class="btn-group">
-                <button class="btn btn-default btn-danger" ng-click="file.cancel()">Remove</button>
-            </div>
+            <button class="btn btn-default -md btn-danger pull-right" ng-click="file.cancel()">Remove</button>
         </div>
         <div ng-show="$flow.files.length">
             <div class="col-xs-12">
-                <input type="submit" value="Add Square Set to Profile" class="btn btn-primary -md" />
-                <label for="title">Square Set Title</label>
-                <input ng-model="model.title" type="text" id="title" required/>
+                <div class="form-group">
+                    <label for="title">Square Set Title</label>
+                    <input ng-model="model.title" class="form-control" type="text" id="title" required/>
+                </div>
+                <input type="submit" value="Add Square Set to Profile" class="btn btn-primary -md pull-right" />
                 <div ng-show="model.errorMessage" class="alert alert-danger">
                     <p>{{model.errorMessage}}</p>
                 </div>

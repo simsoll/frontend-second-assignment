@@ -111,6 +111,10 @@ a, label, p {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
 
+.no-outline-focus:focus {
+  outline: none;
+  outline-offset: 0; }
+
 span.glyphicon {
   font-size: 1.8em;
   color: #666; }
