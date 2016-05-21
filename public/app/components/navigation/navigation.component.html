@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" ng-link="['Home']">SQUARES</a>
+            <a class="navbar-brand" ng-link="['Home']"><span class="navbar-logo"></span>SQUARES</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li ng-class="{active: model.isActive('/squareSet')}">
@@ -21,7 +21,8 @@
             </li>
             <li ng-if="model.user.isAdmin" ng-class="{active: model.isActive('/admin')}">
                 <a ng-link="['Admin', 'SquareSetAdmin']">Admin</a>
-            </li>            <li ng-if="!model.user" ng-class="{active: model.isActive('/signup')}">
+            </li>
+            <li ng-if="!model.user" ng-class="{active: model.isActive('/signup')}">
                 <a ng-link="['Sign Up']">Sign Up</a>
             </li>
             <li ng-if="!model.user" ng-class="{active: model.isActive('/login')}">
@@ -29,7 +30,7 @@
             </li>
             <li ng-if="model.user">
                 <a ng-click="model.logOut()">Log Out</a>
-            </li>            
+            </li>
         </ul>
     </div>
 </nav>
