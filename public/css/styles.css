@@ -89,7 +89,9 @@ a, label, p {
 
 /* Large devices (large desktops, 1200px and up) */
 .btn {
-  border: 2px solid #666;
+  background-color: #6754CE;
+  color: #DCD7FC;
+  border: none;
   font-weight: 500;
   border-radius: 0;
   width: 58px;
@@ -119,6 +121,9 @@ a, label, p {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
+  .btn:hover {
+    background-color: #3F2BAE;
+    color: #fff; }
 
 .no-outline-focus:focus {
   outline: none;
@@ -126,9 +131,10 @@ a, label, p {
 
 span.glyphicon {
   font-size: 1.8em;
-  color: #666; }
+  color: #DCD7FC; }
   span.glyphicon.glyphicon-star, span.glyphicon.glyphicon-star-empty {
-    font-size: 2.8em; }
+    font-size: 2.8em;
+    color: #6754CE; }
 
 /* Small devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
@@ -370,7 +376,7 @@ design-board {
     float: left; }
 
 .creation-review {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.75);
   text-align: center; }
 
 /* Small devices (tablets, 768px and up) */

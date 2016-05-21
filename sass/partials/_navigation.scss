@@ -59,18 +59,18 @@
 
 .navbar-default .navbar-nav > .active > a {
     color: $text-color;
-    background-color: $color-primary-3;
+    background-color: $navigation-background-color-active;
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
     color: $text-color-hover;
-    background-color: $color-primary-3;    
+    background-color: $navigation-background-color-active;    
 }
 
 
 .navbar-default .navbar-nav > .active > a:focus {
     color: $text-color;
-    background-color: $color-primary-3;        
+    background-color: $navigation-background-color-active;        
 }
 
 .navbar-default .navbar-brand {

@@ -1,5 +1,7 @@
 .btn {
-    border: $square-border-size solid $base-color;
+    background-color: $button-background-color;
+    color: $text-color;
+    border: none;
     font-weight: 500;
     border-radius: 0;
     width: 58px;
@@ -31,6 +33,11 @@
     & span {
         @include dead-center();
     }    
+    
+    &:hover {
+        background-color: $button-background-color-hover;
+        color: $text-color-hover;        
+    }
 }
 
 .no-outline-focus {
@@ -42,10 +49,12 @@
 
 span.glyphicon {
     font-size: 1.8em;
-    color: $base-color;
-    
-    &.glyphicon-star,&.glyphicon-star-empty  {
+    color: $text-color;
+     
+    &.glyphicon-star,
+    &.glyphicon-star-empty {
         font-size: 2.8em;        
+        color: $button-background-color;        
     }
 }
 
