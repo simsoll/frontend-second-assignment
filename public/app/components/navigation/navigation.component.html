@@ -16,21 +16,20 @@
             <li ng-class="{active: model.isActive('/about')}">
                 <a ng-link="['About']">About</a>
             </li>
+            <li ng-if="model.user" ng-class="{active: model.isActive('/profile')}">
+                <a ng-link="['Profile']">Profile</a>
+            </li>
             <li ng-if="model.user.isAdmin" ng-class="{active: model.isActive('/admin')}">
                 <a ng-link="['Admin', 'SquareSetAdmin']">Admin</a>
-            </li>
-            <li ng-if="model.user">
-                <a ng-click="model.logOut()">Log Out</a>
-            </li>
-            <li ng-if="model.user" ng-class="{active: model.isActive('/profile')}">
-                <a ng-link="['Profile']">{{model.user.username}}'s Profile</a>
-            </li>
-            <li ng-if="!model.user" ng-class="{active: model.isActive('/signup')}">
+            </li>            <li ng-if="!model.user" ng-class="{active: model.isActive('/signup')}">
                 <a ng-link="['Sign Up']">Sign Up</a>
             </li>
             <li ng-if="!model.user" ng-class="{active: model.isActive('/login')}">
                 <a ng-link="['Log In']">Log In</a>
             </li>
+            <li ng-if="model.user">
+                <a ng-click="model.logOut()">Log Out</a>
+            </li>            
         </ul>
     </div>
 </nav>
