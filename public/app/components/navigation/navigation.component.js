@@ -13,7 +13,7 @@
                 return $location.path() === '/'; 
             }
             
-            return $location.path().startsWith(route);
+            return $location.path().lastIndexOf(route, 0) === 0;
         }
 
         function logOut() {
