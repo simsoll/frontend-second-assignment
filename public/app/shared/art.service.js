@@ -19,8 +19,11 @@
             art.img = LZString.compressToEncodedURIComponent(art.img);
             return $http.post('/api/art/create', {
                 art: art
-            }).then(function (result) {
-                return result.data;
+            }).then(function (response) {
+                var art = response.data;
+                var decompressed = LZString.decompressFromEncodedURIComponent(art.imageSource);
+                art.imageSource = decompressed;
+                return art;
             });
         }
 
@@ -35,8 +38,11 @@
         function addReview(review) {
             return $http.post('/api/art/addReview', {
                 review: review
-            }).then(function (result) {
-                return result.data;
+            }).then(function (response) {
+                var art = response.data;
+                var decompressed = LZString.decompressFromEncodedURIComponent(art.imageSource);
+                art.imageSource = decompressed;
+                return art;
             });
         }
 
