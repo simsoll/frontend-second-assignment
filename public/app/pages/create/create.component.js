@@ -75,7 +75,7 @@
                     croppedCanvas.height = height;
                     
                     context.drawImage(canvas,
-                        78, 78,   // Start at 70/20 pixels from the left and the top of the image (crop),
+                        662, 77,   // Start at 70/20 pixels from the left and the top of the image (crop),
                         width, height,   // "Get" a `50 * 50` (w * h) area from the source image (crop),
                         0, 0,     // Place the result at 0, 0 in the canvas,
                         width, height); // With as width / height: 100 * 100 (scale)
