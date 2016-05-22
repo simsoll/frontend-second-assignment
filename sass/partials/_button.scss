@@ -1,7 +1,7 @@
 .btn {
     background-color: $button-background-color;
     color: $text-color;
-    border: none;
+    border: $square-border-size solid $border-color;
     font-weight: 500;
     border-radius: 0;
     width: 58px;
