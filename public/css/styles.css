@@ -127,7 +127,8 @@ a, label, p {
     color: #fff; }
   .btn:active, .btn:focus {
     background-color: #6754CE;
-    color: #DCD7FC; }
+    color: #DCD7FC;
+    outline: none; }
 
 .no-outline-focus:focus {
   outline: none;

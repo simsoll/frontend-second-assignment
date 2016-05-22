@@ -4,7 +4,7 @@
             <div ng-if="!model.user">
                 <h2>Would you like to save your work?</h2>
                 <p>You need to be logged in to save your work.</p>
-                <button ng-link="['Log In']" class="btn btn-default -md pull-right">Log In</button>
+                <button ng-link="['Log In']" class="btn -md pull-right">Log In</button>
             </div>
             <div ng-if="model.user">
                 <h2>Would you like to store or share your work?</h2>
@@ -12,8 +12,8 @@
                     <label for="title">Title</label>
                     <input class="form-control" ng-model="model.title" type="text" id="title" required/>
                 </div>
-                <button ng-click="model.saveToProfile()" class="btn btn-default -md pull-right"><span>Save artwork</span></button>
-                <button ng-click="model.share()" class="btn btn-default -md pull-right"><span>Share artwork</span></button>
+                <button ng-click="model.saveToProfile()" class="btn -md pull-right"><span>Save artwork</span></button>
+                <button ng-click="model.share()" class="btn -md pull-right"><span>Share artwork</span></button>
             </div>
         </div>
     </div>
@@ -27,8 +27,8 @@
 <div class="row">
     <div class="col-xs-12 design-board-container">
         <div class="design-board-helpers">
-            <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn btn-default -lg pull-left">Browse square sets</button>
-            <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn btn-default -lg pull-left">Pick a random square set</button>
+            <button ng-if="!model.squareSet" ng-click="model.goToSquareSets()" class="btn -lg pull-left">Browse square sets</button>
+            <button ng-if="!model.squareSet" ng-click="model.goToCreateWithRandomId()" class="btn -lg pull-left">Pick a random square set</button>
         </div>        
         <design-board square-set="model.squareSet" id="canvas"></design-board>
     </div>

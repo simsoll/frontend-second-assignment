@@ -15,7 +15,7 @@
     <p>
         All rights reserved.
     </p>
-    <button class="btn btn-default pull-right -md" ng-click="model.disclaimerAccepted = true">Accept</button>
+    <button class="btn pull-right -md" ng-click="model.disclaimerAccepted = true">Accept</button>
 </div>
 
 <h1>Welcome to <span class="-squared">SQUARES</span></h1>
@@ -35,9 +35,9 @@
                 <p>Customize real designers work to fit your own individuality</p>
             </div>
             <div class="col-xs-12">
-                <button ng-link="['Arts']" class="btn btn-default -lg pull-right">Get inspired by others</button>
-                <button ng-link="['Create']" class="btn btn-default -lg pull-right">Create your own artworks</button>
-                <button ng-link="['Square Sets']" class="btn btn-default -lg pull-right">Browse square sets</button>
+                <button ng-link="['Arts']" class="btn -lg pull-right">Get inspired by others</button>
+                <button ng-link="['Create']" class="btn -lg pull-right">Create your own artworks</button>
+                <button ng-link="['Square Sets']" class="btn -lg pull-right">Browse square sets</button>
             </div>
         </div>
         <div class="row">
@@ -48,9 +48,9 @@
                 <p>Make users identify themselves through your designs and make a profit from your work</p>
             </div>
             <div class="col-xs-12">
-                <button ng-if="model.user" ng-link="['Profile']" class="btn btn-default -lg pull-right">Upload your square sets</button>
-                <button ng-if="!model.user" ng-link="['Log In']" class="btn btn-default -lg pull-right">Upload your square sets</button>
-                <button ng-if="!model.user" ng-link="['Sign Up']" class="btn btn-default -lg pull-right">Be part of the SQUARES community</button>
+                <button ng-if="model.user" ng-link="['Profile']" class="btn -lg pull-right">Upload your square sets</button>
+                <button ng-if="!model.user" ng-link="['Log In']" class="btn -lg pull-right">Upload your square sets</button>
+                <button ng-if="!model.user" ng-link="['Sign Up']" class="btn -lg pull-right">Be part of the SQUARES community</button>
             </div>
         </div>
     </div>

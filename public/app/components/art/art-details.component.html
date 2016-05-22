@@ -9,8 +9,8 @@
         <p>Created by {{model.art.user.username}}</p>
     </div>
     <div class="col-xs-12 col-md-6 col-md-offset-3 text-center">
-        <button ng-click="model.goToArts()" class="btn btn-default -sm"><span class="glyphicon glyphicon-arrow-left"></span></button>
-        <button ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn btn-default -sm"><span class="glyphicon glyphicon-picture"></span></button>
+        <button ng-click="model.goToArts()" class="btn -sm"><span class="glyphicon glyphicon-arrow-left"></span></button>
+        <button ng-link="['Create', {id: model.art.squareSetId, state: model.art.state}]" class="btn -sm"><span class="glyphicon glyphicon-picture"></span></button>
     </div>
     <div class="col-xs-12 col-md-6 col-md-offset-3">
         <add-review ng-if="model.user && !model.hasUserReviewed() && !model.isMadeByUser()" min="0" max="5" on-review-added="model.addReview(review)"></add-review>

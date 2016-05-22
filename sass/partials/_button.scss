@@ -42,7 +42,8 @@
     &:active,
     &:focus {
         background-color: $button-background-color;
-        color: $text-color;        
+        color: $text-color;     
+        outline: none;   
     }
 }
 
