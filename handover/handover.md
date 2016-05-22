@@ -61,10 +61,20 @@ Looking at the designer persona this part of the overall user group is quite dif
 To support these personas the design should be simple and intuitive so non-technical people can navigate the website and easily find square sets and produce artworks that they envision. Furthermore, the website should accommodate the picky designer that has a sense of what good design is.
 
 ## Color Scheme
-* A colour palette with examples of colours and an explanation of your choices.
+To support SQUARE's creative environment a monochromatic purple color scheme has been chosen.
+
+The purple color combines the stability of the blue and the energy of the red color, creating a color of the imagination allowing the user to get in touch with his/her deeper thoughts. It's a creative color, which is well suited for the purpose of the website.
+
+As the purple color is a rather feminine color, the color scheme is mainly applied to the navigation bar and on call-to-action elements such as the buttons. This is done to not scare off any male visitors and for the same reason the chosen purple colors are more blue than red. 
+
+The color scheme can also be seen below in figure \ref{color-scheme} and online by following the link http://paletton.com/#uid=1480f0klIH05sZKf6RGrEvAtHj8.
+
+![The chosen color scheme \label{color-scheme}](./images/color-scheme.jpg)
 
 ## Typeface
-* Your choice of Font and an explanation of your choices.
+The SQUARES website uses the Open Sans typeface, which is a humanist sans-serif typeface. The site is not heavy on text, but the places where readability is important Open Sans is a good choice, as it's easily readable even in small sizes and it works well on both web and mobile. 
+
+![The hierarchy of text elements  \label{text-elements}](./images/text-elements.jpg)
 
 ## Gestalt principles
 * A Gestalt sketch and description of composition. Explain why you chose to organise your site in this particular way, knowing what you do about users and functionality.
@@ -74,7 +84,6 @@ To support these personas the design should be simple and intuitive so non-techn
 
 # Technical Considerations
 * Semantic HTML
-* Possible use of JavaScript framework, i.e. AngularJS
 * Browser compatibility
 * Validation of HTML and CSS
 
