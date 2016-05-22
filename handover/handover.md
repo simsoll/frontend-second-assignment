@@ -65,7 +65,7 @@ To support SQUARE's creative environment a monochromatic purple color scheme has
 
 The purple color combines the stability of the blue and the energy of the red color, creating a color of the imagination allowing the user to get in touch with his/her deeper thoughts. It's a creative color, which is well suited for the purpose of the website.
 
-As the purple color is a rather feminine color, the color scheme is mainly applied to the navigation bar and on call-to-action elements such as the buttons. This is done to not scare off any male visitors and for the same reason the chosen purple colors are more blue than red. 
+As the purple color is a rather feminine color, the color scheme is mainly applied to the navigation bar and on call-to-action elements such as the buttons. This is done to try also embrace the male visitors and for the same reason the chosen purple colors are more blue than red.
 
 The color scheme can also be seen below in figure \ref{color-scheme} and online by following the link http://paletton.com/#uid=1480f0klIH05sZKf6RGrEvAtHj8.
 
@@ -74,13 +74,41 @@ The color scheme can also be seen below in figure \ref{color-scheme} and online 
 ## Typeface
 The SQUARES website uses the Open Sans typeface, which is a humanist sans-serif typeface. The site is not heavy on text, but the places where readability is important Open Sans is a good choice, as it's easily readable even in small sizes and it works well on both web and mobile. 
 
-![The hierarchy of text elements  \label{text-elements}](./images/text-elements.jpg)
+![Hierarchy of text elements  \label{text-elements}](./images/text-elements.jpg)
 
 ## Gestalt principles
-* A Gestalt sketch and description of composition. Explain why you chose to organise your site in this particular way, knowing what you do about users and functionality.
+To support the personas and their goals visiting the website, it needs to be intuitive and easy to navigate. For this to work the main Gestalt principle used are similarity in the use of square shapes.
 
-## Wrap up 
-* Explain how your design choices supports the sites content.
+### Front page
+![Gestalt sketch of the front page \label{gestalt-front-page}](./images/front-page.png)
+
+Figure \ref{gestalt-front-page} is showing a Gestalt sketch of the front page, which has been marked with two points of interest
+
+1. Similarity: The squares logo and the call-to-action buttons all share the same form and color - a purple square. This is used throughout the website and will make it easy for the user to identify important elements.
+2. Proximity: The buttons are situated close to each other enforcing that these buttons are somehow related. These buttons are three distinct ways for the user to start investigating what the site has to offer and thereby helps the user from the front page to other pages of interest.
+
+### Square Sets and Artworks page
+![Gestalt sketch of the Square Sets page \label{gestalt-square-sets-page}](./images/square-sets-page.png)
+
+Figure \ref{gestalt-square-sets-page} is showing a Gestalt sketch of the square sets page, which has been marked with two points of interest, but are both related to the similarity principle.
+
+The artworks page is not shown here, as it has the exact same structure as the square sets page. This also makes it easier for the user, as the same structures and rules apply on the different pages. 
+
+### Canvas page
+![Gestalt sketch of the Canvas page \label{gestalt-canvas-page}](./images/canvas-page.png)
+
+1. Similarity: Squared elements are again a theme on this page, as it has been for the other pages.   
+2. Proximity: The two buttons in the middle of the page are close to each other and share a common purpose - to have the user pick a square set, before he/she can start working on the canvas.  
+
+Figure \ref{gestalt-canvas-page} is showing a Gestalt sketch of the canvas page, which has been marked with two points of interest
+
+### About page
+![Gestalt sketch of the About page \label{gestalt-about-page}](./images/about-page.png)
+
+Figure \ref{gestalt-about-page} is showing a Gestalt sketch of the about page, which has been marked with a single point of interest showing the SQUARES logo, which is also placed on the front page.
+
+### The remaining pages
+Both the profile and administration pages are using the same Gestalt principles as mentioned above, as they are just compositions of square sets, artworks and buttons, which already has been discussed. The only things remaining are the form elements on the user administration page, sign up page and login page, which are not interesting in this discussing.
 
 # Technical Considerations
 * Semantic HTML
@@ -89,9 +117,9 @@ The SQUARES website uses the Open Sans typeface, which is a humanist sans-serif 
 
 The front-end part of the website is build using the JavaScript framework AngularJS together with the CSS framework Bootstrap, both helping speeding up the development process on the SQUARES prototype. 
 
-NodeJS is used as a simple back-end web server, where user information, square sets and artworks are stored. There is no real database behind the SQUARES prototype, as data is stored in back-end services, which are reset whenever the web server is restarted. However, having these back-end services simplified many of the application workflows as no data needs to be stored in the front-end - user information, square sets and artworks are just retrieved from the back-end using HTTP GET request whenever needed.  
+NodeJS is used as a simple back-end web server, where user information, square sets and artworks are stored. There is no real database behind the SQUARES prototype, as data is stored in back-end services, which are reset whenever the web server is restarted. However, having these back-end services simplified many of the application workflows as no data needs to be stored in the front-end - user information, square sets and artworks are just retrieved from the back-end using HTTP GET request whenever needed.
 
-Besides a standard CSS reset stylesheet the styling is developed using Sass. The Sass files are complied to CSS files using a Gulp task with a watch on all the Sass files recompiling when any changes are made to the Sass files.   
+Besides a standard CSS reset style sheet the styling is developed using Sass. The Sass files are complied to CSS files using a Gulp task with a watch on all the Sass files recompiling when any changes are made to the Sass files.   
 
 
 ## Frameworks
@@ -138,9 +166,8 @@ This way of saving the artwork put some limitations on how the Canvas page mark-
 Instead of relying on the native HTML input file type to handle upload of square sets ng-flow is used, which is a HTML5 file upload extension specifically to the AngularJS framework. This extension comes with a few interesting features, such as pause/resume uploads, folder upload and upload progress, but also enables a fast implementaion with only a minimum of mark-up and JavaScript to be specified for the extension to work.
 
 # Future improvements
-* mention ngAnimate?
 The mobile experience on the SQUARES prototype could be improved significantly. Due to a smaller screen size on mobile devices it can be cumbersome to effectively use the Canvas page in it's current form. This is because the distance between the top of the artwork frame and the bottom of the square set is greater than the height of the majority of mobile devices. To improve on this a carousel-like library called Swiper has been consider. However, implementing this library will be a bit involved, as with Swiper and InteractJS uses the CSS transform property to manipulate an items position. This means that whenever the user interacts with a square within the slider created by Swiper, InteractJS should be notified that it can manipulate the square. At the same time Swiper must also be notified that the square cannot be manipulate until the square has been put back into the slider. If this is not done, every square in the artwork frame will be moved whenever the slider is activated. Due to time constraints this has not been investigated further.
 
-As mentioned before the look and feel of the website could be improved by removing Bootstrap and instead put some time into creating custom styling for the website.
+As mentioned before the look and feel of the website could be improved by removing Bootstrap and instead put some time into creating custom styling for the website. Furthermore, due to time constraints no animations has been implemented on the site. It would make sense to add a few small unobtrusive animations (for instance using the ngAnimate module) to improve the look and feel of the site and make the experience more fun and delightful.  
 
 * list more stuff from the Nice to Have list in Trello
