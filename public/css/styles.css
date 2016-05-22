@@ -162,6 +162,10 @@ span.glyphicon {
 .form-control {
   border-radius: 0; }
 
+.form-horizontal .control-label {
+  padding-top: 3px;
+  padding-right: 0px; }
+
 .navbar {
   height: 80px;
   background-color: #6754CE;
