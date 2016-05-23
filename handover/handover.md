@@ -1,7 +1,8 @@
 # Introduction 
 This document is part of the second mandatory assignment in the course Front-end Development held in Spring 2016 at BAAA - Business Academy Aarhus.
-* Link to source code on GitHub
-* Link to Heroku app
+
+* This source code can be found on GitHub at https://github.com/simsoll/frontend-second-assignment/tree/handover
+* The website can be found online at Heroku at https://squares-beta.herokuapp.com/
 
 # Case description
 Squares is a digital gallery for new art, where gallery visitors can fashion and create the final expression of the art pieces. 
@@ -31,6 +32,7 @@ Create a Style Guide for the public website to Squares. The Style Guide must inc
 You have to utilize technologies from the front end course: HTML5, CSS3, CSS preprocessor (i.e. Sass) and JavaScript. Using jQuery and jQuery plugins is voluntary and you are allowed to use a CSS framework like Bootstrap. It is also voluntary to use automation tools like ex Gulp. You are allowed to use JavaScript frameworks like AngularJS.
 
 In the report, you must document and explain how the following elements are used in your solution:
+
 * Semantic HTML
 * CSS3 and use of CSS preprocessor
 * Central JavaScript algorithms
@@ -44,30 +46,30 @@ In the report, you must document and explain how the following elements are used
 # SQUARES
 This section will shortly describe how the SQUARES business case is interpreted and how it will be supported by the website.
 
-Everyone will be able to upload square sets to SQUARES - the only requirement is that you need to be logged in, as square sets are uploaded through the profile page and every square set will be linked to a user account. The poorly designed square sets will be filtered out using a rating system. For this prototype the rating system will be rather simple, but will ensure that the highest rated square sets and artworks will be shown first.
+Everyone will be able to upload square sets to SQUARES - the only requirement is that you need to be logged in, as square sets are uploaded through the profile page and every square set will be linked to a user account. The poorly designed square sets will be filtered out using a rating system. For this prototype the rating system will be rather simple, but will ensure that the highest rated square sets and artworks will be shown first. Square sets can contain between 5 and 25 square pieces.
 
-The users of SQUARES will be incentivized to upload quality looking square sets, as this is the only way people can make a profit on SQUARES. Whenever someone buys a product in the shop (a poster, t-shirt, physical cardboard pieces, etc.) with one of the artworks on SQUARES, the money left after covering expenses will be distributed between SQUARES and the user that created the underlying the square set. It doesn't make sense to give any contributions to the creator of the artwork, as it's easy on SQUARES to create artworks based on already completed artworks, so the artwork gallery will likely be floated with copies of high quality artworks. 
+The users of SQUARES will be incentivized to upload quality looking square sets, as this is the way people can make a profit on SQUARES. Whenever someone buys a product in the shop (a poster, t-shirt, physical cardboard pieces, etc.) with one of the artworks on SQUARES, the money left after covering expenses will be distributed between SQUARES and the user that created the underlying the square set. It doesn't make sense to give any contributions to the creator of the artwork, as it's easy on SQUARES to create artworks based on already completed artworks, so the artwork gallery will likely be floated with copies of high quality artworks. 
 
 The shop will not be implemented in this prototype, but the idea is to have a shop where its transparent what the square set creator will earn on the purchase. Furthermore, donations to the square set creator should also be possible through the shop by letting the buyer choose the price (a minimum price, a maximum price and a suggested price should be predefined for each product). This could also incentivize new designers to upload square sets as their earning potential is visible. This type of shop can for instance be found on https://leanpub.com.
-
-# Style Guide
-The style guide presented here will cover the main design choices for the website. The overall theme will be to use squares in the design thereby supporting both the title of the website but also the business concept - combining squares to produce squared artworks.
 
 ## Target group
 Taking the user persona into account the user target group consists of people that want to signal to their surroundings that they are cool and up-to-date with the newest trends, but inside are struggling to find their own true individuality. They know how to handle a smart-phone but are still considered to be non-technical people.   
 
-Looking at the designer persona this part of the overall user group is quite different from the part described by the user persona and discussed above. They tend to be a bit more mature and business-minded, as they are not on a pursuit for finding their own individuality (they have found it), but are looking for something that can help them succeed with the career ambitions. They are discerning, as they easily can distinguish a well thought-out product from a poorly designed product. Additionally, they are considered professionals within their field of work.
+Looking at the designer persona this part of the overall user group is quite different from the other target segment described by the user persona and discussed above. They tend to be a bit more mature and business-minded, as they are not on a pursuit for finding their own individuality (they have found it), but are looking for something that can help them succeed with the career ambitions. They are discerning, as they easily can distinguish a well thought-out product from a poorly designed product. Additionally, they are considered professionals within their field of work.
 
-To support these personas the design should be simple and intuitive so non-technical people can navigate the website and easily find square sets and produce artworks that they envision. Furthermore, the website should accommodate the picky designer that has a sense of what good design is.
+To support these personas the design should be simple and intuitive so non-technical people can navigate the website and it should be easy to find square sets and produce artworks that the user envision. Furthermore, the website should accommodate the picky designer that has a sense of what good design is.
+
+# Style Guide
+The style guide presented here will cover the main design choices for the website. The overall theme will be to use squares in the design thereby supporting both the title of the website but also the business concept - combining squares to produce artworks.
 
 ## Color Scheme
 To support SQUARE's creative environment a monochromatic purple color scheme has been chosen.
 
 The purple color combines the stability of the blue and the energy of the red color, creating a color of the imagination allowing the user to get in touch with his/her deeper thoughts. It's a creative color, which is well suited for the purpose of the website.
 
-As the purple color is a rather feminine color, the color scheme is mainly applied to the navigation bar and on call-to-action elements such as the buttons. This is done to try also embrace the male visitors and for the same reason the chosen purple colors are more blue than red.
+As the purple color is a rather feminine color, the color scheme is mainly applied to the navigation bar and on call-to-action elements such as the buttons. This is done to also embrace the male visitors and for the same reason the chosen purple colors are more blue than red.
 
-The color scheme can also be seen below in figure \ref{color-scheme} and online by following the link http://paletton.com/#uid=1480f0klIH05sZKf6RGrEvAtHj8.
+The color scheme can be seen below in figure \ref{color-scheme} and online by following the link http://paletton.com/#uid=1480f0klIH05sZKf6RGrEvAtHj8.
 
 ![The chosen color scheme \label{color-scheme}](./images/color-scheme.jpg)
 
@@ -85,12 +87,12 @@ To support the personas and their goals visiting the website, it needs to be int
 Figure \ref{gestalt-front-page} is showing a Gestalt sketch of the front page, which has been marked with two points of interest
 
 1. Similarity: The squares logo and the call-to-action buttons all share the same form and color - a purple square. This is used throughout the website and will make it easy for the user to identify important elements.
-2. Proximity: The buttons are situated close to each other enforcing that these buttons are somehow related. These buttons are three distinct ways for the user to start investigating what the site has to offer and thereby helps the user from the front page to other pages of interest.
+2. Proximity: The buttons are situated close to each other indicating that they are somehow related. These buttons are three distinct ways for the user to start investigating what the site has to offer and thereby helps the user from the front page to other pages of interest.
 
 ### Square Sets and Artworks page
 ![Gestalt sketch of the Square Sets page \label{gestalt-square-sets-page}](./images/square-sets-page.png)
 
-Figure \ref{gestalt-square-sets-page} is showing a Gestalt sketch of the square sets page, which has been marked with two points of interest, but are both related to the similarity principle.
+Figure \ref{gestalt-square-sets-page} is showing a Gestalt sketch of the square sets page, which has been marked with two points of interest, but are both related to the similarity principle. Again, the theme is characterized by square forms.
 
 The artworks page is not shown here, as it has the exact same structure as the square sets page. This also makes it easier for the user, as the same structures and rules apply on the different pages. 
 
@@ -111,16 +113,11 @@ Figure \ref{gestalt-about-page} is showing a Gestalt sketch of the about page, w
 Both the profile and administration pages are using the same Gestalt principles as mentioned above, as they are just compositions of square sets, artworks and buttons, which already has been discussed. The only things remaining are the form elements on the user administration page, sign up page and login page, which are not interesting in this discussing.
 
 # Technical Considerations
-* Semantic HTML
-* Browser compatibility
-* Validation of HTML and CSS
-
 The front-end part of the website is build using the JavaScript framework AngularJS together with the CSS framework Bootstrap, both helping speeding up the development process on the SQUARES prototype. 
 
 NodeJS is used as a simple back-end web server, where user information, square sets and artworks are stored. There is no real database behind the SQUARES prototype, as data is stored in back-end services, which are reset whenever the web server is restarted. However, having these back-end services simplified many of the application workflows as no data needs to be stored in the front-end - user information, square sets and artworks are just retrieved from the back-end using HTTP GET request whenever needed.
 
 Besides a standard CSS reset style sheet the styling is developed using Sass. The Sass files are complied to CSS files using a Gulp task with a watch on all the Sass files recompiling when any changes are made to the Sass files.   
-
 
 ## Frameworks
 As mentioned above the SQUARES prototype uses both a CSS framework and a JavaScript framework to simplify some of the development tasks thereby greatly shortening the development time. Bootstrap and AngularJS has been taught during the course, so these frameworks has been used developing the SQUARES prototype.  
@@ -145,7 +142,6 @@ Alternatives to InteractJS could be using AngularJS directives simulating drap a
 
 Another alternative is called codef0rmer, which makes jQuery-like drag and drop easy in AngularJS. Still, the lack of key features such as grid-snapping is the reason InteractJS is used in the SQUARES prototype.
 
-
 ### State compression
 As previous stated, sharing through social media can become quite important for SQUARES going forward. To support this even further a prototype for a canvas state-generator has been included in the SQUARES website. This state-generator makes it possible to share a canvas without creating a user on SQUARES and save the progress as an artwork. A unique URL can instead be generated, which contains the current state of the canvas - much like the functionality available on http://paletton.com/ - and can therefore be shared with everyone.  
 
@@ -168,6 +164,4 @@ Instead of relying on the native HTML input file type to handle upload of square
 # Future improvements
 The mobile experience on the SQUARES prototype could be improved significantly. Due to a smaller screen size on mobile devices it can be cumbersome to effectively use the Canvas page in it's current form. This is because the distance between the top of the artwork frame and the bottom of the square set is greater than the height of the majority of mobile devices. To improve on this a carousel-like library called Swiper has been consider. However, implementing this library will be a bit involved, as with Swiper and InteractJS uses the CSS transform property to manipulate an items position. This means that whenever the user interacts with a square within the slider created by Swiper, InteractJS should be notified that it can manipulate the square. At the same time Swiper must also be notified that the square cannot be manipulate until the square has been put back into the slider. If this is not done, every square in the artwork frame will be moved whenever the slider is activated. Due to time constraints this has not been investigated further.
 
-As mentioned before the look and feel of the website could be improved by removing Bootstrap and instead put some time into creating custom styling for the website. Furthermore, due to time constraints no animations has been implemented on the site. It would make sense to add a few small unobtrusive animations (for instance using the ngAnimate module) to improve the look and feel of the site and make the experience more fun and delightful.  
-
-* list more stuff from the Nice to Have list in Trello
+As mentioned before the look and feel of the website could be improved by removing Bootstrap and instead put some time into creating custom styling for the website. Furthermore, due to time constraints no animations or transitions has been implemented on the site. It would make sense to add a few small unobtrusive animations (for instance using the ngAnimate module) to improve the look and feel of the site and make the experience more fun and delightful.
