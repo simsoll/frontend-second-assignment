@@ -100,7 +100,9 @@ a, label, p {
   white-space: pre-wrap;
   position: relative;
   font-size: 1.2rem;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  -webkit-transition: background-color 0.5s, color 0.25s;
+  transition: background-color 0.5s, color 0.25s; }
   .btn.-sm {
     width: 58px;
     height: 58px; }
@@ -209,7 +211,9 @@ span.glyphicon {
   max-height: 60vh; }
 
 .navbar-default .navbar-nav > li > a {
-  color: #DCD7FC; }
+  color: #DCD7FC;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s; }
   .navbar-default .navbar-nav > li > a:hover {
     color: #fff; }
 
@@ -226,7 +230,9 @@ span.glyphicon {
   background-color: #3F2BAE; }
 
 .navbar-default .navbar-brand {
-  color: #DCD7FC; }
+  color: #DCD7FC;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s; }
   .navbar-default .navbar-brand:hover {
     color: #fff; }
   .navbar-default .navbar-brand:focus {

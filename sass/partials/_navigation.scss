@@ -51,6 +51,7 @@
 
 .navbar-default .navbar-nav > li > a {
     color: $text-color;    
+    transition: color 0.25s;    
     
     &:hover {
         color: $text-color-hover;        
@@ -60,6 +61,7 @@
 .navbar-default .navbar-nav > .active > a {
     color: $text-color;
     background-color: $navigation-background-color-active;
+    
 }
 
 .navbar-default .navbar-nav > .active > a:hover {
@@ -75,6 +77,7 @@
 
 .navbar-default .navbar-brand {
     color: $text-color;
+    transition: color 0.25s;    
     
     &:hover {
         color: $text-color-hover;
