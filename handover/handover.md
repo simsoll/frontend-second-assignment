@@ -110,17 +110,17 @@ Figure \ref{gestalt-canvas-page} is showing a Gestalt sketch of the canvas page,
 Figure \ref{gestalt-about-page} is showing a Gestalt sketch of the about page, which has been marked with a single point of interest showing the SQUARES logo, which is also placed on the front page.
 
 ### The remaining pages
-Both the profile and administration pages are using the same Gestalt principles as mentioned above, as they are just compositions of square sets, artworks and buttons, which already has been discussed. The only things remaining are the form elements on the user administration page, sign up page and login page, which are not interesting in this discussing.
+Both the profile and administration pages are using the same Gestalt principles as mentioned above, as they are just compositions of square sets, artworks and buttons, which already have been discussed. The only things remaining are the form elements on the user administration page, sign up page and login page, which are not interesting in this discussing.
 
 # Technical Considerations
 The front-end part of the website is build using the JavaScript framework AngularJS together with the CSS framework Bootstrap, both helping speeding up the development process on the SQUARES prototype. 
 
-NodeJS is used as a simple back-end web server, where user information, square sets and artworks are stored. There is no real database behind the SQUARES prototype, as data is stored in back-end services, which are reset whenever the web server is restarted. However, having these back-end services simplified many of the application workflows as no data needs to be stored in the front-end - user information, square sets and artworks are just retrieved from the back-end using HTTP GET request whenever needed.
+NodeJS is used as a simple back-end web server, where user information, square sets and artworks are stored. There is no real database behind the SQUARES prototype, as data is stored in back-end services, which are reset whenever the web server is restarted. However, having these back-end services simplifies many of the application workflows as no data needs to be stored in the front-end - user information, square sets and artworks are just retrieved from the back-end using HTTP GET request whenever needed.
 
-Besides a standard CSS reset style sheet the styling is developed using Sass. The Sass files are complied to CSS files using a Gulp task with a watch on all the Sass files recompiling when any changes are made to the Sass files.   
+Besides a standard CSS reset style sheet the styling is developed using Sass. The Sass files are complied to CSS files using a Gulp task ensuring that the Sass files is recompiled when any changes are made to the Sass files.   
 
 ## Frameworks
-As mentioned above the SQUARES prototype uses both a CSS framework and a JavaScript framework to simplify some of the development tasks thereby greatly shortening the development time. Bootstrap and AngularJS has been taught during the course, so these frameworks has been used developing the SQUARES prototype.  
+As mentioned above the SQUARES prototype uses both a CSS framework and a JavaScript framework to simplify some of the development tasks thereby greatly shortening the development time. Bootstrap and AngularJS have been taught during the course, so these frameworks have been used developing the SQUARES prototype.  
 
 ### Bootstrap 
 Bootstrap is used to define the layout of the pages on the website using the Bootstrap 12-column grid system. Furthermore, Bootstrap is used in styling the navigation bar and the form elements and comes with a set of glyph-icons also used on the website. 
@@ -128,24 +128,24 @@ Bootstrap is used to define the layout of the pages on the website using the Boo
 The CSS framework is good for fast prototyping, as it makes some of the styling tasks faster to implement as the framework comes with a lot of pre-made CSS classes. However, going forward with the SQUARES prototype it should be considered to stop using Bootstrap, as it's a heavy framework (+400KB for the non-minified version used in this project) and it would make sense to style the website with custom-made CSS creating a unique look and feel.
 
 ### AngularJS
-Along with Boostrap the website uses the JavaScript framework AngularJS. The SQUARES prototype uses AngularJS version 1.5.X introducing components and these are heavly used in the prototype. These components are special types of directives, which easily binds templates and controllers together forming encapsulated HTML element resulting in expressive mark-up. AngularJS components forms intuitive communication flows between components using clear component interfaces, one-way binding, callbacks to component events, lifecycle hooks, etc. Each page is then implemented using one or more components.
+Along with Boostrap the website uses the JavaScript framework AngularJS. The SQUARES prototype uses AngularJS version 1.5.X introducing components and these are heavily used in the prototype. These components are special types of directives, which easily binds templates and controllers together forming encapsulated HTML elements resulting in expressive mark-up. AngularJS components forms intuitive communication flows between components using clear component interfaces, one-way binding, callbacks to component events, lifecycle hooks, etc. Each page is then implemented using one or more components.
 
 As sharing square sets and artworks through social media will likely be necessary for SQUARES to become succesful, the routing capabilities will be important having each part of the website identified by a unique URL. This is done through the ngComponentRouter module, which makes it possible to route paths to relevant page components.
 
 ## Libraries
-The SQUARES prototype uses a few external libraries making some of the complex challenges more easy to solve and in far less time.
+The SQUARES prototype uses a few external libraries to simplify some of the complex challenges.
 
 ### Canvas
-The canvas page is developed using the library InteractJS, which comes with many needed features out-of-the-box including drag and drop, event callbacks and grid-snapping. Furthermore, the library has excellent documentation. 
+The canvas page is developed using the library InteractJS, which comes with many interesting features out-of-the-box including drag and drop, event callbacks and grid-snapping. Furthermore, the library has excellent documentation. 
 
-Alternatives to InteractJS could be using AngularJS directives simulating drap and drop functionality by hooking into mouse-down, mouse-up and mouse-over events, but still rather limitied compared to InteractJS.
+One alternative to InteractJS is to use AngularJS directives simulating drap and drop functionality by hooking into mouse-down, mouse-up and mouse-over events, but is still rather limitied compared to what InteractJS has to offer.
 
 Another alternative is called codef0rmer, which makes jQuery-like drag and drop easy in AngularJS. Still, the lack of key features such as grid-snapping is the reason InteractJS is used in the SQUARES prototype.
 
 ### State compression
 As previous stated, sharing through social media can become quite important for SQUARES going forward. To support this even further a prototype for a canvas state-generator has been included in the SQUARES website. This state-generator makes it possible to share a canvas without creating a user on SQUARES and save the progress as an artwork. A unique URL can instead be generated, which contains the current state of the canvas - much like the functionality available on http://paletton.com/ - and can therefore be shared with everyone.  
 
-This is done by having the canvas state represented as a JSON object, which then can be serialized (using the JSON.stringify function) and then encoded to greatly reduce the length of the stringified JSON object. The encoding could be accomplished using the btoa base64 encoding function (atob is the decoding function), which is part of the HTML5 specification. However, a library called lz-string is used instead as it's both a lot faster than the btoa/atob functions and the length of the encoded string is also greatly reduced compared to the base64 encoding. 
+This is done by having the canvas state represented as a JSON object, which then can be serialized (using the JSON.stringify function) and then encoded to greatly reduce the length of the stringified JSON object. The encoding could be accomplished using the btoa base64 encoding function (the decoding function is called atob), which is part of the HTML5 specification. However, a library called lz-string is used instead as it's both a lot faster than the btoa/atob functions and the length of the encoded string is also greatly reduced compared to the base64 encoding. 
 
 When the generated URL is entered in the browser the encoded state is part of the query string. This encoded state string is then decoded using lz-string and then parsed into a JSON object using JSON.parse, which is loaded into the canvas component.
 
