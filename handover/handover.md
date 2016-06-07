@@ -1,3 +1,9 @@
+---
+title: Second Mandatory Assignment in Front-end Development
+author: Simon Søllingvraa
+date: 2016-05-23
+---
+
 # Introduction 
 This document is part of the second mandatory assignment in the course Front-end Development held in Spring 2016 at BAAA - Business Academy Aarhus.
 
